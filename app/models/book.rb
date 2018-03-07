@@ -13,5 +13,6 @@
 #
 
 class Book < ApplicationRecord
-  validates :title, :author, :synopsis, 
+  validates :title, :author, :synopsis, presence: true
+  validates :title, uniqueness: {scope: [:author, :edition] }
 end
