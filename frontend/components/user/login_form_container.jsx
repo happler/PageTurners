@@ -8,8 +8,9 @@ const msp = state => {
   return({
     errors: state.errors.session,
     formType: "Sign In",
+    preposition: "to",
     altLoginText: "Not a Member?",
-    navLink: <Link to='/login' >Sign Up</Link>,
+    navLink: <Link to='/signup' >Sign Up</Link>,
   });
 };
 

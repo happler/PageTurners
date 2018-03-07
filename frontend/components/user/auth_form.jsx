@@ -18,28 +18,58 @@ class AuthRouter extends React.Component{
   }
 
   render(){
-    const { formType, altLoginText, navLink} = this.props
+    const { formType, altLoginText, navLink, preposition} = this.props
     return(
-      <div>
-        <ul>
-          {this.props.errors.map((error, idx) => <li key={ idx }>{error</li>) }
+      <div className="auth-form-container">
+        <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
+          <ul>
+            <li>{`${formType} ${preposition} PageTurners`}</li>
+            <li className="auth-form-demo">
+              <button>Continue with Demo</button>
+            </li>
+            {this.props.errors.map((error, idx) => <li key={ idx }>{error}</li>) }
+            <li>
+              <label>Username
+                <input
+                  className="auth-field"
+                  type='text'
+                  onChange={this.update('username')}
+                  value={this.state.username} />
+              </label>
+            </li>
+            <li>
+              <label>Password
+                <input
+                  className='auth-field'
+                  type='password'
+                  onChange={this.update('password')}
+                  value={this.state.password} />
+              </label>
+            </li>
+            <li>
+              <ul className='submit-row'>
+                <li>
+                  <input className='submit-button' type='submit' value={formType}/>
+                </li>
+                <li>
+                  Forgot your password? Try our demo!
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul className='switch-forms'>
+                <li>
+                  {altLoginText}
+                </li>
+                <li>
+                  {navLink}
+                </li>
+              </ul>
+
+            </li>
         </ul>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>Username
-            <input
-              type='text'
-              onChange={this.update('username')}
-              value={this.state.username} />
-          </label>
-          <label>Password
-            <input
-              type='password'
-              onChange={this.update('password')}
-              value={this.state.password} />
-          </label>
-          <input type='submit'/>
-        </form>
-      </div>
+      </form>
+    </div>
     );
   }
 }
