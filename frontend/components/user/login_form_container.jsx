@@ -3,21 +3,23 @@ import React from 'react';
 import AuthForm from './auth_form';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
+import { clearErrors } from '../../actions/global_actions';
 
-const msp = state => {
+const msp = (state, ownProps) => {
   return({
     errors: state.errors.session,
     formType: "Sign in",
     preposition: "to",
     altLoginText: "Not a Member?",
-    navLink: <Link to='/signup' >Sign Up</Link>,
+    path:ownProps.match.path,
   });
 };
 
 const mdp = dispatch => {
   return({
     submitAction: (user) => dispatch(login(user)),
-    demoLogin: () => dispatch(login({username:"Muad'Dib", password:'starwars'}))
+    demoLogin: () => dispatch(login({username:"Muad'Dib", password:'starwars'})),
+    clearErrors: () => dispatch(clearErrors()),
 
   });
 };

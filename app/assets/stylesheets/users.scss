@@ -60,6 +60,8 @@ text-align: center;
 .auth-field{
   border: 1px solid grey;
   border-radius: 3px;
+  height: 40px;
+  width: 300px
 }
 
 .submit-row input{
@@ -79,14 +81,9 @@ text-align: center;
   display: flex;
   flex-direction: column;
   width: 300px;
-  padding:25px;
   font-family: 'Lato', sans-serif;
 }
 
-.auth-form-input input{
-  height: 40px;
-  width: 300px
-}
 
 .auth-form-demo span{
   padding: 14px;

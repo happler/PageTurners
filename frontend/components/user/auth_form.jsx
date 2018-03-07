@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class AuthRouter extends React.Component{
   constructor(props){
@@ -18,24 +18,33 @@ class AuthRouter extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    if( this.state.username === '' || this.state.password === '') return
+    // if( this.state.username === '' || this.state.password === '') return
     this.props.submitAction(this.state)
     .then(() => this.props.history.push('/'),() => this.setState({password:''}) );
   }
 
   render(){
-    const { formType, altLoginText, navLink, preposition} = this.props
+    const { formType, altLoginText, preposition, clearErrors} = this.props;
+    const navLink = this.props.match.path ==='/signup'
+      ? <Link to='/login' onClick={() => clearErrors()}>Sign In</Link> 
+      : <Link to='/signup' onClick={() => clearErrors()}>Sign Up</Link>;
     return(
       <div>
         <p className="auth-form-header">PageTurners</p>
         <div className="auth-form-container">
           <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
             <ul>
-              <li className="auth-form-title">{`${formType} ${preposition} PageTurners`}</li>
-              <li className="auth-form-demo">
-                <span onClick={(e)=> this.handleDemo(e)}>Continue with Demo</span>
+              <li className="auth-form-title">
+                {`${formType} ${preposition} PageTurners`}
               </li>
-              {this.props.errors.map((error, idx) => <li className='auth-form-error' key={ idx }>{error}</li>) }
+              <li className="auth-form-demo">
+                <span onClick={(e)=> this.handleDemo(e)}>
+                  Continue with Demo
+                </span>
+              </li>
+              {this.props.errors.map((error, idx) => <li
+                className='auth-form-error'
+                key={ idx }>{error}</li>) }
               <li>
                 <label className='auth-form-input'>Username
                   <input
@@ -60,7 +69,12 @@ class AuthRouter extends React.Component{
                     <input type='submit' value={formType}/>
                   </li>
                   <li>
-                    Forgot your password? <p className="auth-form-demo-link" onClick={(e)=> this.handleDemo(e)}>Try our demo!</p>
+                    Forgot your password?
+                    <p
+                    className="auth-form-demo-link"
+                    onClick={(e)=> this.handleDemo(e)}>
+                    Try our demo!
+                  </p>
                   </li>
                 </ul>
               </li>
