@@ -7,19 +7,22 @@ import { withRouter } from 'react-router-dom';
 
 const Header = ({ user, logoutButton, history }) =>{
   return(
-    <ul className="nav-bar">
-      <ul className="left-nav">
-        <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
+    <div className='nav-bar-container'>
+      <ul className="nav-bar">
+        <ul className="left-nav">
+          <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
+          <li className="left-nav-shelves">My Shelves</li>
+        </ul>
+        <ul className="right-nav">
+          <li className="right-nav-user">
+            {user.username}
+          </li>
+          <li className='right-nav-logout'>
+            <button onClick={(e) => logoutButton()}>Log Out</button>
+          </li>
+        </ul>
       </ul>
-      <ul className="right-nav">
-        <li>
-          {user.username}
-        </li>
-        <li>
-          <button onClick={(e) => logoutButton()}>Log Out</button>
-        </li>
-      </ul>
-    </ul>
+    </div>
   );
 };
 

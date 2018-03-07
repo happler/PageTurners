@@ -1,15 +1,50 @@
+#root{
+  // background-color: #ECECE3;
+  background-color: #eae8de;
+  height: 1200px;
+}
+
+.nav-bar-container{
+  display: flex;
+  justify-content: center;
+}
+
 .nav-bar{
   display: flex;
-  width: 800px;
+  width: 100%;
+  height:60px;
+  max-width: 1200px;
+  min-width: 500px;
   justify-content: space-between;
   flex-direction: row;
   background-color: #f4f1eb;
   border-bottom: 2px solid #dbd9d7
 }
-.left-nav-home{
+
+.left-nav-home, .right-nav-user,
+.right-nav-logout, .left-nav-shelves{
   padding:15px;
 }
-.right-nav{
+
+.left-nav-home{
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  text-shadow: #FC8 0px 0 3px;
+  padding-top: 7px;
+  font-size: 27px;
+}
+
+.left-nav-home:hover{
+  cursor: pointer;
+}
+.right-nav, .left-nav{
   display: flex;
   flex-direction: row;
+  padding:5px;
+}
+
+
+.right-nav-logout:hover, .left-nav-shelves:hover{
+  background-color: #352213;
+  color:white;
 }

@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #root{
-  background-color: #ECECE3;
+  // background-color: #ECECE3;
   background-color: #eae8de;
 }
 .auth-form-container{
+  position: relative;
+  top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
