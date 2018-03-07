@@ -4,12 +4,13 @@
 
 #root{
   background-color: #ECECE3;
-  background-color: green;
+  background-color: #eae8de;
 }
 .auth-form-container{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
 
 }
 .auth-form{
@@ -20,8 +21,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  border-radius: 3px;
+  border: 1px solid #d0d0c9;
+  border-radius: 8px;
 }
 .auth-form > ul > li{
   width: 300px;
@@ -41,7 +42,9 @@
 }
 
 .switch-forms li{
-width: 75px;
+width: 90px;
+font-size: 12px;
+
 }
 
 .auth-field{
@@ -50,11 +53,12 @@ width: 75px;
 }
 
 .submit-row input{
-  padding:10px;
-  background-color: grey;
-  border: 1px solid black;
+  padding:10px 20px;
+  background-color: #ece6d8;
+  border: 1px solid #d5d0c5;
   border-radius: 4px;
   margin: 10px;
+  letter-spacing: .75px;
 }
 
 .auth-form-input{
@@ -62,6 +66,7 @@ width: 75px;
   flex-direction: column;
   width: 300px;
   padding:25px;
+  font-family: 'Lato', sans-serif;
 }
 
 .auth-form-input input{
@@ -71,9 +76,38 @@ width: 75px;
 
 .auth-form-demo button{
   padding: 14px;
-  background-color: goldenrod;
-  border: 1px solid black;
+  background-color: #f1c26d;
+  border: 1px solid #ae8b39;
   width: 280px;
   border-radius: 4px;
+  text-align: center;
+}
+
+.auth-form-title{
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .75px;
+}
+
+.auth-form-link{
+  color: #28615C
+}
+
+.auth-form-link:hover{
+  text-decoration: underline;
+}
+.auth-form-demo-link{
+  color: #28615C
+}
+
+.auth-form-demo-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.auth-form-error{
+  background-color: #fef7cd;
+  font-size: 12px;
   text-align: center;
 }

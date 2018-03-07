@@ -7,7 +7,7 @@ import { signup } from '../../actions/session_actions';
 const msp = state => {
   return({
     errors: state.errors.session,
-    formType: "Sign Up",
+    formType: "Sign up",
     preposition: "for",
     altLoginText: "Already a Member?",
     navLink: <Link to='/login' >Sign In</Link>,

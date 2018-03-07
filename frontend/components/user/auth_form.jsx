@@ -11,6 +11,10 @@ class AuthRouter extends React.Component{
     return e => this.setState({[type]:e.currentTarget.value});
   }
 
+  handleDemo(e){
+    this.props.submitAction({username:"muaddib", password:"starwars"});
+  }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.submitAction(this.state)
@@ -23,11 +27,11 @@ class AuthRouter extends React.Component{
       <div className="auth-form-container">
         <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
           <ul>
-            <li>{`${formType} ${preposition} PageTurners`}</li>
+            <li className="auth-form-title">{`${formType} ${preposition} PageTurners`}</li>
             <li className="auth-form-demo">
-              <button>Continue with Demo</button>
+              <button onClick={(e)=> this.handleDemo(e)}>Continue with Demo</button>
             </li>
-            {this.props.errors.map((error, idx) => <li key={ idx }>{error}</li>) }
+            {this.props.errors.map((error, idx) => <li className='auth-form-error' key={ idx }>{error}</li>) }
             <li>
               <label className='auth-form-input'>Username
                 <input
@@ -52,7 +56,7 @@ class AuthRouter extends React.Component{
                   <input type='submit' value={formType}/>
                 </li>
                 <li>
-                  Forgot your password? Try our demo!
+                  Forgot your password? <p className="auth-form-demo-link" onClick={(e)=> this.handleDemo(e)}>Try our demo!</p>
                 </li>
               </ul>
             </li>
@@ -61,7 +65,7 @@ class AuthRouter extends React.Component{
                 <li>
                   {altLoginText}
                 </li>
-                <li>
+                <li className="auth-form-link">
                   {navLink}
                 </li>
               </ul>
