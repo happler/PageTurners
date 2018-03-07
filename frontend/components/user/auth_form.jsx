@@ -26,55 +26,58 @@ class AuthRouter extends React.Component{
   render(){
     const { formType, altLoginText, navLink, preposition} = this.props
     return(
-      <div className="auth-form-container">
-        <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
-          <ul>
-            <li className="auth-form-title">{`${formType} ${preposition} PageTurners`}</li>
-            <li className="auth-form-demo">
-              <span onClick={(e)=> this.handleDemo(e)}>Continue with Demo</span>
-            </li>
-            {this.props.errors.map((error, idx) => <li className='auth-form-error' key={ idx }>{error}</li>) }
-            <li>
-              <label className='auth-form-input'>Username
-                <input
-                  className="auth-field"
-                  type='text'
-                  onChange={this.update('username')}
-                  value={this.state.username} />
-              </label>
-            </li>
-            <li>
-              <label className='auth-form-input'>Password
-                <input
-                  className='auth-field'
-                  type='password'
-                  onChange={this.update('password')}
-                  value={this.state.password} />
-              </label>
-            </li>
-            <li>
-              <ul className='submit-row'>
-                <li>
-                  <input type='submit' value={formType}/>
-                </li>
-                <li>
-                  Forgot your password? <p className="auth-form-demo-link" onClick={(e)=> this.handleDemo(e)}>Try our demo!</p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul className='switch-forms'>
-                <li>
-                  {altLoginText}
-                </li>
-                <li className="auth-form-link">
-                  {navLink}
-                </li>
-              </ul>
+      <div>
+        <p className="auth-form-header">PageTurners</p>
+        <div className="auth-form-container">
+          <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
+            <ul>
+              <li className="auth-form-title">{`${formType} ${preposition} PageTurners`}</li>
+              <li className="auth-form-demo">
+                <span onClick={(e)=> this.handleDemo(e)}>Continue with Demo</span>
+              </li>
+              {this.props.errors.map((error, idx) => <li className='auth-form-error' key={ idx }>{error}</li>) }
+              <li>
+                <label className='auth-form-input'>Username
+                  <input
+                    className="auth-field"
+                    type='text'
+                    onChange={this.update('username')}
+                    value={this.state.username} />
+                </label>
+              </li>
+              <li>
+                <label className='auth-form-input'>Password
+                  <input
+                    className='auth-field'
+                    type='password'
+                    onChange={this.update('password')}
+                    value={this.state.password} />
+                </label>
+              </li>
+              <li>
+                <ul className='submit-row'>
+                  <li>
+                    <input type='submit' value={formType}/>
+                  </li>
+                  <li>
+                    Forgot your password? <p className="auth-form-demo-link" onClick={(e)=> this.handleDemo(e)}>Try our demo!</p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul className='switch-forms'>
+                  <li>
+                    {altLoginText}
+                  </li>
+                  <li className="auth-form-link">
+                    {navLink}
+                  </li>
+                </ul>
 
-            </li>
-        </ul>
-      </form>
+              </li>
+          </ul>
+        </form>
+      </div>
     </div>
     );
   }

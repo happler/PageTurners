@@ -13,8 +13,15 @@
   align-items: center;
   justify-content: center;
   font-family: 'Lato', sans-serif;
-
 }
+.auth-form-header{
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  text-shadow: #FC8 0px 0 3px;
+  font-size: 27px;
+  padding: 10px;
+}
+
 .auth-form{
   width: 580px;
   height:580px;
@@ -92,6 +99,7 @@ text-align: center;
 
 .auth-form-demo span:hover{
   background-color: #f1c26d;
+  cursor: pointer;
 }
 
 .auth-form-title{
