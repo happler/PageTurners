@@ -42,8 +42,9 @@
 }
 
 .switch-forms li{
-width: 90px;
+width: 120px;
 font-size: 12px;
+text-align: center;
 
 }
 
@@ -54,11 +55,15 @@ font-size: 12px;
 
 .submit-row input{
   padding:10px 20px;
-  background-color: #ece6d8;
+  background-color: #F4F1EA;
   border: 1px solid #d5d0c5;
   border-radius: 4px;
   margin: 10px;
   letter-spacing: .75px;
+}
+
+.submit-row input:hover{
+  background-color: #ede6d6
 }
 
 .auth-form-input{
@@ -74,13 +79,17 @@ font-size: 12px;
   width: 300px
 }
 
-.auth-form-demo button{
+.auth-form-demo span{
   padding: 14px;
-  background-color: #f1c26d;
+  background-color: #f5d47a;
   border: 1px solid #ae8b39;
   width: 280px;
   border-radius: 4px;
   text-align: center;
+}
+
+.auth-form-demo span:hover{
+  background-color: #f1c26d;
 }
 
 .auth-form-title{

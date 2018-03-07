@@ -13,7 +13,7 @@ class AuthRouter extends React.Component{
 
   handleDemo(e){
     // debugger
-    this.props.submitAction({username:"muaddib", password:"starwars"});
+    this.props.demoLogin();
   }
 
   handleSubmit(e){
@@ -31,7 +31,7 @@ class AuthRouter extends React.Component{
           <ul>
             <li className="auth-form-title">{`${formType} ${preposition} PageTurners`}</li>
             <li className="auth-form-demo">
-              <button onClick={(e)=> this.handleDemo(e)}>Continue with Demo</button>
+              <span onClick={(e)=> this.handleDemo(e)}>Continue with Demo</span>
             </li>
             {this.props.errors.map((error, idx) => <li className='auth-form-error' key={ idx }>{error}</li>) }
             <li>

@@ -14,7 +14,6 @@ import HeaderContainer from './nav/header';
 
 const App = () =>(
   <div>
-    <h2>Hello World</h2>
     <AuthRoute exact path='/login' component={ LoginFormContainer } />
     <AuthRoute exact path='/signup' component={ SignupFormContainer } />
     <ProtectedRoute path='/' component={ HeaderContainer } />

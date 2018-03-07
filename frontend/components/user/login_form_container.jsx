@@ -16,7 +16,9 @@ const msp = state => {
 
 const mdp = dispatch => {
   return({
-    submitAction: (user) => dispatch(login(user))
+    submitAction: (user) => dispatch(login(user)),
+    demoLogin: () => dispatch(login({username:'muaddib', password:'starwars'}))
+    
   });
 };
 
