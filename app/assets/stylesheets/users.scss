@@ -4,7 +4,8 @@
 
 #root{
   // background-color: #ECECE3;
-  background-color: #eae8de;
+  // background-color: #eae8de;
+  background-image: url('https://s.gr-assets.com/assets/layout/tan-bg-texture.jpg');
 }
 .auth-form-container{
   position: relative;
@@ -24,7 +25,7 @@
 
 .auth-form{
   width: 580px;
-  height:580px;
+  height:480px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -126,4 +127,10 @@ text-align: center;
   background-color: #fef7cd;
   font-size: 12px;
   text-align: center;
+}
+.image-footer{
+  position: relative;
+  height:50px;
+  top: 225px;
+  background-image: url('https://s.gr-assets.com/assets/layout/bookrow.jpg');
 }

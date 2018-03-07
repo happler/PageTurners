@@ -26,7 +26,7 @@ class AuthRouter extends React.Component{
   render(){
     const { formType, altLoginText, preposition, clearErrors} = this.props;
     const navLink = this.props.match.path ==='/signup'
-      ? <Link to='/login' onClick={() => clearErrors()}>Sign In</Link> 
+      ? <Link to='/login' onClick={() => clearErrors()}>Sign In</Link>
       : <Link to='/signup' onClick={() => clearErrors()}>Sign Up</Link>;
     return(
       <div>
@@ -51,6 +51,7 @@ class AuthRouter extends React.Component{
                     className="auth-field"
                     type='text'
                     onChange={this.update('username')}
+                    placeholder='Username'
                     value={this.state.username} />
                 </label>
               </li>
@@ -60,6 +61,7 @@ class AuthRouter extends React.Component{
                     className='auth-field'
                     type='password'
                     onChange={this.update('password')}
+                    placeholder='Password (min len 6, any chars)'
                     value={this.state.password} />
                 </label>
               </li>
@@ -92,6 +94,7 @@ class AuthRouter extends React.Component{
           </ul>
         </form>
       </div>
+      <footer className='image-footer'></footer>
     </div>
     );
   }
