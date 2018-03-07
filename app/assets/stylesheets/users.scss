@@ -25,7 +25,7 @@
 
 .auth-form{
   width: 580px;
-  height:480px;
+  height:580px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: center;
   margin: 15px;
+  margin-bottom: 30px;
 }
 .switch-forms, .submit-row, {
   display: flex;
@@ -62,7 +63,8 @@ text-align: center;
   border: 1px solid grey;
   border-radius: 3px;
   height: 40px;
-  width: 300px
+  width: 300px;
+  padding-left: 5px;
 }
 
 .submit-row input{
@@ -83,6 +85,10 @@ text-align: center;
   flex-direction: column;
   width: 300px;
   font-family: 'Lato', sans-serif;
+}
+
+.auth-form-input-li{
+  margin-bottom: 30px;
 }
 
 

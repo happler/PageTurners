@@ -45,7 +45,7 @@ class AuthRouter extends React.Component{
               {this.props.errors.map((error, idx) => <li
                 className='auth-form-error'
                 key={ idx }>{error}</li>) }
-              <li>
+              <li className='auth-form-input-li'>
                 <label className='auth-form-input'>Username
                   <input
                     className="auth-field"
@@ -55,7 +55,7 @@ class AuthRouter extends React.Component{
                     value={this.state.username} />
                 </label>
               </li>
-              <li>
+              <li className='auth-form-input-li'>
                 <label className='auth-form-input'>Password
                   <input
                     className='auth-field'
