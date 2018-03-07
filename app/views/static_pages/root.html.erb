@@ -2,7 +2,7 @@
   <% if logged_in? %>
     window.currentUser = {
       id: <%= current_user.id %>,
-      username: "<%=  current_user.username%>"
+      username: "<%= current_user.username.html_safe %>"
     }
     <% end %>
   </script>

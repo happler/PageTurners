@@ -23,14 +23,14 @@
 
 .left-nav-home, .right-nav-user,
 .right-nav-logout, .left-nav-shelves{
-  padding:15px;
+  padding:20px;
 }
 
 .left-nav-home{
   font-family: 'Righteous', cursive;
   font-weight: 300;
   text-shadow: #FC8 0px 0 3px;
-  padding-top: 7px;
+  padding-top: 10px;
   font-size: 27px;
 }
 
@@ -40,7 +40,7 @@
 .right-nav, .left-nav{
   display: flex;
   flex-direction: row;
-  padding:5px;
+  padding:0px;
 }
 
 

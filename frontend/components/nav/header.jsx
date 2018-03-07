@@ -17,8 +17,8 @@ const Header = ({ user, logoutButton, history }) =>{
           <li className="right-nav-user">
             {user.username}
           </li>
-          <li className='right-nav-logout'>
-            <button onClick={(e) => logoutButton()}>Log Out</button>
+          <li onClick={(e) => logoutButton()} className='right-nav-logout'>
+            Log Out
           </li>
         </ul>
       </ul>
