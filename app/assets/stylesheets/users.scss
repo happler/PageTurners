@@ -23,13 +23,15 @@
   border: 1px solid black;
   border-radius: 3px;
 }
-.auth-form ul > li{
+.auth-form > ul > li{
   width: 300px;
   height: 50px;
-  border: 1px solid red;
+  // border: 1px solid red;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 15px;
 }
 .switch-forms, .submit-row, {
   display: flex;
@@ -38,7 +40,40 @@
   justify-content: space-between;
 }
 
+.switch-forms li{
+width: 75px;
+}
+
 .auth-field{
   border: 1px solid grey;
   border-radius: 3px;
+}
+
+.submit-row input{
+  padding:10px;
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.auth-form-input{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding:25px;
+}
+
+.auth-form-input input{
+  height: 40px;
+  width: 300px
+}
+
+.auth-form-demo button{
+  padding: 14px;
+  background-color: goldenrod;
+  border: 1px solid black;
+  width: 280px;
+  border-radius: 4px;
+  text-align: center;
 }

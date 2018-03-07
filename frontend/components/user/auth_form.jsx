@@ -29,7 +29,7 @@ class AuthRouter extends React.Component{
             </li>
             {this.props.errors.map((error, idx) => <li key={ idx }>{error}</li>) }
             <li>
-              <label>Username
+              <label className='auth-form-input'>Username
                 <input
                   className="auth-field"
                   type='text'
@@ -38,7 +38,7 @@ class AuthRouter extends React.Component{
               </label>
             </li>
             <li>
-              <label>Password
+              <label className='auth-form-input'>Password
                 <input
                   className='auth-field'
                   type='password'
@@ -49,7 +49,7 @@ class AuthRouter extends React.Component{
             <li>
               <ul className='submit-row'>
                 <li>
-                  <input className='submit-button' type='submit' value={formType}/>
+                  <input type='submit' value={formType}/>
                 </li>
                 <li>
                   Forgot your password? Try our demo!
