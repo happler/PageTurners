@@ -12,11 +12,13 @@ class AuthRouter extends React.Component{
   }
 
   handleDemo(e){
+    // debugger
     this.props.submitAction({username:"muaddib", password:"starwars"});
   }
 
   handleSubmit(e){
     e.preventDefault();
+    if( this.state.username === '' || this.state.password === '') return
     this.props.submitAction(this.state)
     .then(() => this.props.history.push('/'),() => this.setState({password:''}) );
   }

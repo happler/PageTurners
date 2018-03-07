@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
 
-const Header = ({ user, logoutButton }) =>{
+
+
+const Header = ({ user, logoutButton, history }) =>{
   return(
-    <ul className="Nav-Bar">
-      <ul className="Left-Nav">
-        <li>PageTurners</li>
+    <ul className="nav-bar">
+      <ul className="left-nav">
+        <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
       </ul>
-      <ul className="Right-Nav">
+      <ul className="right-nav">
         <li>
           {user.username}
         </li>
@@ -28,4 +31,4 @@ const mdp = dispatch => ({
   logoutButton:() => dispatch(logout())
 });
 
-export default connect(msp, mdp)(Header);
+export default withRouter(connect(msp, mdp)(Header));

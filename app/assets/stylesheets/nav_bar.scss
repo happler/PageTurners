@@ -1,0 +1,15 @@
+.nav-bar{
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #f4f1eb;
+  border-bottom: 2px solid #dbd9d7
+}
+.left-nav-home{
+  padding:15px;
+}
+.right-nav{
+  display: flex;
+  flex-direction: row;
+}
