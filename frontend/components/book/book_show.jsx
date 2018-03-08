@@ -17,11 +17,10 @@ class BookShow extends React.Component{
   }
 
   render(){
-    debugger
     if (!this.props.book){
       return(
         <div>
-          <h2>Loading...</h2>;
+          <h2>Loading...</h2>
             {this.props.errors.map((error, idx) => <li
               className='book-show-error'
               key={ idx }>{error}</li>) }

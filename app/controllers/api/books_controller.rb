@@ -6,13 +6,11 @@ class Api::BooksController < ApplicationController
   end
 
   def show
-    debugger
-    @book = Book.find(params[:id])
+    @book = Book.find_by(id: params[:id])
     if @book
       render '/api/books/show'
     else
-      render json: @book.errors.full_messages, status: 404
+      render json: ["Sorry, we couldn't find your book"], status: 422
     end
   end
-
 end

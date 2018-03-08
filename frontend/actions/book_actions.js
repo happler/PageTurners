@@ -14,13 +14,13 @@ const receiveBookErrors = errors => {
 return({
   type: RECEIVE_BOOK_ERRORS,
   errors
-})};
+});};
 
 
 export const fetchBooks = () => dispatch => (
   BookUtils.fetchBooks().
   then(books => dispatch(receiveBooks(books)
-    ), err => receiveBookErrors(err))
+), err => dispatch(receiveBookErrors(err)))
 
 );
 
@@ -28,6 +28,6 @@ export const fetchBook = (id) => dispatch => {
   return(
     BookUtils.fetchBook(id).
     then(book => dispatch(receiveBooks(book)
-      ), err => receiveBookErrors(err))
+  ), err => dispatch(receiveBookErrors(err)))
 
 );};
