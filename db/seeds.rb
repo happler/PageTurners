@@ -8,3 +8,9 @@
 
 User.destroy_all
 User.create(username:"Muad'Dib", password:'starwars')
+
+Book.destroy_all
+
+30.times do
+  Book.create(title: Faker::Superhero.unique.name, author: Faker::RockBand.unique.name, synopsis: Faker::Lovecraft.unique.paragraphs(2))
+end

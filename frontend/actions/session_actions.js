@@ -18,17 +18,17 @@ export const login = user => dispatch =>{
   return(
   ApiUtils.login(user)
   .then(recievedUser => dispatch(receiveCurrentUser(recievedUser)
-), err => dispatch(receiveSessionErrors(err)))
+    ), err => dispatch(receiveSessionErrors(err)))
 );};
 
 export const signup = user => dispatch =>(
   ApiUtils.signup(user)
   .then(recievedUser => dispatch(receiveCurrentUser(recievedUser)
-), err => dispatch(receiveSessionErrors(err)))
+    ), err => dispatch(receiveSessionErrors(err)))
 );
 
 export const logout = () => dispatch =>(
   ApiUtils.logout()
   .then(recievedUser => dispatch(receiveCurrentUser(null)
-), err => dispatch(receiveSessionErrors(err)))
+    ), err => dispatch(receiveSessionErrors(err)))
 );
