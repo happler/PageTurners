@@ -20,7 +20,8 @@ class BookShow extends React.Component{
     if (!this.props.book){
       return(
         <div>
-          <h2>Loading...</h2>
+          <Header />
+          <h2 className='book-show-loading'>Loading...</h2>
             {this.props.errors.map((error, idx) => <li
               className='book-show-error'
               key={ idx }>{error}</li>) }
@@ -29,10 +30,10 @@ class BookShow extends React.Component{
     const { title, author, synopsis, published, edition, coverImage } = this.props.book;
     return(
       <div>
+        <Header />
         {this.props.errors.map((error, idx) => <li
           className='book-show-error'
           key={ idx }>{error}</li>) }
-        <Header />
         <div className='book-show-container'>
           <BookImageItem coverImage={coverImage}/>
           <div className='book-show__right'>

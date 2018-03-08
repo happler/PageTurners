@@ -6,7 +6,6 @@ import { CLEAR_ALL_ERRORS } from '../actions/global_actions';
 
 
 const BooksErrorsReducer = (state = [], action) =>{
-  debugger;
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOK_ERRORS:

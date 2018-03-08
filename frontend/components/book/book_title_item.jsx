@@ -9,8 +9,8 @@ const BookTitleItem = ({ title, author, RatingStuff}) =>{
       <div className='book-title__author'>
         <span>{author}</span>
       </div>
-      <div>
-        <p>Rating Stuff Goes Here</p>
+      <div className='book-title__rating'>
+        <p>Rating stats go here</p>
       </div>
     </div>
   );

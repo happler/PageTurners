@@ -10,7 +10,7 @@ class Api::BooksController < ApplicationController
     if @book
       render '/api/books/show'
     else
-      render json: ["Sorry, we couldn't find your book"], status: 422
+      render json: ["Sorry, we couldn't find your book"], status: 404
     end
   end
 end

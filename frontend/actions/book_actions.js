@@ -10,7 +10,6 @@ const receiveBooks = books => ({
 });
 
 const receiveBookErrors = errors => {
-  debugger
 return({
   type: RECEIVE_BOOK_ERRORS,
   errors
