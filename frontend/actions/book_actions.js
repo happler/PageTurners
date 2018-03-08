@@ -16,14 +16,14 @@ const receiveBookErrors = errors => ({
 
 
 export const fetchBooks = () => dispatch => (
-  BookUtils.fetch().
+  BookUtils.fetchBooks().
   then(books => dispatch(receiveBooks(books)
     ), err => receiveBookErrors(err))
 
 );
 
 export const fetchBook = (id) => dispatch => (
-  BookUtils.fetch(id).
+  BookUtils.fetchBook(id).
   then(book => dispatch(receiveBooks(book)
     ), err => receiveBookErrors(err))
 

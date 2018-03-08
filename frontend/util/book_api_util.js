@@ -1,11 +1,11 @@
-const fetchBooks =() =>(
+export const fetchBooks = () =>(
   $.ajax({
     url:'/api/books'
   })
 );
 
-const fetchBook =(id) =>(
+export const fetchBook = (id) =>(
   $.ajax({
-    url:`/api/books${id}`
+    url:`/api/books/${id}`
   })
 );
