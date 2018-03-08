@@ -15,3 +15,5 @@ const BookTitleItem = ({ title, author, RatingStuff}) =>{
     </div>
   );
 };
+
+export default BookTitleItem;

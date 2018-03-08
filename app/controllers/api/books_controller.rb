@@ -6,6 +6,7 @@ class Api::BooksController < ApplicationController
   end
 
   def show
+    debugger
     @book = Book.find(params[:id])
     if @book
       render '/api/books/show'

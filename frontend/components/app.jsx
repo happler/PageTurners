@@ -11,12 +11,14 @@ import LoginFormContainer from './user/login_form_container';
 import SignupFormContainer from './user/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './nav/header';
+import BookShowContainer from './book/book_show_container';
 
 const App = () =>(
   <div>
     <AuthRoute exact path='/login' component={ LoginFormContainer } />
     <AuthRoute exact path='/signup' component={ SignupFormContainer } />
-    <ProtectedRoute path='/' component={ HeaderContainer } />
+    <ProtectedRoute exact path='/' component={ HeaderContainer } />
+    <ProtectedRoute path='/books/:id' component={ BookShowContainer } />
   </div>
 );
 

@@ -7,10 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.create(username:"Muad'Dib", password:'starwars')
+User.create(username: "Muad'Dib", password: 'starwars')
 
 Book.destroy_all
 
 30.times do
-  Book.create(title: Faker::Superhero.unique.name, author: Faker::RockBand.unique.name, synopsis: Faker::Lovecraft.unique.paragraphs(2))
+  Book.create(
+    title: Faker::Superhero.unique.name,
+    author: Faker::RockBand.unique.name,
+    synopsis: Faker::Lovecraft.unique.paragraphs(2),
+    cover_image: "/assets/book_cover.jpg",
+    published: Faker::Date.backward(8000),
+    edition: "1st"
+  )
 end
