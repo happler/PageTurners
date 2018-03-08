@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import BookImageItem from './book_image_item';
 import BookTitleItem from './book_title_item';
-import Header from '../nav/header';
 
 class BookShow extends React.Component{
   componentDidMount(){
@@ -10,6 +9,11 @@ class BookShow extends React.Component{
       this.props.fetchBook(this.props.match.params.id);
     }
 
+  }
+  componentWillReceiveProps(newProps){
+    if (this.props.match.params.id !== newProps.match.params.id){
+      this.props.fetchBook(newProps.match.params.id);
+    }
   }
 
   componentWillUnmount(){
@@ -20,7 +24,6 @@ class BookShow extends React.Component{
     if (!this.props.book){
       return(
         <div>
-          <Header />
           <h2 className='book-show-loading'>Loading...</h2>
             {this.props.errors.map((error, idx) => <li
               className='book-show-error'
@@ -30,7 +33,6 @@ class BookShow extends React.Component{
     const { title, author, synopsis, published, edition, coverImage } = this.props.book;
     return(
       <div>
-        <Header />
         {this.props.errors.map((error, idx) => <li
           className='book-show-error'
           key={ idx }>{error}</li>) }

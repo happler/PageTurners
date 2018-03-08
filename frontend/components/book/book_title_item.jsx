@@ -7,7 +7,7 @@ const BookTitleItem = ({ title, author, RatingStuff}) =>{
         <span >{title}</span>
       </div>
       <div className='book-title__author'>
-        <span>{author}</span>
+        <span> by {author}</span>
       </div>
       <div className='book-title__rating'>
         <p>Rating stats go here</p>

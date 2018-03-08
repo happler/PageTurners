@@ -1,0 +1,94 @@
+/* line 1, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 3, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 4, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 5, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header {
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  border-bottom:1px solid #999
+}
+
+/* line 11, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 15, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 20, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 16, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__right {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* line 21, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 27, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__demo {
+  display: flex;
+}
+
+/* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 32, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 31, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__demo__link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 29, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 37, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 38, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__field {
+  width: 130px;
+  height: 25px;
+  border: 1px solid #DCD6CC;
+  background-color: white;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  padding-left: 5px;
+  border-radius: 3px;
+}
+
+/* line 48, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 50, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__left {
+  font-family: 'Righteous', cursive;
+  font-weight: 300;
+  text-shadow: #FC8 0px 0 3px;
+  font-size: 35px;
+  /*   margin-top:-13px; */
+}
+
+/* line 58, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__demo__link, .landing-header__demo__title {
+  font-family: 'Lato', sans-serif;
+  width: 130px;
+  font-size: 12px;
+  color: #999;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+/* line 67, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-submit-button {
+  background-color: #382111;
+  color: white;
+  padding: 8px 12px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12.5px;
+  border-radius: 3px;
+  space-between: .75px;
+}
+
+/* line 77, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-submit-button:hover {
+  background-color: #573720;
+}
+
+/* line 81, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-container {
+  display: flex;
+  justify-content: center;
+}
