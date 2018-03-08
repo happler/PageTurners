@@ -63,11 +63,38 @@ class Landing extends React.Component{
             </div>
             <div>
               <div className='landing-header__right__right'>
-                <input className='landing-submit-button' type='submit' value="Sign in"/>
+                <input className='landing-header__submit-button' type='submit' value="Sign in"/>
               </div>
             </div>
         </form>
       </div>
+      <div className='landing-body'>
+      <p className="landing-body__left">Meet your next favourite book.</p>
+        <form
+          onSubmit={(e) => this.handleSubmit(e)}
+          className="landing-body__right"
+        >
+          <h2 className='landing-body__title'>New here? Create a free account!</h2>
+          <input
+            className="landing-body__field"
+            type='text'
+            onChange={this.update('username')}
+            placeholder='Username'
+            value={this.state.username} />
+          <input
+            className='landing-body__field'
+            type='password'
+            onChange={this.update('password')}
+            placeholder='Password'
+            value={this.state.password} />
+          <input className='landing-body__submit-button' type='submit' value="Sign up"/>
+            <h2
+              className="landing-body__demo__link"
+              onClick={(e)=> this.handleDemo(e)}>
+              or sign in using our Demo
+            </h2>
+      </form>
+    </div>
     </div>
     );
   }

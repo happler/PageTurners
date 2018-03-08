@@ -2,19 +2,22 @@
 /* line 3, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 4, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 5, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 6, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 7, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header {
-  width: 960px;
+  width: 965px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 75px;
-  border-bottom:1px solid #999
 }
 
 /* line 11, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 15, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 20, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 16, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 19, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 21, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__right {
   width: 350px;
   display: flex;
@@ -25,6 +28,8 @@
 /* line 21, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 27, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 29, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 32, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__demo {
   display: flex;
 }
@@ -32,6 +37,8 @@
 /* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 32, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 31, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 36, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 40, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__demo__link:hover {
   cursor: pointer;
   text-decoration: underline;
@@ -40,6 +47,8 @@
 /* line 29, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 37, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 38, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 44, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 49, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__field {
   width: 130px;
   height: 25px;
@@ -53,6 +62,8 @@
 
 /* line 48, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 /* line 50, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 57, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 63, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__left {
   font-family: 'Righteous', cursive;
   font-weight: 300;
@@ -62,6 +73,8 @@
 }
 
 /* line 58, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 66, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 73, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-header__demo__link, .landing-header__demo__title {
   font-family: 'Lato', sans-serif;
   width: 130px;
@@ -72,7 +85,9 @@
 }
 
 /* line 67, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-.landing-submit-button {
+/* line 76, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 84, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-header__submit-button {
   background-color: #382111;
   color: white;
   padding: 8px 12px;
@@ -83,12 +98,85 @@
 }
 
 /* line 77, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 87, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 96, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-submit-button:hover {
   background-color: #573720;
 }
 
 /* line 81, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 92, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+/* line 102, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
 .landing-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  background-image: url("https://s.gr-assets.com/assets/home/masthead_background.jpg");
+}
+
+/* line 109, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+.landing-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width:965px;
+}
+
+.landing-body__right{
+  display:flex;
+  flex-direction:column;
+  margin-right:-100px;
+  width:
+}
+
+.landing-body__right *{
+  margin:3px;
+}
+
+.landing-body__field{
+  font-size:16px;
+  font-family:'Lato';
+  width:285px;
+  border:#dcd6cc 1px solid;
+  background-color:white;
+  border-radius:3px;
+  padding:7px 5px;
+}
+.landing-body__submit-button{
+  font-size:18px;
+  padding:8px;
+  background-color:rgb(253,208,95);
+  width:85px;
+  line-height:22px;
+  text-align:center;
+  border-radius:4px;
+  font-family:"Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.landing-body__submit-button:hover{
+  background-color:rgb(255,213,109);
+}
+
+.landing-body__title{
+  font-family:'Lato';
+  font-size:18px;
+  line-height:18px;
+}
+
+.landing-body__demo__link{
+  background-color:#333333;
+  color:white;
+  text-align:center;
+  padding:15px;
+  position:relative;
+  top:46px;
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+}
+
+.landing-body__demo__link:hover{
+  cursor:pointer;
+  background-color:#444444;
 }
