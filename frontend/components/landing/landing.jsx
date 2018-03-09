@@ -1,15 +1,22 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { merge } from 'lodash';
 
 class Landing extends React.Component{
   constructor(props){
     super(props);
     this.state = {login: {username:'', password: ''}, signup: {username:'', password: ''} };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
-  update(type, field){
-    return e => this.setState({field: {[type]:e.currentTarget.value}});
-  }
+  update(type, field, unchanged){
+    return e => {
+
+      const newState = merge({}, this.state, {[field]: {[type]:e.currentTarget.value}});
+      this.setState(newState);
+  };
+}
 
   handleDemo(e){
     // debugger
@@ -18,10 +25,8 @@ class Landing extends React.Component{
 
   handleSubmit(type){
     return e =>{
-
     e.preventDefault();
-    // if( this.state.username === '' || this.state.password === '') return
-    this.props.submitAction(this.state[type])
+    this.props[type](this.state[type])
     .then(() => this.props.history.push('/')
     ,() => this.props.history.push(`/${type}`));
   };}
@@ -43,7 +48,7 @@ class Landing extends React.Component{
               <input
                 className="landing-header__field"
                 type='text'
-                onChange={this.update('username', 'login')}
+                onChange={this.update('username', 'login', 'password')}
                 placeholder='Username'
                 value={this.state.username} />
                 <p className="landing-header__demo__title">
@@ -54,7 +59,7 @@ class Landing extends React.Component{
               <input
                 className='landing-header__field'
                 type='password'
-                onChange={this.update('password', 'login')}
+                onChange={this.update('password', 'login', 'username')}
                 placeholder='Password'
                 value={this.state.password} />
                 <p
@@ -80,13 +85,13 @@ class Landing extends React.Component{
           <input
             className="landing-body__field"
             type='text'
-            onChange={this.update('username', 'signup')}
+            onChange={this.update('username', 'signup', 'password')}
             placeholder='Username'
             value={this.state.username} />
           <input
             className='landing-body__field'
             type='password'
-            onChange={this.update('password', 'signup')}
+            onChange={this.update('password', 'signup', 'username')}
             placeholder='Password'
             value={this.state.password} />
           <input className='landing-body__submit-button' type='submit' value="Sign up"/>

@@ -21,11 +21,12 @@ export const login = user => dispatch =>{
     ), err => dispatch(receiveSessionErrors(err)))
 );};
 
-export const signup = user => dispatch =>(
+export const signup = user => dispatch =>{
+  return(
   ApiUtils.signup(user)
   .then(recievedUser => dispatch(receiveCurrentUser(recievedUser)
     ), err => dispatch(receiveSessionErrors(err)))
-);
+);};
 
 export const logout = () => dispatch =>(
   ApiUtils.logout()
