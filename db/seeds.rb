@@ -15,7 +15,7 @@ Book.destroy_all
   Book.create(
     title: Faker::Superhero.unique.name,
     author: Faker::RockBand.unique.name,
-    synopsis: Faker::Lovecraft.unique.paragraphs(2).join(" \n"),
+    synopsis: Faker::Lovecraft.unique.paragraphs(3).join(" \n"),
     cover_image: "/assets/book_cover.jpg",
     published: Faker::Date.backward(8000),
     edition: "1st",
