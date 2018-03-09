@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 
 
@@ -11,7 +11,8 @@ const Header = ({ user, logoutButton, history }) =>{
       <ul className="nav-bar">
         <ul className="left-nav">
           <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
-          <li className="left-nav-shelves">My Shelves</li>
+          <li className="left-nav-shelves">Shelf Link Placeholder</li>
+          <Link to='/books/236' className="left-nav-shelves">Book Demo</Link>
         </ul>
         <ul className="right-nav">
           <li className="right-nav-user">

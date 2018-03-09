@@ -7,10 +7,10 @@ const BookImageItem = ({ coverImage }) =>{
         <img src={ coverImage }></img>
       </div>
       <div className='book-image__read-status'>
-        <p>Reading/Read/Will Read</p>
+        <p>Reading shelf placeHolder</p>
       </div>
       <div className='book-image__rating'>
-        <p>User rating Five by Five</p>
+        <p>User rating placeHolder</p>
       </div>
     </div>
   );
