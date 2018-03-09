@@ -17,7 +17,7 @@ import Header from './nav/header';
 const Headers = () =>(
   <div>
     <Header />
-    <h2> here is the header version</h2>
+    <h2> </h2>
     <ProtectedRoute path='/books/:id' component={ BookShowContainer } />
   </div>
 );

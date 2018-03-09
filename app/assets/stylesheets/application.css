@@ -64,3 +64,8 @@
  input[type="submit"] {
    cursor: pointer;
  }
+
+main{
+  background-color: #eae8de;
+  height: 800px;
+}

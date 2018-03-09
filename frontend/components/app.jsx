@@ -17,9 +17,11 @@ import LandingContainer from './landing/landing_container';
 
 const App = () =>(
   <div>
-    <ConRoute exact path='/' FalseComp={ LandingContainer } TrueComp={ Headers } />
-    <AuthRoute exact path='/login' component={ LoginFormContainer } />
-    <AuthRoute exact path='/signup' component={ SignupFormContainer } />
+    <Switch>
+      <AuthRoute exact path='/login' component={ LoginFormContainer } />
+      <AuthRoute exact path='/signup' component={ SignupFormContainer } />
+      <ConRoute path='/' FalseComp={ LandingContainer } TrueComp={ Headers } />
+    </Switch>
   </div>
 );
 
