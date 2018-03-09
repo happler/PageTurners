@@ -15,5 +15,5 @@ const BookImageItem = ({ coverImage }) =>{
     </div>
   );
 };
-
+// change for git to see
 export default BookImageItem;
