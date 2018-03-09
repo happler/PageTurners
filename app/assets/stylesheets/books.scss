@@ -1,11 +1,22 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book-show{
+  display: flex;
+  justify-content: center;
+}
+
 .book-show-container {
   display: flex;
   flex-direction: row;
-  padding-top: 40px;
+  padding-top: 60px;
   // background-color: #eae8de;
+  width: 950px;
+}
+
+.book-show-loading-container{
+  padding: 65px 20px;
 }
 
 .book-show-synopsis {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import BookImageItem from './book_image_item';
+import BookImageItem from './book_image_section';
 import BookTitleItem from './book_title_item';
 
 class BookShow extends React.Component{
@@ -23,7 +23,7 @@ class BookShow extends React.Component{
   render(){
     if (!this.props.book){
       return(
-        <div>
+        <div className='book-show-loading-container'>
           <h2 className='book-show-loading'>Loading...</h2>
             {this.props.errors.map((error, idx) => <li
               className='book-show-error'
@@ -32,7 +32,7 @@ class BookShow extends React.Component{
     );}
     const { title, author, synopsis, published, edition, coverImage } = this.props.book;
     return(
-      <div>
+      <div className='book-show'>
         {this.props.errors.map((error, idx) => <li
           className='book-show-error'
           key={ idx }>{error}</li>) }
