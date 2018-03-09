@@ -20,7 +20,7 @@ const App = () =>(
     <Switch>
       <AuthRoute exact path='/login' component={ LoginFormContainer } />
       <AuthRoute exact path='/signup' component={ SignupFormContainer } />
-      <ConRoute path='/' FalseComp={ LandingContainer } TrueComp={ Headers } />
+      <ConRoute path='/' conditional={(loggedStatus) => loggedStatus }FalseComp={ LandingContainer } TrueComp={ Headers } />
     </Switch>
   </div>
 );

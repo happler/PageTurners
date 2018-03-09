@@ -19,7 +19,7 @@
   padding: 65px 20px;
 }
 
-.book-show-synopsis {
+.book-synopsis-container {
   width: 450px;
   border-bottom: 1px solid #DDDDDD;
   padding-bottom:15px;
@@ -47,4 +47,17 @@
 
 .book-show-container{
   margin:20px 20px 20px 5px
+}
+
+.book-synopsis__hidden{
+  display: none;
+}
+
+.book-synopsis__swap-content:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.book-synopsis__swap-content{
+  color: blue;
 }

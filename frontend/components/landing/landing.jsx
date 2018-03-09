@@ -93,7 +93,7 @@ class Landing extends React.Component{
             <h2
               className="landing-body__demo__link"
               onClick={(e)=> this.handleDemo(e)}>
-              or sign in using our demo
+              ...or sign in using our demo!
             </h2>
       </form>
     </div>

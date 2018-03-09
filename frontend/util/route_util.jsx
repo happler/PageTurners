@@ -23,9 +23,9 @@ const Protected = ({ component: Compoy, path, loggedIn, exact }) => (
       )} />
   );
 
-  const Con = ({ loggedIn, TrueComp, FalseComp, path, exact }) => (
+  const Con = ({ loggedIn, TrueComp, FalseComp, path, exact, conditional }) => (
     <Route path={path} exact={exact} render={(props) => (
-        loggedIn ? (
+        conditional(loggedIn) ? (
           <TrueComp {...props} />
         ) : (
           <FalseComp {...props} />

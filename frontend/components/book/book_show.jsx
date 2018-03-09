@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import BookImageItem from './book_image_section';
 import BookTitleItem from './book_title_item';
+import BookSynopsisItem from './book_synopsis_item';
 
 class BookShow extends React.Component{
   componentDidMount(){
@@ -40,9 +41,7 @@ class BookShow extends React.Component{
           <BookImageItem coverImage={coverImage}/>
           <div className='book-show__right'>
             <BookTitleItem title={title} author={author} />
-            <p className='book-show-synopsis'>
-              {synopsis}
-            </p>
+            <BookSynopsisItem synopsis={synopsis} />
           </div>
         </div>
       </div>
