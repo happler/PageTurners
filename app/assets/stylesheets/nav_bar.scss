@@ -1,7 +1,7 @@
 #root{
   // background-color: #ECECE3;
-  background-color: #eae8de;
-  height: 800px;
+  // background-color: #eae8de;
+  // height: 800px;
 }
 
 .nav-bar-container{
@@ -33,6 +33,8 @@
   text-shadow: #FC8 0px 0 3px;
   padding-top: 10px;
   font-size: 27px;
+  cursor: default;
+  user-select:none;
 }
 
 .left-nav-home:hover{

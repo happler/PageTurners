@@ -13,12 +13,22 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     );}} />
 );
 
-const Protected = ({ component: Component, path, loggedIn, exact }) => (
+const Protected = ({ component: Compoy, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => (
       loggedIn ? (
-        <Component {...props} />
+        <Compoy {...props} />
         ) : (
           <Redirect to='/login' />
+        )
+      )} />
+  );
+
+  const Con = ({ loggedIn, TrueComp, FalseComp, path, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        loggedIn ? (
+          <TrueComp {...props} />
+        ) : (
+          <FalseComp {...props} />
         )
       )} />
   );
@@ -29,5 +39,5 @@ const mapStateToProps = state => {
 );};
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
-
+export const ConRoute = withRouter(connect(mapStateToProps)(Con));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

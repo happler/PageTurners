@@ -1,9 +1,4 @@
-/* line 1, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 3, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 4, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 5, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 6, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 7, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header {
   width: 965px;
   display: flex;
@@ -12,12 +7,7 @@
   height: 75px;
 }
 
-/* line 11, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 15, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 20, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 16, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 19, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 21, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__right {
   width: 350px;
   display: flex;
@@ -25,30 +15,18 @@
   flex-direction: row;
 }
 
-/* line 21, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 27, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 29, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 32, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__demo {
   display: flex;
 }
 
-/* line 25, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 32, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 31, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 36, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 40, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__demo__link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 29, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 37, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 38, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 44, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 49, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__field {
   width: 130px;
   height: 25px;
@@ -60,21 +38,18 @@
   border-radius: 3px;
 }
 
-/* line 48, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 50, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 57, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 63, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__left {
   font-family: 'Righteous', cursive;
   font-weight: 300;
   text-shadow: #FC8 0px 0 3px;
   font-size: 35px;
+  cursor: default;
+  user-select:none;
   /*   margin-top:-13px; */
 }
 
-/* line 58, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 66, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 73, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__demo__link, .landing-header__demo__title {
   font-family: 'Lato', sans-serif;
   width: 130px;
@@ -84,9 +59,7 @@
   padding-top: 5px;
 }
 
-/* line 67, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 76, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 84, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-header__submit-button {
   background-color: #382111;
   color: white;
@@ -97,25 +70,21 @@
   space-between: .75px;
 }
 
-/* line 77, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 87, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 96, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-.landing-submit-button:hover {
+
+.landing-header__submit-button:hover {
   background-color: #573720;
 }
 
-/* line 81, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 92, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
-/* line 102, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
-
+  border-bottom: 1px solid white;
   background-image: url("https://s.gr-assets.com/assets/home/masthead_background.jpg");
 }
 
-/* line 109, /Users/s4nguinebish0p/app_academy/PageTurners/app/assets/stylesheets/landing.scss */
+
 .landing-body {
   display: flex;
   justify-content: space-around;
@@ -128,7 +97,6 @@
   display:flex;
   flex-direction:column;
   margin-right:-100px;
-  width:
 }
 
 .landing-body__right *{

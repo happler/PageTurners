@@ -29,7 +29,7 @@ class AuthRouter extends React.Component{
       ? <Link to='/login' onClick={() => clearErrors()}>Sign In</Link>
       : <Link to='/signup' onClick={() => clearErrors()}>Sign Up</Link>;
     return(
-      <div>
+      <div className="auth-page">
         <p className="auth-form-header">PageTurners</p>
         <div className="auth-form-container">
           <form onSubmit={(e) => this.handleSubmit(e)} className="auth-form">
