@@ -3,14 +3,14 @@ import { withRouter } from 'react-router-dom';
 import BookImageItem from './book_image_section';
 import BookTitleItem from './book_title_item';
 import BookSynopsisItem from './book_synopsis_item';
+import BookDetailsItem from './book_details_item';
 
 class BookShow extends React.Component{
-  componentDidMount(){
-    if (!this.props.book){
-      this.props.fetchBook(this.props.match.params.id);
-    }
 
+  componentDidMount(){
+      this.props.fetchBook(this.props.match.params.id);
   }
+
   componentWillReceiveProps(newProps){
     if (this.props.match.params.id !== newProps.match.params.id){
       this.props.fetchBook(newProps.match.params.id);
@@ -31,7 +31,20 @@ class BookShow extends React.Component{
               key={ idx }>{error}</li>) }
         </div>
     );}
-    const { title, author, synopsis, published, edition, coverImage } = this.props.book;
+    const {
+      title,
+      author,
+      synopsis,
+      published,
+      edition,
+      coverImage,
+      language,
+      isbn,
+      length,
+      format,
+      originalTitle,
+      publisher
+    } = this.props.book;
     return(
       <div className='book-show'>
         {this.props.errors.map((error, idx) => <li
@@ -42,6 +55,15 @@ class BookShow extends React.Component{
           <div className='book-show__right'>
             <BookTitleItem title={title} author={author} />
             <BookSynopsisItem synopsis={synopsis} />
+            <BookDetailsItem
+              published={published}
+              edition={edition}
+              language={language}
+              isbn={isbn}
+              length={length}
+              format={format}
+              originalTitle={originalTitle}
+              publisher={publisher} />
           </div>
         </div>
       </div>

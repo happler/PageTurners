@@ -58,6 +58,44 @@
   text-decoration: underline;
 }
 
+.book-details__swap-content:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .book-synopsis__swap-content{
   color: blue;
+}
+
+.book-details__hidden{
+  display: none;
+}
+.book-details__visible{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.book-details-long__row{
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.book-details-long__row__header {
+  font-weight: 700;
+  // line-height: 18px;
+  font-family: 'lato';
+  padding:8px 8px 8px 0;
+}
+
+.book-details__row span{
+  font-family: 'lato';
+  color: #999;
+  font-size: 14px;
+}
+
+.book-details__swap-content{
+  font-family: 'lato';
+  font-size: 14px;
+  color:rgb(0,99,93);
 }
