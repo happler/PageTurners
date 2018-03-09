@@ -18,6 +18,12 @@ Book.destroy_all
     synopsis: Faker::Lovecraft.unique.paragraphs(2).join(" \n"),
     cover_image: "/assets/book_cover.jpg",
     published: Faker::Date.backward(8000),
-    edition: "1st"
+    edition: "1st",
+    language: ['English', 'Gaelic', 'German', 'Klingon', 'Farsi', 'Ruby'].sample,
+    isbn: Faker::Number.number(8),
+    length: Faker::Number.number(3),
+    format: ['Hardcover', 'Paperback', 'e-Book', 'Mauscript', 'Audio', 'Tattoo'].sample,
+    original_title: Faker::Lovecraft.tome,
+    publisher: Faker::Book.publisher
   )
 end
