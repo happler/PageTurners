@@ -6,13 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+BOOK_IMAGES = %w(Christie Die_blechtrommel Dragon_Rider Dune educated enders_game geb handbook neuromancer snow)
 User.destroy_all
 User.create(username: "Muad'Dib", password: 'starwars')
 
 Book.destroy_all
-
+books =[]
 30.times do
-  Book.create(
+  books << Book.create(
     title: Faker::Superhero.unique.name,
     author: Faker::RockBand.unique.name,
     synopsis: Faker::Lovecraft.unique.paragraphs(3).join(" \n"),
@@ -25,4 +26,11 @@ Book.destroy_all
     original_title: Faker::Lovecraft.tome,
     publisher: Faker::Book.publisher
   )
+end
+books.each do |book|
+  img = BOOK_IMAGES.sample
+  f = File.open("app/assets/images/#{img}.jpg")
+  book.image = f
+  f.close
+  book.save
 end

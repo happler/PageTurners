@@ -15,23 +15,31 @@ class BookSynopsisItem extends React.Component{
   }
 
   render(){
-    const { synopsis } =this.props;
+    const synopsis = this.props.synopsis.split('\n').join(<br/>);
     const {shortSynopsis, longSynopsis} = this.state;
+
     let truncSyn;
     if(synopsis.length > 450){
       truncSyn = synopsis.slice(0, 375) + " " ;
+      if (truncSyn.slice(-5).includes('<')){
+        truncSyn = truncSyn.slice(0, -5);
+      }
       return(
         <div className='book-synopsis-container'>
           <div className={shortSynopsis}>
             <p>
              {truncSyn}
-             <span onClick={this.swapContent()} className='book-synopsis__swap-content'>  ...more</span>
+             <span
+               onClick={this.swapContent()}
+               className='book-synopsis__swap-content'>  ...more</span>
             </p>
           </div>
           <div className={longSynopsis}>
             <p>
              {synopsis}
-             <span onClick={this.swapContent()} className='book-synopsis__swap-content'> (less)</span>
+             <span
+               onClick={this.swapContent()}
+               className='book-synopsis__swap-content'> (less)</span>
             </p>
           </div>
 
