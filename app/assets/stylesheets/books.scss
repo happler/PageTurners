@@ -21,7 +21,7 @@
 
 .book-synopsis-container {
   width: 450px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #ccc;
   padding-bottom:15px;
 }
 
@@ -65,13 +65,15 @@
 
 .book-synopsis__swap-content{
   color: blue;
+  position: relative;
+  top:-20px;
 }
 
 .book-details__hidden{
   display: none;
 }
 .book-details__visible{
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #ccc;
 }
 
 .book-details-long__row{
@@ -99,4 +101,9 @@
   font-size: 14px;
   color:rgb(0,99,93);
   width: 90px;
+}
+
+.book-synopsis__content{
+  white-space: pre-line;
+  text-indent: 20px;
 }
