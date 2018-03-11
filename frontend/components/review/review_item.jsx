@@ -1,22 +1,32 @@
 import React from 'react';
 
-const ReviewItem =>(
+const ReviewItem  = ({userImage, username, dateUpdated, body, rating}) => {
+
+  const ratingList = [];
+
+  for (let i = 0; i < 5; i++) {
+    ratingList.push(i < rating
+      ? <li className='review-item__filled'></li>
+      : <li className='review-item__empty'></li>);
+  }
+
   return(
     <article className='review-item-container'>
       <header className='review-item__user'>
-       <img className='review-item__user__image' src={this.props.userImage} />
+       <img className='review-item__user__image' src={userImage} />
        <div className='review-item__user__info'>
-         <p className='review-item__user__name'>{this.props.username}</p>
+         <p className='review-item__user__name'>{username}</p>
          <ul>
-           <li className='review-item__1star'></li>
-           <li className='review-item__2star'></li>
-           <li className='review-item__3star'></li>
-           <li className='review-item__4star'></li>
-           <li className='review-item__5star'></li>
+           {ratingList}
          </ul>
        </div>
+       <details className='review-item__user__date'>
+         {dateUpdated}
+       </details>
       </header>
-
+      <p className='review-item__body'>
+        {body}
+      </p>
     </article>
-  )
-)
+  );
+};

@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-BOOK_IMAGES = %w(Christie Die_blechtrommel Dragon_Rider Dune educated enders_game geb handbook neuromancer snow)
+BOOK_IMAGES = %w(
+  Christie
+  Die_blechtrommel
+  Dragon_Rider Dune
+  educated
+  enders_game
+  geb
+  handbook
+  neuromancer
+  snow
+).freeze
 User.destroy_all
 User.create(username: "Muad'Dib", password: 'starwars')
 
 Book.destroy_all
-books =[]
+books = []
 30.times do
   books << Book.create(
     title: Faker::Superhero.unique.name,
@@ -22,7 +32,7 @@ books =[]
     language: ['English', 'Gaelic', 'German', 'Klingon', 'Farsi', 'Ruby'].sample,
     isbn: Faker::Number.number(8),
     length: Faker::Number.number(3),
-    format: ['Hardcover', 'Paperback', 'e-Book', 'Mauscript', 'Audio', 'Tattoo'].sample,
+    format: ['Hardcover', 'Paperback', 'e-Book', 'Mauscript'].sample,
     original_title: Faker::Lovecraft.tome,
     publisher: Faker::Book.publisher
   )
@@ -33,4 +43,11 @@ books.each do |book|
   book.image = f
   f.close
   book.save
+end
+
+Review.destroy_all
+users = User.all
+books = Book.all
+30.times do
+  Review.create(user_id: users.sample.id, book_id: books.sample.id, rating: rand(1..5), title: Faker::Robin.quote, body: Faker::VentureBros.quote )
 end
