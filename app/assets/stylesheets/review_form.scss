@@ -1,0 +1,39 @@
+.review-form-container{
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  margin-top: 100px;
+}
+
+.review-form-book-container{
+  display: flex;
+  flex-direction: row;
+  width: 720px;
+  justify-content: flex-start;
+  border-bottom: 1px solid #CCC;
+}
+
+.review-form-book__cover{
+  width: 50px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+.review-form-book__title{
+  font-family:'Merriweather';
+  font-size:16.8px;
+  font-weight: 700px;
+  line-height: 21.84px;
+}
+
+.review-form-book__author{
+  font-size: 14px;
+  font-family: 'Merriweather';
+  line-height:21px;
+
+}
+
+.review-form-book__right{
+  display: flex;
+  flex-direction: column;
+}

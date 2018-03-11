@@ -9,7 +9,7 @@ const ReviewFormBook = ({ title, author, coverImage}) =>{
           {title}
         </article>
         <article className='review-form-book__author'>
-          {author}
+           by {author}
         </article>
       </section>
     </section>

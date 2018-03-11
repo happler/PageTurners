@@ -1,0 +1,82 @@
+.reviews-show-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 630px;
+  border-top: 1px solid #ccc;
+}
+
+.review-item-container{
+  display: flex;
+  flex-direction: row;
+  padding:5px;
+}
+.review-item__right{
+  display: flex;
+  flex-direction: column;
+}
+
+.review-item__user{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  width: 570px
+}
+
+.review-item__user__image{
+  width: 50px;
+  height: 70px;
+  margin-right:10px;
+}
+
+.review-item__user__info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 570px;
+}
+
+.review-item__user__rating{
+  display: flex;
+  flex-direction: row;
+}
+.review-item__filled{
+  height: 20px;
+  width: 20px;
+}
+
+.review-item__empty{
+  height: 20px;
+  width: 20px;
+}
+
+.review-item__user__name{
+  font-family: 'lato';
+  font-weight: bold;
+  font-size: 14px;
+  color:#00635D;
+}
+
+.review-item__user__rating__label{
+  font-family: 'lato';
+  font-size: 14px;
+  padding: 0px 5px;
+}
+
+.review-item__body{
+  font-family: 'Merriweather';
+  font-size:14px;
+}
+
+.review-item__user__date{
+  font-family: 14px;
+  font-family: 'lato';
+  color: #bbbbbb;
+}
+
+.review-item__user__left{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}

@@ -49,5 +49,5 @@ Review.destroy_all
 users = User.all
 books = Book.all
 30.times do
-  Review.create(user_id: users.sample.id, book_id: books.sample.id, rating: rand(1..5), title: Faker::Robin.quote, body: Faker::VentureBros.quote )
+  Review.create(user_id: users.sample.id, book_id: books.sample.id, rating: rand(1..5), body: Faker::VentureBros.quote )
 end

@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-left: 65px;
+  width: 630px;
 }
 
 .book-show-container {
@@ -107,4 +109,16 @@
 .book-synopsis__content{
   white-space: pre-line;
   text-indent: 20px;
+}
+
+.book-show__add__review__link:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.book-show__add__review__link{
+  font-family: 'lato';
+  font-size: 14px;
+  color:rgb(0,99,93);
+  width: 90px;
 }

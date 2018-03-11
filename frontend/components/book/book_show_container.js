@@ -9,7 +9,7 @@ const msp = (state, ownProps) =>{
   return({
     errors: state.errors.books,
     book,
-    reviews: selectReviews(state, book)
+    reviews: selectReviews(state, book).reverse()
   });
 };
 

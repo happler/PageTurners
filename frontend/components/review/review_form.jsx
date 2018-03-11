@@ -27,7 +27,7 @@ class ReviewForm extends React.Component{
   }
 
   render(){
-    const {coverImage, title, author} = this.props;
+    const {coverImage, title, author} = this.props.book;
     return(
       <form onSubmit={e => this.handleSubmit(e)} className='review-form-container'>
         {this.props.errors.map((error, idx) => <li
@@ -41,11 +41,11 @@ class ReviewForm extends React.Component{
         </header>
         <section className='review-form__attributes'>
           <ul className='review-form__rating'>
-            <li className='review-form__1star' onCLick={this.adjustRating(1)}></li>
-            <li className='review-form__2star' onCLick={this.adjustRating(2)}></li>
-            <li className='review-form__3star' onCLick={this.adjustRating(3)}></li>
-            <li className='review-form__4star' onCLick={this.adjustRating(4)}></li>
-            <li className='review-form__5star' onCLick={this.adjustRating(5)}></li>
+            <li className='review-form__1star' onClick={this.adjustRating(1)}></li>
+            <li className='review-form__2star' onClick={this.adjustRating(2)}></li>
+            <li className='review-form__3star' onClick={this.adjustRating(3)}></li>
+            <li className='review-form__4star' onClick={this.adjustRating(4)}></li>
+            <li className='review-form__5star' onClick={this.adjustRating(5)}></li>
           </ul>
           <section className='review-form__shelf'>
           </section>

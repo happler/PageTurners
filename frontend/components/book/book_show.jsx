@@ -69,7 +69,7 @@ class BookShow extends React.Component{
               publisher={publisher} />
           </div>
         </div>
-        <Link to={`/books/${this.props.match.params.id}/addReview`}>Review this book</Link>
+        <Link className='book-show__add__review__link' to={`/books/${this.props.match.params.id}/addReview`}>Add A Review</Link>
         <ReviewsShow reviews={this.props.reviews} />
       </div>
   );}
