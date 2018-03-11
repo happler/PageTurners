@@ -14,7 +14,7 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, title}) => {
     <article className='review-item-container'>
       <header className='review-item__user'>
         <img className='review-item__user__image' src={userImage} />
-        <div className='review-item__user__left'>
+        <div className='review-item__user__right'>
          <div className='review-item-top-bar'>
            <div className='review-item__user__info'>
              <p className='review-item__user__name'>{username}</p>
@@ -22,9 +22,9 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, title}) => {
                {ratingList}
              </ul>
            </div>
-           <details className='review-item__user__date'>
+           <div className='review-item__user__date'>
              {updatedAt}
-           </details>
+           </div>
          </div>
          <div className='review-item-bottom-bar'>
            <p className='review-item-bottom-bar__title'>

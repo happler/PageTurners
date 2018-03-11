@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import BookImageItem from './book_image_section';
 import BookTitleItem from './book_title_item';
 import BookSynopsisItem from './book_synopsis_item';
@@ -34,9 +34,6 @@ class BookShow extends React.Component{
               key={ idx }>{error}</li>) }
         </div>
     );}
-
-
-
     const {
       title,
       author,
@@ -72,6 +69,7 @@ class BookShow extends React.Component{
               publisher={publisher} />
           </div>
         </div>
+        <Link to={`/books/${this.props.match.params.id}/addReview`}>Review this book</Link>
         <ReviewsShow reviews={this.props.reviews} />
       </div>
   );}

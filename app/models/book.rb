@@ -31,4 +31,10 @@ class Book < ApplicationRecord
 
   has_many :reviews
 
+  def average_rating
+    reviews = self.reviews.pluck(:rating)
+    
+
+  end
+
 end

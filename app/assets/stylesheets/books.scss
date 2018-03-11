@@ -5,6 +5,7 @@
 .book-show{
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .book-show-container {

@@ -26,7 +26,7 @@ class Api::ReviewsController < ApplicationController
     review = Review.find(params[:id])
     if review.user_id == current_user.id
       review.destroy
-      render json: ["successful deletion"] # this should never be used
+      render json: ["successful deletion"] # this should never be used, Render as an error?
     else
       render json: ["permission denied"], status: 403
   end
