@@ -9,7 +9,7 @@ const BooksErrorsReducer = (state = [], action) =>{
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOK_ERRORS:
-    return action.errors.responseJSON;
+      return action.errors.responseJSON;
     case RECEIVE_BOOKS:
       return [];
     case CLEAR_ALL_ERRORS:

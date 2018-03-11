@@ -5,7 +5,7 @@ const BooksReducer = (state = {}, action) =>{
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOKS:
-      return merge({}, state, action.books);
+      return merge({}, state, action.payload.books);
     default:
       return state;
   }

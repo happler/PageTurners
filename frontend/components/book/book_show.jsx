@@ -4,11 +4,14 @@ import BookImageItem from './book_image_section';
 import BookTitleItem from './book_title_item';
 import BookSynopsisItem from './book_synopsis_item';
 import BookDetailsItem from './book_details_item';
+import ReviewsShow from '../review/reviews_show';
 
 class BookShow extends React.Component{
 
   componentDidMount(){
+    if (!this.props.book || !this.props.book.published){
       this.props.fetchBook(this.props.match.params.id);
+    }
   }
 
   componentWillReceiveProps(newProps){
@@ -22,7 +25,7 @@ class BookShow extends React.Component{
   }
 
   render(){
-    if (!this.props.book){
+    if (!this.props.book || !this.props.book.published){
       return(
         <div className='book-show-loading-container'>
           <h2 className='book-show-loading'>Loading...</h2>
@@ -31,6 +34,9 @@ class BookShow extends React.Component{
               key={ idx }>{error}</li>) }
         </div>
     );}
+
+
+
     const {
       title,
       author,
@@ -66,6 +72,7 @@ class BookShow extends React.Component{
               publisher={publisher} />
           </div>
         </div>
+        <ReviewsShow reviews={this.props.reviews} />
       </div>
   );}
 }

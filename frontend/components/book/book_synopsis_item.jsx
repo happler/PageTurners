@@ -29,13 +29,13 @@ class BookSynopsisItem extends React.Component{
       return(
         <div className='book-synopsis-container'>
           <div className={shortSynopsis}>
-             {truncSyn.map((section, idx) => <div><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
+             {truncSyn.map((section, idx) => <div key={idx}><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
             <span
               onClick={this.swapContent()}
               className='book-synopsis__swap-content'>(more)</span>
           </div>
           <div className={longSynopsis}>
-              {splitSyn.map((section, idx) => <div><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
+              {splitSyn.map((section, idx) => <div key={idx}><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
              <span
                onClick={this.swapContent()}
                className='book-synopsis__swap-content'>(less)</span>

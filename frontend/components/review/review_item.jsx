@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewItem  = ({userImage, username, dateUpdated, body, rating}) => {
+const ReviewItem  = ({userImage, username, updatedAt, body, rating, title}) => {
 
   const ratingList = [];
 
@@ -13,16 +13,25 @@ const ReviewItem  = ({userImage, username, dateUpdated, body, rating}) => {
   return(
     <article className='review-item-container'>
       <header className='review-item__user'>
-       <img className='review-item__user__image' src={userImage} />
-       <div className='review-item__user__info'>
-         <p className='review-item__user__name'>{username}</p>
-         <ul>
-           {ratingList}
-         </ul>
+        <img className='review-item__user__image' src={userImage} />
+        <div className='review-item__user__left'>
+         <div className='review-item-top-bar'>
+           <div className='review-item__user__info'>
+             <p className='review-item__user__name'>{username}</p>
+             <ul>
+               {ratingList}
+             </ul>
+           </div>
+           <details className='review-item__user__date'>
+             {updatedAt}
+           </details>
+         </div>
+         <div className='review-item-bottom-bar'>
+           <p className='review-item-bottom-bar__title'>
+             {title}
+           </p>
+         </div>
        </div>
-       <details className='review-item__user__date'>
-         {dateUpdated}
-       </details>
       </header>
       <p className='review-item__body'>
         {body}
@@ -30,3 +39,5 @@ const ReviewItem  = ({userImage, username, dateUpdated, body, rating}) => {
     </article>
   );
 };
+
+export default ReviewItem;
