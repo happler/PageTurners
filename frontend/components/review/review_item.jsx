@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewItem  = ({userImage, username, updatedAt, body, rating, title}) => {
+const ReviewItem  = ({userImage, username, updatedAt, body, rating}) => {
 
   const ratingList = [];
 
@@ -25,11 +25,6 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, title}) => {
            <div className='review-item__user__date'>
              {updatedAt}
            </div>
-         </div>
-         <div className='review-item-bottom-bar'>
-           <p className='review-item-bottom-bar__title'>
-             {title}
-           </p>
          </div>
        </div>
       </header>

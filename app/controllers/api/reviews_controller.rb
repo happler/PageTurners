@@ -29,10 +29,11 @@ class Api::ReviewsController < ApplicationController
       render json: ["successful deletion"] # this should never be used, Render as an error?
     else
       render json: ["permission denied"], status: 403
+    end
   end
 
   def review_params
-    params.require(:review).permit(:title, :body, :rating, :book_id)
+    params.require(:review).permit(:body, :rating, :book_id)
 
   end
 

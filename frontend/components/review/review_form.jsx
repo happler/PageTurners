@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewFormBook from './review_form_book';
 
 class ReviewForm extends React.Component{
   constructor(props){
@@ -19,6 +20,10 @@ class ReviewForm extends React.Component{
     // if( this.state.username === '' || this.state.password === '') return
     this.props.submitAction(this.state)
     .then(() => this.props.history.push(`/books/${this.props.id}`));
+  }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
   }
 
   render(){
@@ -54,4 +59,4 @@ class ReviewForm extends React.Component{
     );
   }
 }
-export default ReviewForm
+export default ReviewForm;
