@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'react-router-dom'
 
-const ReviewItem  = ({userImage, username, updatedAt, body, rating}) => {
+const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, userId, bookId}) => {
 
   const ratingList = [];
 
@@ -31,7 +32,13 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating}) => {
         <p className='review-item__body'>
           {body}
         </p>
+        { userId === currentUserId
+          ? <div><Link to={`/books/${bookId}/reviews/${id}`}>Edit Review</Link>
+          <span onClick={(e)=>deleteReview(id)}>Delete Review</span>
+        </div>
+          : null }
       </div>
+
     </article>
   );
 };

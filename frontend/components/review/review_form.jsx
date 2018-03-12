@@ -4,11 +4,50 @@ import ReviewFormBook from './review_form_book';
 class ReviewForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = {rating:'', shelf:'', body:''};
+    this.state = {rating:'', shelf:'', body:'', stars:{
+      1: 'far',
+      2: 'far',
+      3: 'far',
+      4: 'far',
+      5: 'far',
+    }};
+    this.adjustRating = this.adjustRating.bind(this);
+    this.dynamicStars = this.dynamicStars.bind(this);
   }
 
   adjustRating(rating){
-    return e => this.setState({rating});
+    // debugger
+    // return e => this.setState({rating});
+    return e => {
+      this.setState({rating});
+    };
+  }
+
+  dynamicStars(star){
+    return e => {
+
+      const ratingKeys = Object.keys(this.state.stars);
+      ratingKeys.forEach(key => {
+        if (key <= star){
+          this.setState({stars:{[key]:'fas'}});
+        } else{
+          this.setState({stars:{[key]:'far'}});
+        }
+        console.log(this.state);
+      });
+    };
+  }
+
+  //     for (let i = 0, i < star, i++){
+  //       this.setState({stars:{[star]:'fas'}})
+  //     }
+  //   }
+  // }
+
+  componentDidMount(){
+    if (!this.props.book || !this.props.book.coverImage){
+      this.props.fetchBook(this.props.match.params.id);
+    }
   }
 
   update(){
@@ -27,6 +66,15 @@ class ReviewForm extends React.Component{
   }
 
   render(){
+    if (!this.props.book || !this.props.book.coverImage){
+      return(
+        <div className='review-form-loading-container'>
+          <h2 className='review-form-loading'>Loading...</h2>
+            {this.props.errors.map((error, idx) => <li
+              className='review-form-error'
+              key={ idx }>{error}</li>) }
+        </div>
+    );}
     const {coverImage, title, author} = this.props.book;
     return(
       <form onSubmit={e => this.handleSubmit(e)} className='review-form-container'>
@@ -41,17 +89,28 @@ class ReviewForm extends React.Component{
         </header>
         <section className='review-form__attributes'>
           <ul className='review-form__rating'>
-            <li className='review-form__1star' onClick={this.adjustRating(1)}></li>
-            <li className='review-form__2star' onClick={this.adjustRating(2)}></li>
-            <li className='review-form__3star' onClick={this.adjustRating(3)}></li>
-            <li className='review-form__4star' onClick={this.adjustRating(4)}></li>
-            <li className='review-form__5star' onClick={this.adjustRating(5)}></li>
+            <li onMouseEnter={this.dynamicStars(1)} onClick={this.adjustRating(1)}>
+              <p className={`${this.state.stars[1]} fa-star`}></p>
+            </li>
+            <li onMouseEnter={this.dynamicStars(2)} onClick={this.adjustRating(2)}>
+              <p className={`${this.state.stars[2]} fa-star`}></p>
+            </li>
+            <li onMouseEnter={this.dynamicStars(3)} onClick={this.adjustRating(3)}>
+              <p className={`${this.state.stars[3]} fa-star`}></p>
+            </li>
+            <li onMouseEnter={this.dynamicStars(4)} onClick={this.adjustRating(4)}>
+              <p className={`${this.state.stars[4]} fa-star`}></p>
+            </li>
+            <li onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}>
+              <p className={`${this.state.stars[5]} fa-star`}></p>
+            </li>
           </ul>
           <section className='review-form__shelf'>
           </section>
         </section>
         <article>
-          <textarea onChange={this.update()}value={this.state.body}></textarea>
+          What did you think?
+          <textarea  className='review-form__body' onChange={this.update()}value={this.state.body}></textarea>
         </article>
         <input type="submit" value='Add Review'></input>
       </form>

@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 720px;
   margin-top: 100px;
+  margin-left: 100px;
 }
 
 .review-form-book-container{
@@ -11,6 +12,7 @@
   width: 720px;
   justify-content: flex-start;
   border-bottom: 1px solid #CCC;
+  margin-bottom: 20px;
 }
 
 .review-form-book__cover{
@@ -36,4 +38,38 @@
 .review-form-book__right{
   display: flex;
   flex-direction: column;
+}
+
+.review-form__body{
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 3px;
+  width: 725px;
+  height: 258px;
+}
+
+.review-form__rating{
+  height:20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.fa-star:hover{
+  cursor: pointer;
+}
+
+.star-1:hover{
+  background-color: yellow;
+}
+.star-2:hover{
+  background-color: yellow;
+}
+.star-3:hover{
+  background-color: yellow;
+}
+.star-4:hover{
+  background-color: yellow;
+}
+.star-5:hover{
+  background-color: yellow;
 }

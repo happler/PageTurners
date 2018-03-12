@@ -16,7 +16,7 @@ import ReviewFormContainer from './review/review_form_container';
 import Header from './nav/header';
 
 const Headers = () =>(
-  <div>
+  <div className='content-page-container'>
     <Header />
     <Switch>
       <ProtectedRoute path='/books/:id/addReview' component={ ReviewFormContainer } />

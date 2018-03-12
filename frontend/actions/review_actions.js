@@ -32,7 +32,7 @@ const removeReview = payload =>({
  );
 
  export const deleteReview = id => dispatch =>(
-   ReviewUtils.delteReview(id)
+   ReviewUtils.deleteReview(id)
    .then(_ => dispatch(removeReview(id)
  ),err => dispatch(receiveReviewErrors(err)))
  );
