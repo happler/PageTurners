@@ -13,8 +13,12 @@ const BooksReducer = (state = {}, action) =>{
     case RECEIVE_REVIEW:
       review =Object.values(action.payload.reviews)[0];
       newArr = state[review.bookId].reviewIds.slice();
-      newArr.push(review.id);
-      return merge({}, state, {[review.bookId]:{reviewIds:newArr}});
+      if (newArr.indexOf(review.id) === -1){
+        newArr.push(review.id);
+        return merge({}, state, {[review.bookId]:{reviewIds:newArr}});
+      } else{
+        return state;
+      }
     case REMOVE_REVIEW:
       const newState = merge({}, state);
       review = Object.values(action.payload.reviews)[0];
