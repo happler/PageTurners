@@ -1,11 +1,11 @@
 import * as ReviewUtils from '../util/review_api_util';
 
-export const RECIEVE_REVIEW = 'RECIEVE_REVIEW';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 const receiveReview = payload =>({
-  type: RECIEVE_REVIEW,
+  type: RECEIVE_REVIEW,
   payload
 });
 
@@ -19,6 +19,13 @@ const removeReview = payload =>({
    errors
  });
 
+ export const fetchReview = id => dispatch =>(
+   ReviewUtils.fetchReview(id)
+   .then(receivedReview => dispatch(receiveReview(receivedReview)
+ ),err => dispatch(receiveReviewErrors(err)))
+ );
+
+
  export const postReview = review => dispatch =>(
    ReviewUtils.postReview(review)
    .then(receivedReview => dispatch(receiveReview(receivedReview)
@@ -31,8 +38,11 @@ const removeReview = payload =>({
  ),err => dispatch(receiveReviewErrors(err)))
  );
 
- export const deleteReview = id => dispatch =>(
-   ReviewUtils.deleteReview(id)
-   .then(_ => dispatch(removeReview(id)
- ),err => dispatch(receiveReviewErrors(err)))
- );
+ export const deleteReview = id => dispatch =>{
+   debugger
+   return(
+     ReviewUtils.deleteReview(id)
+     .then(deletedReview => dispatch(removeReview(deletedReview)
+   ),err => dispatch(receiveReviewErrors(err)))
+   );
+};

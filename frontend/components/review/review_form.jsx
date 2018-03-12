@@ -1,16 +1,22 @@
 import React from 'react';
 import ReviewFormBook from './review_form_book';
+import { merge } from 'lodash';
 
 class ReviewForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = {rating:'', shelf:'', body:'', stars:{
-      1: 'far',
-      2: 'far',
-      3: 'far',
-      4: 'far',
-      5: 'far',
-    }};
+    this.state = {
+      rating:this.props.review.rating,
+      shelf:this.props.review.shelf,
+      body:this.props.review.body,
+      stars: {
+        1: 'far',
+        2: 'far',
+        3: 'far',
+        4: 'far',
+        5: 'far',
+      }
+    };
     this.adjustRating = this.adjustRating.bind(this);
     this.dynamicStars = this.dynamicStars.bind(this);
   }
@@ -29,7 +35,8 @@ class ReviewForm extends React.Component{
       const ratingKeys = Object.keys(this.state.stars);
       ratingKeys.forEach(key => {
         if (key <= star){
-          this.setState({stars:{[key]:'fas'}});
+          // const newState = Object.assign()
+          this.setState({ stars: { [key]: 'fas' } } );
         } else{
           this.setState({stars:{[key]:'far'}});
         }
@@ -56,9 +63,9 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    // if( this.state.username === '' || this.state.password === '') return
-    this.props.submitAction(this.state)
-    .then(() => this.props.history.push(`/books/${this.props.id}`));
+    const review = merge({}, this.state, {book_id:this.props.match.params.id});
+    this.props.submitAction(review)
+    .then(() => this.props.history.push(`/books/${this.props.match.params.id}`));
   }
 
   componentWillUnmount(){
@@ -74,8 +81,10 @@ class ReviewForm extends React.Component{
               className='review-form-error'
               key={ idx }>{error}</li>) }
         </div>
-    );}
+      );
+    }
     const {coverImage, title, author} = this.props.book;
+
     return(
       <form onSubmit={e => this.handleSubmit(e)} className='review-form-container'>
         {this.props.errors.map((error, idx) => <li
@@ -101,9 +110,13 @@ class ReviewForm extends React.Component{
             <li onMouseEnter={this.dynamicStars(4)} onClick={this.adjustRating(4)}>
               <p className={`${this.state.stars[4]} fa-star`}></p>
             </li>
-            <li onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}>
-              <p className={`${this.state.stars[5]} fa-star`}></p>
-            </li>
+
+            <div onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}
+              className={`${this.state.stars[5]} fa-star`}
+              >
+              <li></li>
+            </div>
+
           </ul>
           <section className='review-form__shelf'>
           </section>
@@ -112,7 +125,7 @@ class ReviewForm extends React.Component{
           What did you think?
           <textarea  className='review-form__body' onChange={this.update()}value={this.state.body}></textarea>
         </article>
-        <input type="submit" value='Add Review'></input>
+        <input type="submit" value={this.props.formType}></input>
       </form>
 
     );

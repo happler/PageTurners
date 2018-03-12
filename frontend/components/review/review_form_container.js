@@ -7,12 +7,13 @@ import { postReview } from '../../actions/review_actions';
 
 const msp = (state, ownProps) =>{
   const book = state.entities.books[ownProps.match.params.id];
+  const defaultReview = { rating: 0, shelf:'', body:''};
+  const formType = "Add Review";
   return({
-    rating: 0,
-    shelf: '',
-    body:'',
+    review: defaultReview,
     book,
-    errors: state.errors.reviews
+    errors: state.errors.reviews,
+    formType,
   });
 };
 

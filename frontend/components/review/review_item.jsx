@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, userId, bookId}) => {
 
@@ -7,9 +7,13 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
 
   for (let i = 0; i < 5; i++) {
     ratingList.push(i < rating
-      ? <li className='review-item__filled' key={i}><i class="fas fa-star"></i></li>
+      ? <li className='review-item__filled' key={i}><i className="fas fa-star"></i></li>
       : <li className='review-item__empty' key={i}><i className="far fa-star"></i></li>);
   }
+
+   const extraButtons =  userId === currentUserId
+    ? <span className='review-item__delete' onClick={(e)=>deleteReview(id)}>Delete Review</span>
+    : null;
 
   return(
     <article className='review-item-container'>
@@ -32,13 +36,8 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
         <p className='review-item__body'>
           {body}
         </p>
-        { userId === currentUserId
-          ? <div><Link to={`/books/${bookId}/reviews/${id}`}>Edit Review</Link>
-          <span onClick={(e)=>deleteReview(id)}>Delete Review</span>
-        </div>
-          : null }
+        {extraButtons}
       </div>
-
     </article>
   );
 };

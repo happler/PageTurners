@@ -23,13 +23,23 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
-    review = Review.find(params[:id])
-    if review.user_id == current_user.id
-      review.destroy
-      render json: ["successful deletion"] # this should never be used, Render as an error?
+    @review = Review.find(params[:id])
+    if @review.user_id == current_user.id
+      @review.destroy
+      render :show
     else
-      render json: ["permission denied"], status: 403
+      render json: @review.errors.full_messages, status: 403
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
+    if @review
+      render :show
+    else
+      render json: @review.errors.full_messages, status: 404
+    end
+
   end
 
   def review_params

@@ -80,3 +80,18 @@
   justify-content: space-between;
 
 }
+
+.review-item__delete{
+  padding:3px;
+  background-color: rgb(244, 241, 234);
+  border: 1px solid rgb(214, 208, 196);
+  font-family: 'lato';
+  font-size: 11px;
+  width: 75px;
+  border-radius: 3px;
+}
+
+.review-item__delete:hover{
+  background-color: #ede6d6;
+  cursor: pointer;
+}
