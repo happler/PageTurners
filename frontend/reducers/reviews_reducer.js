@@ -3,6 +3,7 @@ import { RECEIVE_BOOKS }  from '../actions/book_actions';
 import { RECEIVE_REVIEW, REMOVE_REVIEW }  from '../actions/review_actions';
 
 const ReviewsReducer = (state = {}, action) =>{
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOKS:

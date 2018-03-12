@@ -39,7 +39,6 @@ const removeReview = payload =>({
  );
 
  export const deleteReview = id => dispatch =>{
-   debugger
    return(
      ReviewUtils.deleteReview(id)
      .then(deletedReview => dispatch(removeReview(deletedReview)

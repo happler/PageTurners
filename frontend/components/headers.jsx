@@ -13,12 +13,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './nav/header';
 import BookShowContainer from './book/book_show_container';
 import ReviewFormContainer from './review/review_form_container';
+import EditReviewFormContainer from './review/edit_review_form_container';
 import Header from './nav/header';
 
 const Headers = () =>(
   <div className='content-page-container'>
     <Header />
     <Switch>
+      <ProtectedRoute path='/books/:id/addReview/:reviewId' component={ EditReviewFormContainer } />
       <ProtectedRoute path='/books/:id/addReview' component={ ReviewFormContainer } />
       <ProtectedRoute path='/books/:id' component={ BookShowContainer } />
     </Switch>

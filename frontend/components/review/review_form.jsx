@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewFormBook from './review_form_book';
 import { merge } from 'lodash';
+import { withRouter } from 'react-router-dom';
 
 class ReviewForm extends React.Component{
   constructor(props){
@@ -61,7 +62,8 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    const review = merge({}, this.state, {book_id:this.props.match.params.id});
+    debugger
+    const review = merge({}, this.state, {book_id:this.props.match.params.id, id:this.props.match.params.reviewId});
     this.props.submitAction(review)
     .then(() => this.props.history.push(`/books/${this.props.match.params.id}`));
   }
@@ -126,4 +128,4 @@ class ReviewForm extends React.Component{
     );
   }
 }
-export default ReviewForm;
+export default withRouter(ReviewForm);
