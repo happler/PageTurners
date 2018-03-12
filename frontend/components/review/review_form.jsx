@@ -22,8 +22,6 @@ class ReviewForm extends React.Component{
   }
 
   adjustRating(rating){
-    // debugger
-    // return e => this.setState({rating});
     return e => {
       this.setState({rating});
     };
@@ -110,12 +108,9 @@ class ReviewForm extends React.Component{
             <li onMouseEnter={this.dynamicStars(4)} onClick={this.adjustRating(4)}>
               <p className={`${this.state.stars[4]} fa-star`}></p>
             </li>
-
-            <div onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}
-              className={`${this.state.stars[5]} fa-star`}
-              >
-              <li></li>
-            </div>
+            <li onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}>
+              <p className={`${this.state.stars[5]} fa-star`}></p>
+            </li>
 
           </ul>
           <section className='review-form__shelf'>
