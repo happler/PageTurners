@@ -109,20 +109,26 @@ class ReviewForm extends React.Component{
             coverImage={coverImage}/>
         </header>
         <section className='review-form__attributes'>
-          <ul className='review-form__rating'  onMouseLeave={this.dynamicStarsReset}>
-            <li onMouseEnter={this.dynamicStars(1)} onClick={this.adjustRating(1)}>
+          <ul className='review-form__rating'
+            onMouseLeave={this.dynamicStarsReset}>
+            <li onMouseEnter={this.dynamicStars(1)}
+              onClick={this.adjustRating(1)}>
               <img src={this.state.stars[1]} />
             </li>
-            <li onMouseEnter={this.dynamicStars(2)} onClick={this.adjustRating(2)}>
+            <li onMouseEnter={this.dynamicStars(2)}
+              onClick={this.adjustRating(2)}>
               <img src={this.state.stars[2]} />
             </li>
-            <li onMouseEnter={this.dynamicStars(3)} onClick={this.adjustRating(3)}>
+            <li onMouseEnter={this.dynamicStars(3)}
+              onClick={this.adjustRating(3)}>
               <img src={this.state.stars[3]} />
             </li>
-            <li onMouseEnter={this.dynamicStars(4)} onClick={this.adjustRating(4)}>
+            <li onMouseEnter={this.dynamicStars(4)}
+              onClick={this.adjustRating(4)}>
               <img src={this.state.stars[4]} />
             </li>
-            <li onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}>
+            <li onMouseEnter={this.dynamicStars(5)}
+              onClick={this.adjustRating(5)}>
               <img src={this.state.stars[5]} />
             </li>
 
