@@ -41,7 +41,6 @@ class ReviewForm extends React.Component{
         } else{
           newState.stars[key]= window.hollowStar;
         }
-        console.log(this.state);
       });
       this.setState(newState);
     };
@@ -57,7 +56,6 @@ class ReviewForm extends React.Component{
         } else{
           newState.stars[key]= window.hollowStar;
         }
-        console.log(this.state);
       });
       this.setState(newState);
   }

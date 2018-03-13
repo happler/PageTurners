@@ -54,11 +54,11 @@ class ReviewDetails extends React.Component{
 
     const ratingStars = [];
 
-    const oneStarPct = (oneStar /reviewCount).toFixed(2) * 100;
-    const twoStarPct = (twoStar /reviewCount).toFixed(2) * 100;
-    const threeStarPct = (threeStar /reviewCount).toFixed(2) * 100;
-    const fourStarPct = (fourStar /reviewCount).toFixed(2) * 100;
-    const fiveStarPct = (fiveStar /reviewCount).toFixed(2) * 100;
+    const oneStarPct = ((oneStar /reviewCount) * 100).toFixed(2);
+    const twoStarPct = ((twoStar /reviewCount) * 100).toFixed(2);
+    const threeStarPct = ((threeStar /reviewCount) * 100).toFixed(2);
+    const fourStarPct = ((fourStar /reviewCount) * 100).toFixed(2);
+    const fiveStarPct = ((fiveStar /reviewCount)* 100).toFixed(2);
 
     for (let i = 0; i < 5; i++) {
       ratingStars.push(i < Math.round(average)
@@ -70,7 +70,6 @@ class ReviewDetails extends React.Component{
     const threeStyle = {width:threeStarPct +'%'};
     const twoStyle = {width:twoStarPct +'%'};
     const oneStyle = {width:oneStarPct +'%'};
-    debugger
     return(
       <div className='review-details-container'>
         <div className='review-details__average'>
