@@ -4,17 +4,17 @@ class ReviewDetails extends React.Component{
   constructor(props){
     super(props);
     this.state={dropDown:'review-details__hidden'};
-    this.showBox = this.showBox.bind(this);
-    this.hideBox = this.hideBox.bind(this);
+    this.swapBox = this.swapBox.bind(this);
 
   }
 
-  showBox(){
-    this.setState({dropDown:'review-details__shown'});
-  }
+  swapBox(){
+    if (this.state.dropDown === 'review-details__hidden' ){
+      this.setState({dropDown:'review-details__shown'});
+    } else{
+      this.setState({dropDown:'review-details__hidden'});
 
-  hideBox(){
-    this.setState({dropDown:'review-details__hidden'});
+    }
   }
 
   render(){
@@ -78,20 +78,20 @@ class ReviewDetails extends React.Component{
         </div>
         <div className='review-details__mini-graph-container'>
           <img className='review-details__mini-graph' src={window.graph} />
-            <span onClick={this.showBox}>Rating Details</span>
+            <span className='review-details__graph__toggle' onClick={this.swapBox}>Rating Details</span>
         </div>
         <div className={this.state.dropDown}>
-          <div>
-            <span>Rating Details</span>
-            <span onClick={this.hideBox}>X</span>
-          </div>
+          <nav className='review-details__graph__nav'>
+            <span className='review-details__graph__nav__title'>Rating Details</span>
+            <span className='review-details__graph__nav__exit' onClick={this.swapBox}>x</span>
+          </nav>
           <div className='review-details__graph'>
             <div className='review-details__graph__labels'>
-              <span>5</span>
-              <span>4</span>
-              <span>3</span>
-              <span>2</span>
-              <span>1</span>
+              <span className='review-details__graph__label' >5</span>
+              <span className='review-details__graph__label' >4</span>
+              <span className='review-details__graph__label' >3</span>
+              <span className='review-details__graph__label' >2</span>
+              <span className='review-details__graph__label' >1</span>
             </div>
             <div className='review-details__graph__stars__col'>
               <img className='review-details__graph__stars' src={window.yellowStar} alt='Yellow Text' />
@@ -107,14 +107,15 @@ class ReviewDetails extends React.Component{
               <div className='review-details__graph__bars__two' style={twoStyle}></div>
               <div className='review-details__graph__bars__one' style={oneStyle}></div>
             </div>
-            <div className='review-details__graph__pct'>
-              <span>{`${fiveStarPct}% (${fiveStar})`}</span>
-              <span>{`${fourStarPct}% (${fourStar})`}</span>
-              <span>{`${threeStarPct}% (${threeStar})`}</span>
-              <span>{`${twoStarPct}% (${twoStar})`}</span>
-              <span>{`${oneStarPct}% (${oneStar})`}</span>
+            <div className='review-details__graph__pcts'>
+              <span className='review-details__graph__pct' >{`${fiveStarPct}% (${fiveStar})`}</span>
+              <span className='review-details__graph__pct' >{`${fourStarPct}% (${fourStar})`}</span>
+              <span className='review-details__graph__pct' >{`${threeStarPct}% (${threeStar})`}</span>
+              <span className='review-details__graph__pct' >{`${twoStarPct}% (${twoStar})`}</span>
+              <span className='review-details__graph__pct' >{`${oneStarPct}% (${oneStar})`}</span>
             </div>
           </div>
+          <p>{`${fiveStarPct + fourStarPct + threeStarPct}% of people liked it`}</p>
 
         </div>
         <span className='review-details__numbers'>{ratings} Ratings</span>

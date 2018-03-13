@@ -136,14 +136,15 @@
 .review-details__shown{
   display: flex;
   flex-direction: column;
-  width:500px;
-  height: 180px;
+  width:375px;
+  height: 130px;
   position: absolute;
   background-color: ghostwhite;
-  border:5px solid beige;
+  border:5px solid #C8C8C8;
   border-radius: 5px;
   padding: 5px;
   top: 150px;
+  z-index: 1;
 }
 
 .review-details__hidden{
@@ -153,25 +154,32 @@
 .review-details__graph__bars__five{
   background-color: purple;
   height:16px;
+  border-right: 1px solid black;
 }
 .review-details__graph__bars__four{
   background-color: green;
   height:16px;
+  border-right: 1px solid black;
 }
 .review-details__graph__bars__three{
   background-color: blue;
   height:16px;
+  border-right: 1px solid black;
+
 }
 .review-details__graph__bars__two{
   background-color: yellow;
   height:16px;
+  border-right: 1px solid black;
+
 }
 .review-details__graph__bars__one{
   background-color: red;
   height:16px;
+  border-right: 1px solid black;
 }
 
-.review-details__graph__labels, .review-details__graph__stars__col, .review-details__graph__bars, .review-details__graph__pct{
+.review-details__graph__labels, .review-details__graph__stars__col, .review-details__graph__bars, .review-details__graph__pcts{
   display: flex;
   flex-direction: column;
 }
@@ -181,10 +189,45 @@
   width: 16px;
 }
 .review-details__graph__bars{
-  width:350px;
+  width:250px;
 }
 
 .review-details__graph{
   display: flex;
   flex-direction: row;
+  // justify-content: space-around;
+}
+
+.review-details__graph__nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.review-details__graph__nav__exit{
+  padding:1px 3px;
+  background-color: #C8C8C8;
+  border-radius: 4px;
+  font-family: 'lato';
+  font-size:11px;
+  font-weight: 700;
+}
+
+.review-details__graph__nav__exit:hover{
+  cursor:pointer;
+}
+
+.review-details__graph__nav__title{
+  font-family: 'lato';
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.review-details__graph__toggle:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.review-details__graph__label, .review-details__graph__pct{
+  height: 16px;
 }
