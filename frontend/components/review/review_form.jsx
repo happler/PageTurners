@@ -20,6 +20,8 @@ class ReviewForm extends React.Component{
     };
     this.adjustRating = this.adjustRating.bind(this);
     this.dynamicStars = this.dynamicStars.bind(this);
+    this.dynamicStarsReset = this.dynamicStarsReset.bind(this);
+    this.dynamicStarsReset();
   }
 
   adjustRating(rating){
@@ -45,11 +47,21 @@ class ReviewForm extends React.Component{
     };
   }
 
-  //     for (let i = 0, i < star, i++){
-  //       this.setState({stars:{[star]:'fas'}})
-  //     }
-  //   }
-  // }
+  dynamicStarsReset(){
+      const star = this.state.rating;
+      const ratingKeys = Object.keys(this.state.stars);
+      const newState = Object.assign({}, this.state);
+      ratingKeys.forEach(key => {
+        if (key <= star){
+          newState.stars[key]= window.yellowStar;
+        } else{
+          newState.stars[key]= window.hollowStar;
+        }
+        console.log(this.state);
+      });
+      this.setState(newState);
+  }
+
 
   componentDidMount(){
     if (!this.props.book || !this.props.book.coverImage){
@@ -63,7 +75,6 @@ class ReviewForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    debugger
     const review = merge({}, this.state, {book_id:this.props.match.params.id, id:this.props.match.params.reviewId});
     this.props.submitAction(review)
     .then(() => this.props.history.push(`/books/${this.props.match.params.id}`));
@@ -98,7 +109,7 @@ class ReviewForm extends React.Component{
             coverImage={coverImage}/>
         </header>
         <section className='review-form__attributes'>
-          <ul className='review-form__rating'>
+          <ul className='review-form__rating'  onMouseLeave={this.dynamicStarsReset}>
             <li onMouseEnter={this.dynamicStars(1)} onClick={this.adjustRating(1)}>
               <img src={this.state.stars[1]} />
             </li>
