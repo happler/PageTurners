@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :books, only: [:show, :index]
     resources :reviews, only: [:create, :edit, :update, :destroy, :show]
+    resources :bookshelves, only: [:create, :destroy, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

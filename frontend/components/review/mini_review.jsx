@@ -28,7 +28,7 @@ class MiniReview extends React.Component{
       let review = Object.assign({}, this.state.review);
       review.rating = rating;
       this.setState({review});
-      review.bookId = this.props.match.params.id;
+      review.book_id = this.props.match.params.id;
       this.props.submitAction(review);
     };
   }

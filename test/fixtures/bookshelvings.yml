@@ -2,11 +2,11 @@
 #
 # Table name: bookshelvings
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  shelf_id   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  book_id      :integer          not null
+#  bookshelf_id :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
