@@ -132,3 +132,59 @@
   width: 16px;
   height: 16px;
 }
+
+.review-details__shown{
+  display: flex;
+  flex-direction: column;
+  width:500px;
+  height: 180px;
+  position: absolute;
+  background-color: ghostwhite;
+  border:5px solid beige;
+  border-radius: 5px;
+  padding: 5px;
+  top: 150px;
+}
+
+.review-details__hidden{
+  display: none;
+}
+
+.review-details__graph__bars__five{
+  background-color: purple;
+  height:16px;
+}
+.review-details__graph__bars__four{
+  background-color: green;
+  height:16px;
+}
+.review-details__graph__bars__three{
+  background-color: blue;
+  height:16px;
+}
+.review-details__graph__bars__two{
+  background-color: yellow;
+  height:16px;
+}
+.review-details__graph__bars__one{
+  background-color: red;
+  height:16px;
+}
+
+.review-details__graph__labels, .review-details__graph__stars__col, .review-details__graph__bars, .review-details__graph__pct{
+  display: flex;
+  flex-direction: column;
+}
+
+.review-details__graph__stars{
+  height:16px;
+  width: 16px;
+}
+.review-details__graph__bars{
+  width:350px;
+}
+
+.review-details__graph{
+  display: flex;
+  flex-direction: row;
+}
