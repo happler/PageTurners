@@ -76,7 +76,7 @@ class Landing extends React.Component{
         </form>
       </div>
       <div className='landing-body'>
-      <p className="landing-body__left">Meet your next favourite book.</p>
+      <p className="landing-body__left">Meet your next <br></br>favourite book.</p>
         <form
           onSubmit={this.handleSubmit('signup')}
           className="landing-body__right"

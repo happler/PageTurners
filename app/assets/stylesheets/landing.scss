@@ -82,7 +82,7 @@
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid white;
-  background-image: url("https://s.gr-assets.com/assets/home/masthead_background.jpg");
+  background-image: image-url("masthead_background.jpg");
 }
 
 
@@ -148,4 +148,9 @@
 .landing-body__demo__link:hover{
   cursor:pointer;
   background-color:#444444;
+}
+
+.landing-body__left{
+  font-family: 'Homemade Apple';
+  font-size: 36px;
 }

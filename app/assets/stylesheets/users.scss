@@ -9,7 +9,7 @@
 // }
 
 .auth-page{
-  background-image: url('https://s.gr-assets.com/assets/layout/tan-bg-texture.jpg');
+  background-image: image-url('tan-bg-texture.jpg');
   // background-repeat: repeat-y;
   background-repeat: repeat;
   height: 800px;
@@ -147,6 +147,6 @@ text-align: center;
   position: relative;
   height:50px;
   top: 160px;
-  background-image: url('https://s.gr-assets.com/assets/layout/bookrow.jpg');
+  background-image: image-url('bookrow.jpg');
   // z-index: 2;
 }
