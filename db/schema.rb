@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311211930) do
+ActiveRecord::Schema.define(version: 20180313205420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 20180311211930) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.index ["title", "author", "edition"], name: "index_books_on_title_and_author_and_edition", unique: true
+  end
+
+  create_table "bookshelves", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id", "title"], name: "index_bookshelves_on_owner_id_and_title", unique: true
+  end
+
+  create_table "bookshelvings", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "bookshelf_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id", "bookshelf_id"], name: "index_bookshelvings_on_book_id_and_bookshelf_id", unique: true
+    t.index ["bookshelf_id"], name: "index_bookshelvings_on_bookshelf_id"
   end
 
   create_table "reviews", force: :cascade do |t|
