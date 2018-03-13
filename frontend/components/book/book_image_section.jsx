@@ -1,6 +1,7 @@
 import React from 'react';
+import MiniReviewContainer from '../review/mini_review_container';
 
-const BookImageItem = ({ coverImage }) =>{
+const BookImageItem = ({ coverImage, reviews }) =>{
   return(
     <div className='book-image-container book-show__left'>
       <div className='book-image__cover-photo'>
@@ -10,7 +11,7 @@ const BookImageItem = ({ coverImage }) =>{
         <p>Reading shelf placeHolder</p>
       </div>
       <div className='book-image__rating'>
-        <p>User rating placeHolder</p>
+        <MiniReviewContainer reviews ={reviews} />
       </div>
     </div>
   );

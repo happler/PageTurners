@@ -55,9 +55,9 @@ class BookShow extends React.Component{
           className='book-show-error'
           key={ idx }>{error}</li>) }
         <div className='book-show-container'>
-          <BookImageItem coverImage={coverImage}/>
+          <BookImageItem coverImage={coverImage} reviews={this.props.reviews} />
           <div className='book-show__right'>
-            <BookTitleItem title={title} author={author} reviews={this.props.reviews} />
+            <BookTitleItem title={title} author={author} reviews={this.props.reviews}  />
             <BookSynopsisItem synopsis={synopsis} />
             <BookDetailsItem
               published={published}
