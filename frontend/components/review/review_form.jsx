@@ -32,15 +32,16 @@ class ReviewForm extends React.Component{
     return e => {
 
       const ratingKeys = Object.keys(this.state.stars);
+      const newState = Object.assign({}, this.state);
       ratingKeys.forEach(key => {
         if (key <= star){
-          // const newState = Object.assign()
-          this.setState({ stars: { [key]: window.yellowStar } } );
+          newState.stars[key]= window.yellowStar;
         } else{
-          this.setState({stars:{[key]:window.hollowStar}});
+          newState.stars[key]= window.hollowStar;
         }
         console.log(this.state);
       });
+      this.setState(newState);
     };
   }
 
