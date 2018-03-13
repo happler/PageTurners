@@ -91,7 +91,26 @@
   border-radius: 3px;
 }
 
+.review-item__edit{
+  font-family: 'lato';
+  font-size: 14px;
+  color:rgb(0,99,93);
+  text-decoration: none;
+}
+
+.review-item__edit:hover{
+  text-decoration: underline;
+
+}
+
 .review-item__delete:hover{
   background-color: #ede6d6;
   cursor: pointer;
+}
+
+.review-item__buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
 }

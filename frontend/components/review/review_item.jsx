@@ -12,7 +12,10 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
   }
 
    const extraButtons =  userId === currentUserId
-    ? <span className='review-item__delete' onClick={(e)=>deleteReview(id)}>Delete Review</span>
+    ? <div className='review-item__buttons'>
+        <Link className='review-item__edit' to={`/books/${bookId}/addReview/${id}`}>Edit Review</Link>
+        <span className='review-item__delete' onClick={(e)=>deleteReview(id)}>Delete Review</span>
+      </div>
     : null;
 
   return(

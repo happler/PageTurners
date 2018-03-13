@@ -5,7 +5,6 @@ import {
 import { CLEAR_ALL_ERRORS } from '../actions/global_actions';
 
 const ReviewErrorsReducer = (state = [], action) =>{
-  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_REVIEW_ERRORS:
