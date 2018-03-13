@@ -19,6 +19,9 @@ BOOK_IMAGES = %w(
 ).freeze
 User.destroy_all
 User.create(username: "Muad'Dib", password: 'starwars')
+10.times do
+  User.create(username: Faker::Pokemon.unique.name, password:'starwars')
+end
 
 Book.destroy_all
 books = []
@@ -48,6 +51,10 @@ end
 Review.destroy_all
 users = User.all
 books = Book.all
+book = Book.last
 30.times do
-  Review.create(user_id: users.sample.id, book_id: books.sample.id, rating: rand(1..5), body: Faker::VentureBros.quote )
+  Review.create(user_id: users.sample.id, book_id: books.sample.id, rating: rand(1..5), body: Faker::StarWars.quote )
+end
+15.times do
+  Review.create(user_id: users.sample.id, book_id: book.id, rating: rand(1..5), body: Faker::TwinPeaks.quote )
 end

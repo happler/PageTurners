@@ -20,7 +20,8 @@ class ReviewDetails extends React.Component{
   render(){
     const { reviews } = this.props;
     let reviewCount, ratings, textReviews, oneStar, twoStar, threeStar, fourStar, fiveStar;
-    reviewCount = ratings = textReviews = oneStar = twoStar = threeStar = fourStar = fiveStar = 0;
+    ratings = textReviews = oneStar = twoStar = threeStar = fourStar = fiveStar = 0;
+    reviewCount = .0001;
 
     reviews.forEach(review =>{
       reviewCount++;
@@ -69,7 +70,7 @@ class ReviewDetails extends React.Component{
     const threeStyle = {width:threeStarPct +'%'};
     const twoStyle = {width:twoStarPct +'%'};
     const oneStyle = {width:oneStarPct +'%'};
-
+    debugger
     return(
       <div className='review-details-container'>
         <div className='review-details__average'>
