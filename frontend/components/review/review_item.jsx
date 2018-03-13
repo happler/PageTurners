@@ -7,8 +7,8 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
 
   for (let i = 0; i < 5; i++) {
     ratingList.push(i < rating
-      ? <li className='review-item__filled' key={i}><i className="fas fa-star"></i></li>
-      : <li className='review-item__empty' key={i}><i className="far fa-star"></i></li>);
+      ? <img key={i} src={window.yellowStar} alt='Yellow Text' />
+    : <img key={i} src={window.hollowStar} alt='Empty Text' />);
   }
 
    const extraButtons =  userId === currentUserId

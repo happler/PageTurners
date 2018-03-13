@@ -11,11 +11,11 @@ class ReviewForm extends React.Component{
       shelf:this.props.review.shelf,
       body:this.props.review.body,
       stars: {
-        1: 'far',
-        2: 'far',
-        3: 'far',
-        4: 'far',
-        5: 'far',
+        1: window.hollowStar,
+        2: window.hollowStar,
+        3: window.hollowStar,
+        4: window.hollowStar,
+        5: window.hollowStar,
       }
     };
     this.adjustRating = this.adjustRating.bind(this);
@@ -35,9 +35,9 @@ class ReviewForm extends React.Component{
       ratingKeys.forEach(key => {
         if (key <= star){
           // const newState = Object.assign()
-          this.setState({ stars: { [key]: 'fas' } } );
+          this.setState({ stars: { [key]: window.yellowStar } } );
         } else{
-          this.setState({stars:{[key]:'far'}});
+          this.setState({stars:{[key]:window.hollowStar}});
         }
         console.log(this.state);
       });
@@ -99,19 +99,19 @@ class ReviewForm extends React.Component{
         <section className='review-form__attributes'>
           <ul className='review-form__rating'>
             <li onMouseEnter={this.dynamicStars(1)} onClick={this.adjustRating(1)}>
-              <p className={`${this.state.stars[1]} fa-star`}></p>
+              <img src={this.state.stars[1]} />
             </li>
             <li onMouseEnter={this.dynamicStars(2)} onClick={this.adjustRating(2)}>
-              <p className={`${this.state.stars[2]} fa-star`}></p>
+              <img src={this.state.stars[2]} />
             </li>
             <li onMouseEnter={this.dynamicStars(3)} onClick={this.adjustRating(3)}>
-              <p className={`${this.state.stars[3]} fa-star`}></p>
+              <img src={this.state.stars[3]} />
             </li>
             <li onMouseEnter={this.dynamicStars(4)} onClick={this.adjustRating(4)}>
-              <p className={`${this.state.stars[4]} fa-star`}></p>
+              <img src={this.state.stars[4]} />
             </li>
             <li onMouseEnter={this.dynamicStars(5)} onClick={this.adjustRating(5)}>
-              <p className={`${this.state.stars[5]} fa-star`}></p>
+              <img src={this.state.stars[5]} />
             </li>
 
           </ul>
