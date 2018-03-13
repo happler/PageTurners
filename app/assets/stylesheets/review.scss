@@ -114,3 +114,21 @@
   justify-content: space-between;
   padding-top: 15px;
 }
+
+.review-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 450px;
+
+}
+
+.review-details__mini-graph-container, .review-details__average{
+  display: flex;
+  flex-direction: row;
+}
+
+.review-details__mini-graph{
+  width: 16px;
+  height: 16px;
+}

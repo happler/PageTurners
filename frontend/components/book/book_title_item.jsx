@@ -1,6 +1,8 @@
 import React from 'react';
+import ReviewDetails from '../review/review_details';
 
-const BookTitleItem = ({ title, author, RatingStuff}) =>{
+
+const BookTitleItem = ({ title, author, reviews}) =>{
   return(
     <div className='book-title-container'>
       <div className='book-title__title'>
@@ -10,7 +12,7 @@ const BookTitleItem = ({ title, author, RatingStuff}) =>{
         <span> by {author}</span>
       </div>
       <div className='book-title__rating'>
-        <p>Rating stats placeHolder</p>
+        <ReviewDetails reviews={reviews} />
       </div>
     </div>
   );

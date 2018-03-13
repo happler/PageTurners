@@ -5,6 +5,7 @@ import BookTitleItem from './book_title_item';
 import BookSynopsisItem from './book_synopsis_item';
 import BookDetailsItem from './book_details_item';
 import ReviewsShow from '../review/reviews_show';
+import ReviewsDetails from '../review/review_details';
 
 class BookShow extends React.Component{
 
@@ -56,7 +57,7 @@ class BookShow extends React.Component{
         <div className='book-show-container'>
           <BookImageItem coverImage={coverImage}/>
           <div className='book-show__right'>
-            <BookTitleItem title={title} author={author} />
+            <BookTitleItem title={title} author={author} reviews={this.props.reviews} />
             <BookSynopsisItem synopsis={synopsis} />
             <BookDetailsItem
               published={published}
