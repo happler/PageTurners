@@ -2,8 +2,8 @@ export const selectReviews = (state, book) => {
   return book ? book.reviewIds.map(id => state.entities.reviews[id]) : [];
 };
 
-export const userReview = (reviews, userId) => {
-  const userReviews = reviews.filter( review => review.userId === userId || review.user_id === userId);
+export const userReview = (reviews, user_id) => {
+  const userReviews = reviews.filter( review => review.user_id === user_id );
   return userReviews[0];
 };
 

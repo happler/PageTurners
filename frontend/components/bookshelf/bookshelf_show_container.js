@@ -7,7 +7,7 @@ import { selectShelves, selectBooks} from '../../reducers/selectors';
 
 const msp = (state, ownProps) =>{
   const shelf = state.entities.bookshelves[ownProps.match.params.shelfId];
-  const user = state.entities.users[ownProps.match.params.userId];
+  const user = state.entities.users[ownProps.match.params.user_id];
   return({
     errors: state.errors.bookshelves,
     shelf,

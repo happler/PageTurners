@@ -8,7 +8,6 @@ const BookshelvesErrorsReducer = (state = [], action) =>{
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SHELF_ERRORS:
-      return action.errors.responseJSON;
     case RECEIVE_SHELVING_ERRORS:
       return action.errors.responseJSON;
     case CLEAR_ALL_ERRORS:

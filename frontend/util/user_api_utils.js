@@ -1,5 +1,5 @@
 export const fetchUser = (id) =>(
   $.ajax({
-    url:`/api/books/${id}`
+    url:`/api/users/${id}`
   })
 );

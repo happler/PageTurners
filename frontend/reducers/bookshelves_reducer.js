@@ -5,12 +5,14 @@ import {
   RECEIVE_SHELVING,
   REMOVE_SHELVING,
 } from '../actions/bookshelf_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const BookshelvesReducer = (state = {}, action) =>{
   Object.freeze(state);
   let newState;
   switch (action.type) {
     case RECEIVE_SHELF:
+    case RECEIVE_USER:
       return merge({}, state, action.payload.bookshelves);
     case REMOVE_SHELF:
       newState = merge({}, state);

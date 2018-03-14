@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, userId, bookId}) => {
+const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, user_id, bookId}) => {
 
   const ratingList = [];
 
@@ -11,7 +11,7 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
     : <img key={i} src={window.hollowStar} alt='Empty Text' />);
   }
 
-   const extraButtons =  userId === currentUserId
+   const extraButtons =  user_id === currentUserId
     ? <div className='review-item__buttons'>
         <Link className='review-item__edit' to={`/books/${bookId}/addReview/${id}`}>Edit Review</Link>
         <span className='review-item__delete' onClick={(e)=>deleteReview(id)}>Delete Review</span>
