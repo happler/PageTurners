@@ -3,7 +3,7 @@ export const selectReviews = (state, book) => {
 };
 
 export const userReview = (reviews, userId) => {
-  const userReviews = reviews.filter( review => review.userId ===userId);
+  const userReviews = reviews.filter( review => review.userId === userId || review.user_id === userId);
   return userReviews[0];
 };
 

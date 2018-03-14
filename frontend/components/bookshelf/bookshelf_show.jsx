@@ -20,7 +20,7 @@ class BookshelfShow extends React.Component{
 
   render(){
 
-    const { books, errors } = this.props;
+    const { books, errors,  } = this.props;
     if (!this.props.shelf){
       return(
       <div className='bookshelf-show-loading-container'>
@@ -31,30 +31,30 @@ class BookshelfShow extends React.Component{
       </div>
       );
     }
+
     return(
       <div className='bookshelf-show'>
         {errors.map((error, idx) => <li
           className='bookshelf-show-error'
           key={ idx }>{error}</li>) }
-        <h2 className='bookshelf-show-title'>My Books</h2>
-        <section>
-          <aside>
+        <h2 className='bookshelf-show__title'>My Books</h2>
+        <section className='bookshelf-show__body'>
+          <aside className='bookshelf-show__sidelinks'>
             <p>Bookshelf links will go here!</p>
           </aside>
           <main>
-            <table>
+            <table className='bookshelf-show__table'>
               <thead>
                 <tr>
-                  <th>cover</th>
+                  <th>Cover</th>
                   <th>Title</th>
                   <th>Author</th>
                   <th>Avg Rating</th>
                   <th>Rating</th>
-                  <th>Shelve(s)</th>
                 </tr>
               </thead>
               <tbody>
-                {books.map(book => <BookshelfItem book={book} />)}
+                {books.map((book, idx) => <BookshelfItem key={idx} book={book} />)}
               </tbody>
             </table>
           </main>
@@ -63,3 +63,5 @@ class BookshelfShow extends React.Component{
     );
   }
 }
+
+export default BookshelfShow;

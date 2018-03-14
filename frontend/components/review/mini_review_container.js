@@ -10,9 +10,11 @@ const msp = (state, ownProps) =>{
   const currentUserReview = userReview(ownProps.reviews, state.session.currentUser.id);
   hasReview = Boolean(currentUserReview);
   const review = currentUserReview || {body:'', rating:0};
+  const bookId = ownProps.bookId || ownProps.match.params.id
   return({
     review,
     errors: state.errors.reviews,
+    bookId,
   });
 };
 

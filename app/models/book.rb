@@ -39,6 +39,7 @@ class Book < ApplicationRecord
 
   def average_rating
     reviews = self.reviews.pluck(:rating)
+    return 0 if reviews.empty?
     reviews.reduce(:+) / reviews.length.to_f
 
 

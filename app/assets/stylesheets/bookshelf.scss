@@ -1,0 +1,23 @@
+.bookshelf-show{
+  padding-top: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookshelf-item__image{
+  width: 50px;
+}
+
+.bookshelf-show__body{
+  display: flex;
+  flex-direction: row;
+  align-items: space-around;
+}
+
+.bookshelf-show__table{
+  flex:3;
+}
+
+.bookshelf-show__sidelinks{
+  flex:1;
+}
