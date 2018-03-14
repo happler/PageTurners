@@ -4,7 +4,7 @@ import {
   REMOVE_SHELF,
   RECEIVE_SHELVING,
   REMOVE_SHELVING,
-} from '../actions/bookshelves_reducer';
+} from '../actions/bookshelf_actions';
 
 const BookshelvesReducer = (state = {}, action) =>{
   Object.freeze(state);
@@ -34,3 +34,5 @@ const BookshelvesReducer = (state = {}, action) =>{
 
   }
 };
+
+export default BookshelvesReducer;

@@ -58,3 +58,17 @@ end
 15.times do
   Review.create(user_id: users.sample.id, book_id: book.id, rating: rand(1..5), body: Faker::TwinPeaks.quote )
 end
+
+Bookshelf.destroy_all
+
+15.times do
+  Bookshelf.create(title: Faker::StarTrek.location, owner_id: users.sample.id)
+end
+
+bookshelves = Bookshelf.all
+
+Bookshelvings.destroy_all
+
+40.times do
+  Bookshelvings.create(book_id: books.sample.id, bookshelf_id: bookshelves.sample.id)
+end

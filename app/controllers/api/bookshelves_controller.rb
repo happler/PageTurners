@@ -1,4 +1,5 @@
-class Api::BooksshelvesController < ApplicationController
+class Api::BookshelvesController < ApplicationController
+  before_action :ensure_logged_in
 
   def show
     @bookshelf = Bookshelf.find_by(id: params[:id])
@@ -8,7 +9,6 @@ class Api::BooksshelvesController < ApplicationController
       render json: ["Sorry, we couldn't find your bookshelf"], status: 404
     end
   end
-
 
   def create
     @bookshelf = current_user.bookshelves.new(bookshelves_params)
@@ -32,7 +32,7 @@ class Api::BooksshelvesController < ApplicationController
   def shelve
     @bookshelf = Bookshelf.find(params[:id])
     @book = Book.find(params[:book][:id])
-    if  @bookshelf.books << @book
+    if @bookshelf.books << @book
       render :shelve
     else
       render json: ['You already have that book in a shelf!'], status: 409

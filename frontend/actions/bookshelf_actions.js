@@ -4,8 +4,8 @@ export const RECEIVE_SHELF = 'RECEIVE_SHELF';
 export const REMOVE_SHELF = 'REMOVE_SHELF';
 export const RECEIVE_SHELVING = 'RECEIVE_SHELVING';
 export const REMOVE_SHELVING = 'REMOVE_SHELVING';
-export const RECEIVE_SHELF_ERROR = 'RECEIVE_SHELF_ERROR';
-export const RECEIVE_SHELVING_ERROR = 'RECEIVE_SHELVING_ERROR';
+export const RECEIVE_SHELF_ERRORS = 'RECEIVE_SHELF_ERRORS';
+export const RECEIVE_SHELVING_ERRORS = 'RECEIVE_SHELVING_ERRORS';
 
 const receiveShelf = payload => ({
   type: RECEIVE_SHELF,
@@ -26,14 +26,14 @@ const removeShelving = payload => ({
   payload
 });
 
-const receiveShelvingError = payload => ({
-  type: RECEIVE_SHELVING_ERROR,
-  payload
+const receiveShelvingError = errors => ({
+  type: RECEIVE_SHELVING_ERRORS,
+  errors
 });
 
-const receiveShelfError = payload => ({
-  type: RECEIVE_SHELF_ERROR,
-  payload
+const receiveShelfError = errors => ({
+  type: RECEIVE_SHELF_ERRORS,
+  errors
 });
 
 export const shelveBook = (shelfId, bookId) => dispatch =>(

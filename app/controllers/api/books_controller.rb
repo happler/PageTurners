@@ -1,4 +1,5 @@
 class Api::BooksController < ApplicationController
+  before_action :ensure_logged_in
 
   def index
     @books = Book.all
