@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { postReview, patchReview } from '../../actions/review_actions';
 import { userReview } from '../../reducers/selectors';
 import MiniReview from './mini_review';
+import { withRouter } from 'react-router-dom';
 
 
 let hasReview;
@@ -25,4 +26,4 @@ const mdp = dispatch =>{
   });
 };
 
-export default connect(msp, mdp)(MiniReview);
+export default withRouter(connect(msp, mdp)(MiniReview));

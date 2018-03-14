@@ -4,7 +4,12 @@ class Api::BookshelvesController < ApplicationController
   def show
     @bookshelf = Bookshelf.find_by(id: params[:id])
     if @bookshelf
-      render '/api/bookshelves/show'
+      revs = @bookshelf.books.map(&:review)
+      @reviews = revs.select do |rev|
+        current_user.id == rev.user_id
+      end
+
+      render :show
     else
       render json: ["Sorry, we couldn't find your bookshelf"], status: 404
     end

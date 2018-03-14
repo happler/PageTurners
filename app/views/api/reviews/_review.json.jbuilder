@@ -5,3 +5,7 @@ json.set! review.id do
   json.user review.user.username
   json.updatedAt review.updated_at.to_formatted_s(:long)
 end
+
+json.set! review.id do 
+  json.review review
+end
