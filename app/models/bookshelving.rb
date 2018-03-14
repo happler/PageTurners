@@ -11,6 +11,7 @@
 
 class Bookshelving < ApplicationRecord
   validates :book_id, :bookshelf_id, presence: true
+  validates :bookshelf_id, uniqueness: { scope: :book_id }
 
   belongs_to :book
 

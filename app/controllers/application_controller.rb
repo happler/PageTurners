@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     unless current_user
+      @already_rendered = true #is this the best method?
       render json: { session: ['invalid credentails'] }, status: 401
     end
 

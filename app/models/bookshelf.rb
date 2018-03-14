@@ -12,11 +12,12 @@
 class Bookshelf < ApplicationRecord
   validates :title, :owner_id, presence: true
 
-  has_many :bookshelvings
+  has_many :bookshelvings,
+  dependent: :destroy
 
   has_many :books,
   through: :bookshelvings,
-  source: :books
+  source: :book
 
   belongs_to :owner,
   class_name: :User,
