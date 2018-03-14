@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as BookActions from './actions/book_actions';
+import * as ShelfActions from './actions/bookshelf_actions';
 
 document.addEventListener("DOMContentLoaded", () =>{
   let store;
