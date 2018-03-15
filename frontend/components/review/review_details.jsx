@@ -54,11 +54,11 @@ class ReviewDetails extends React.Component{
 
     const ratingStars = [];
 
-    const oneStarPct = ((oneStar /reviewCount) * 100).toFixed(2);
-    const twoStarPct = ((twoStar /reviewCount) * 100).toFixed(2);
-    const threeStarPct = ((threeStar /reviewCount) * 100).toFixed(2);
-    const fourStarPct = ((fourStar /reviewCount) * 100).toFixed(2);
-    const fiveStarPct = ((fiveStar /reviewCount)* 100).toFixed(2);
+    const oneStarPct = ((oneStar /reviewCount) * 100);
+    const twoStarPct = ((twoStar /reviewCount) * 100);
+    const threeStarPct = ((threeStar /reviewCount) * 100);
+    const fourStarPct = ((fourStar /reviewCount) * 100);
+    const fiveStarPct = ((fiveStar /reviewCount)* 100);
 
     for (let i = 0; i < 5; i++) {
       ratingStars.push(i < Math.round(average)
@@ -108,14 +108,14 @@ class ReviewDetails extends React.Component{
               <div className='review-details__graph__bars__one' style={oneStyle}></div>
             </div>
             <div className='review-details__graph__pcts'>
-              <span className='review-details__graph__pct' >{`${fiveStarPct}% (${fiveStar})`}</span>
-              <span className='review-details__graph__pct' >{`${fourStarPct}% (${fourStar})`}</span>
-              <span className='review-details__graph__pct' >{`${threeStarPct}% (${threeStar})`}</span>
-              <span className='review-details__graph__pct' >{`${twoStarPct}% (${twoStar})`}</span>
-              <span className='review-details__graph__pct' >{`${oneStarPct}% (${oneStar})`}</span>
+              <span className='review-details__graph__pct' >{`${fiveStarPct.toFixed(2)}% (${fiveStar})`}</span>
+              <span className='review-details__graph__pct' >{`${fourStarPct.toFixed(2)}% (${fourStar})`}</span>
+              <span className='review-details__graph__pct' >{`${threeStarPct.toFixed(2)}% (${threeStar})`}</span>
+              <span className='review-details__graph__pct' >{`${twoStarPct.toFixed(2)}% (${twoStar})`}</span>
+              <span className='review-details__graph__pct' >{`${oneStarPct.toFixed(2)}% (${oneStar})`}</span>
             </div>
           </div>
-          <p>{`${fiveStarPct + fourStarPct + threeStarPct}% of people liked it`}</p>
+          <p>{`${(fiveStarPct + fourStarPct + threeStarPct).toFixed(2)}% of people liked it`}</p>
 
         </div>
         <span className='review-details__numbers'>{ratings} Ratings</span>
