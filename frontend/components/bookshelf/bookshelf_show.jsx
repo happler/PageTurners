@@ -4,7 +4,7 @@ import BookshelfSidebarContainer from './bookshelf_sidebar_container';
 
 class BookshelfShow extends React.Component{
   componentDidMount(){
-    if (!this.props.shelf){
+    if (!this.props.books){
       this.props.fetchShelf(this.props.match.params.shelfId);
     }
   }
@@ -22,7 +22,7 @@ class BookshelfShow extends React.Component{
   render(){
 
     const { books, errors,  } = this.props;
-    if (!this.props.shelf){
+    if (!books){
       return(
       <div className='bookshelf-show-loading-container'>
         <h2 className='bookshelf-show-loading'>Loading...</h2>

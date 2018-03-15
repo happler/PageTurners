@@ -8,9 +8,9 @@ export const userReview = (reviews, user_id) => {
 };
 
 export const selectShelves = (state, user) =>{
-  return user ? user.shelfIds.map(id => state.entities.bookshelves[id]) : [];
+  return user ? user.bookshelfIds.map(id => state.entities.bookshelves[id]) : null;
 };
 
 export const selectBooks = (state, shelf) =>{
-  return shelf ? shelf.bookIds.map(id => state.entities.books[id]) : [];
+  return shelf ? shelf.bookIds.map(id => state.entities.books[id]) : null;
 };

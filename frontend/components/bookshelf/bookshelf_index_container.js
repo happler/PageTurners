@@ -1,24 +1,25 @@
 import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/global_actions';
-import BookshelfShow from './bookshelf_show';
-import { fetchShelf, deleteShelf } from '../../actions/bookshelf_actions';
+import BookshelfIndex from './bookshelf_index';
+import { fetchUser } from '../../actions/bookshelf_actions';
 import { selectShelves, selectBooks} from '../../reducers/selectors';
 
 
 const msp = (state, ownProps) =>{
-  const shelf = state.entities.bookshelves[ownProps.match.params.shelfId];
   const user = state.entities.users[ownProps.match.params.user_id];
+  const allShelves = selectShelves(state, user);
+  const books =  allShelves ? allShelves.map (shelf => selectBooks(state, shelf)).flatten() : null;
   return({
     errors: state.errors.bookshelves,
-    books: selectBooks(state, shelf),
+    books,
   });
 };
 
 const mdp = dispatch =>{
   return({
-    fetchShelf: (id) => dispatch(fetchShelf(id)),
+    fetchUser: (id) => dispatch(fetchUser(id)),
     clearErrors: () => dispatch(clearErrors()),
   });
 };
 
-export default connect(msp, mdp)(BookshelfShow);
+export default connect(msp, mdp)(BookshelfIndex);

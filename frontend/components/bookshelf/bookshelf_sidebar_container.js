@@ -4,18 +4,15 @@ import { fetchShelf, deleteShelf } from '../../actions/bookshelf_actions';
 import { connect } from 'react-redux';
 import BookshelfSidebar from './bookshelf_sidebar';
 import { withRouter } from 'react-router-dom';
+import { selectShelves } from '../../reducers/selectors';
+
 
 
 
 
 const msp = (state, ownProps) =>{
   const user = state.entities.users[ownProps.match.params.userId];
-  const userShelves = user
-    ? user.bookshelfIds.map(id =>({
-      id,
-      title: state.entities.bookshelves[id].title
-    })
-  ) : null;
+  const userShelves = selectShelves(state, user);
   return({
     userShelves,
     errors: state.errors.users
