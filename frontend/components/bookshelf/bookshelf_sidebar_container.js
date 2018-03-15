@@ -3,11 +3,13 @@ import { fetchUser } from '../../actions/user_actions';
 import { fetchShelf, deleteShelf } from '../../actions/bookshelf_actions';
 import { connect } from 'react-redux';
 import BookshelfSidebar from './bookshelf_sidebar';
+import { withRouter } from 'react-router-dom';
+
 
 
 
 const msp = (state, ownProps) =>{
-  const user = state.entities.users[ownProps.match.params.UserId];
+  const user = state.entities.users[ownProps.match.params.userId];
   const userShelves = user
     ? user.bookshelfIds.map(id =>({
       id,
@@ -27,4 +29,4 @@ const mdp = dispatch =>{
   });
 };
 
-export default connect(msp, mdp)(BookshelfSidebar);
+export default withRouter(connect(msp, mdp)(BookshelfSidebar));

@@ -21,7 +21,8 @@ const Headers = () =>(
   <div className='content-page-container'>
     <Header />
     <Switch>
-      <ProtectedRoute path='/users/:user_id/shelf/:shelfId' component={BookshelfShowContainer} />
+      <ProtectedRoute path='/users/:userId/shelf/:shelfId' component={BookshelfShowContainer} />
+      <ProtectedRoute path='/users/:userId/shelf' component={BookshelfShowContainer} />
       <ProtectedRoute path='/books/:id/addReview/:reviewId' component={ EditReviewFormContainer } />
       <ProtectedRoute path='/books/:id/addReview' component={ ReviewFormContainer } />
       <ProtectedRoute path='/books/:id' component={ BookShowContainer } />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class BookshelfSidebar extends React.Component{
 
@@ -21,12 +21,14 @@ class BookshelfSidebar extends React.Component{
       );
     }
     return(
-    <ul>
-      {this.props.userShelves.map((shelf, idx) => (
-        <Link to={`/users/${this.props.match.params.userId}/${shelf.id}`} key={idx}>{shelf.title}</Link>
-      ))}
-    </ul>
-  )
+      <ul>
+        <Link to={`/users/${this.props.match.params.userId}/shelf`} >All Shelves</Link>
+        {this.props.userShelves.map((shelf, idx) => (
+          <Link to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`} key={idx}>{shelf.title}</Link>
+        ))}
+      </ul>
+    );
   }
-
 }
+
+export default withRouter(BookshelfSidebar);

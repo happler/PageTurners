@@ -13,9 +13,9 @@ const receiveUserErrors = errors =>({
   errors
 });
 
-export const fetchUser = user => dispatch =>{
+export const fetchUser = userId => dispatch =>{
   return(
-  UserUtils.fetchUser(user)
+  UserUtils.fetchUser(userId)
   .then(recievedUser => dispatch(receiveUser(recievedUser)
 ), err => dispatch(receiveUserErrors(err)))
 );};

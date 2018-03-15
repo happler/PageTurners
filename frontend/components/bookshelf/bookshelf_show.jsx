@@ -1,5 +1,6 @@
 import React from 'react';
 import BookshelfItem from './bookshelf_item';
+import BookshelfSidebarContainer from './bookshelf_sidebar_container';
 
 class BookshelfShow extends React.Component{
   componentDidMount(){
@@ -40,7 +41,7 @@ class BookshelfShow extends React.Component{
         <h2 className='bookshelf-show__title'>My Books</h2>
         <section className='bookshelf-show__body'>
           <aside className='bookshelf-show__sidelinks'>
-            <p>Bookshelf links will go here!</p>
+            <BookshelfSidebarContainer />
           </aside>
           <main>
             <table className='bookshelf-show__table'>
