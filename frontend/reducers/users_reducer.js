@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_USER_SHELVES } from '../actions/user_actions';
+
 
 const UsersReducer = (state = {}, action) =>{
   Object.freeze(state);
@@ -12,6 +13,8 @@ const UsersReducer = (state = {}, action) =>{
       return {};
     case RECEIVE_USER:
       return merge({}, state, {[action.payload.id]:action.payload});
+    case RECEIVE_USER_SHELVES:
+      return merge({}, state, action.payload.user);
     default:
      return state;
   }

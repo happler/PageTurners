@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import MiniReviewContainer from '../review/mini_review_container';
 
 const BookshelfItem = ({book}) =>{
@@ -20,4 +20,4 @@ const BookshelfItem = ({book}) =>{
     );
 };
 
-export default BookshelfItem;
+export default withRouter(BookshelfItem);

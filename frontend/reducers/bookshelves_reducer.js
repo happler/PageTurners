@@ -6,6 +6,7 @@ import {
   REMOVE_SHELVING,
 } from '../actions/bookshelf_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER_SHELVES } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const BookshelvesReducer = (state = {}, action) =>{
@@ -14,6 +15,7 @@ const BookshelvesReducer = (state = {}, action) =>{
   switch (action.type) {
     case RECEIVE_SHELF:
     case RECEIVE_USER:
+    case RECEIVE_USER_SHELVES:
     return merge({}, state, action.payload.bookshelves);
     case RECEIVE_CURRENT_USER:
     if (action.payload){

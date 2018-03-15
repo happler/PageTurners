@@ -5,13 +5,15 @@ import BookshelfSidebarContainer from './bookshelf_sidebar_container';
 class BookshelfShow extends React.Component{
   componentDidMount(){
     if (!this.props.books){
-      this.props.fetchShelf(this.props.match.params.shelfId);
+      this.props.fetchResource();
     }
   }
 
   componentWillReceiveProps(newProps){
-    if (this.props.match.params.shelfId !== newProps.match.params.shelfId){
-      this.props.fetchShelf(this.props.match.params.shelfId);
+    if (this.props.match.params.userId !== newProps.match.params.userId){
+      this.props.fetchResource();
+    } else if (this.props.match.params.shelfId !== newProps.match.params.shelfId){
+      this.props.fetchResource();
     }
   }
 

@@ -23,6 +23,17 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def shelves
+    @user = User.find_by(id:params[:id])
+    if @user
+      @bookshelves = @user.bookshelves
+      @books = @bookshelves.map(&:books).flatten
+      render :shelves
+    else
+      render json: ["Sorry, we can't find that user"], status: 404
+    end
+  end
+
   def user_params
     params.require(:user).permit(:username, :password)
 

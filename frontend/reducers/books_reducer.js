@@ -2,6 +2,7 @@ import { merge } from 'lodash';
 import { RECEIVE_BOOKS }  from '../actions/book_actions';
 import { RECEIVE_REVIEW, REMOVE_REVIEW }  from '../actions/review_actions';
 import { RECEIVE_SHELF } from '../actions/bookshelf_actions';
+import { RECEIVE_USER_SHELVES } from '../actions/user_actions';
 
 
 const BooksReducer = (state = {}, action) =>{
@@ -10,7 +11,7 @@ const BooksReducer = (state = {}, action) =>{
   let newArr;
   switch (action.type) {
     case RECEIVE_BOOKS:
-      return merge({}, state, action.payload.books);
+    case RECEIVE_USER_SHELVES:
     case RECEIVE_SHELF:
       return merge({}, state, action.payload.books);
     case RECEIVE_REVIEW:
