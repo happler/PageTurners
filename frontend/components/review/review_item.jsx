@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, user_id, bookId}) => {
+const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview, id, currentUserId, user_id, bookId }) => {
 
   const ratingList = [];
 
@@ -18,6 +18,7 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
       </div>
     : null;
 
+
   return(
     <article className='review-item-container'>
       <img className='review-item__user__image' src={userImage} />
@@ -25,7 +26,7 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
         <header className='review-item__user'>
           <div className='review-item__user__info'>
             <div className='review-item__user__left'>
-              <p className='review-item__user__name'>{username }</p>
+              <Link to={`/user/${user_id}/shelf`}className='review-item__user__name'>{username}</Link>
               <p className='review-item__user__rating__label'> Rated it </p>
               <ul className='review-item__user__rating'>
                 { ratingList}
