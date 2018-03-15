@@ -7,8 +7,8 @@ import { RECEIVE_USER_SHELVES } from '../actions/user_actions';
 
 const BooksReducer = (state = {}, action) =>{
   Object.freeze(state);
-  let review;
-  let newArr;
+  let review, newArr;
+  
   switch (action.type) {
     case RECEIVE_BOOKS:
     case RECEIVE_USER_SHELVES:

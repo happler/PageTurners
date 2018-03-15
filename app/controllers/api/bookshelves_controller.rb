@@ -12,7 +12,7 @@ class Api::BookshelvesController < ApplicationController
 
   def create
     @bookshelf = current_user.bookshelves.new(bookshelves_params)
-    if @render.save
+    if @bookshelf.save
       render :show
     else
       render json: @bookshelf.errors.full_messages, status: 422

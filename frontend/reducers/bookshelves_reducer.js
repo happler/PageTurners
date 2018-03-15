@@ -14,9 +14,12 @@ const BookshelvesReducer = (state = {}, action) =>{
   let newState;
   switch (action.type) {
     case RECEIVE_SHELF:
+    debugger
     case RECEIVE_USER:
     case RECEIVE_USER_SHELVES:
-    return merge({}, state, action.payload.bookshelves);
+    newState = merge({}, state, action.payload.bookshelves);
+    debugger
+    return newState
     case RECEIVE_CURRENT_USER:
     if (action.payload){
       return merge({}, state, action.payload.bookshelves);
