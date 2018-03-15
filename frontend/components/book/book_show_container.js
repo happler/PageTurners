@@ -7,7 +7,7 @@ import { selectReviews } from '../../reducers/selectors';
 
 const msp = (state, ownProps) =>{
   const bookTemp = state.entities.books[ownProps.match.params.id];
-  const book = bookTemp.originalTitle ? bookTemp : null;
+  const book = bookTemp && bookTemp.originalTitle ? bookTemp : null;
   const reviews = selectReviews(state, book).reverse();
   return({
     errors: state.errors.books,

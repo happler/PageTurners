@@ -32,10 +32,12 @@ class BookshelfSidebar extends React.Component{
   render(){
 
     const shelfLinks = this.props.userShelves.map((shelf, idx) => (
-      <div key={idx}>
-        <Link to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`} key={idx}>{shelf.title}</Link>
+      <div className='bookshelf-sidebar__item' key={idx}>
+        <Link className='bookshelf-sidebar__item__link' to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`}>
+          {shelf.title}
+        </Link>
         {(["Read", "Reading", "Want to Read"].indexOf(shelf.title) === -1 ) ?
-          <span key={idx} onClick={this.destroy(shelf.id)}>(delete)</span> : null
+          <span className='bookshelf-sidebar__item__delete' onClick={this.destroy(shelf.id)}>(delete)</span> : null
         }
       </div>
     ));
@@ -51,12 +53,14 @@ class BookshelfSidebar extends React.Component{
       );
     }
     return(
-      <ul>
-        <Link to={`/users/${this.props.match.params.userId}/shelf`} >All Shelves</Link>
+      <ul className='bookshelf-sidebar-container'>
+        <Link className='bookshelf-sidebar__all-books' to={`/users/${this.props.match.params.userId}/shelf`} >
+          All Shelves
+        </Link>
         {shelfLinks}
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.update} value={this.state.title}></input>
-          <input type='submit' value='Add Shelf'></input>
+        <form className='bookshelf-sidebar__form' onSubmit={this.handleSubmit}>
+          <input className='bookshelf-sidebar__form__input' onChange={this.update} value={this.state.title}></input>
+          <input className='bookshelf-sidebar__form__submit' type='submit' value='Add Shelf'></input>
         </form>
       </ul>
     );

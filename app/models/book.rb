@@ -41,8 +41,13 @@ class Book < ApplicationRecord
     reviews = self.reviews.pluck(:rating)
     return 0 if reviews.empty?
     reviews.reduce(:+) / reviews.length.to_f
+  end
 
-
+  def current_user_shelves(current_user)
+    shelf_arr = self.bookshelves.select {|shelf| shelf.owner === current_user}
+    shelf_arr.map(&:id)
+    # shelf_arr = self.bookshelves.where(owner_id:current_user.id)
+    # return shelf_arr
   end
 
 end

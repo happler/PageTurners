@@ -12,7 +12,7 @@ const BookshelfItem = ({book, history}) =>{
     const toBookPage = () => history.push(`/books/${id}`);
 
     return(
-      <tr>
+      <tr className='bookshelf-show__table__row'>
         <td><img onClick={toBookPage} className='bookshelf-item__image' src={ coverImage }></img></td>
         <td onClick={toBookPage} className='bookshelf-item__title' >{title}</td>
         <td className='bookshelf-item__author' >{author}</td>

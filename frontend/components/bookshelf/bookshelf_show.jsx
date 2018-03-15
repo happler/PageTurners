@@ -41,20 +41,22 @@ class BookshelfShow extends React.Component{
         {errors.map((error, idx) => <li
           className='bookshelf-show-error'
           key={ idx }>{error}</li>) }
-        <h2 className='bookshelf-show__title'>My Books</h2>
+        <h2 className='bookshelf-show__title'>
+          My Books
+        </h2>
         <section className='bookshelf-show__body'>
           <aside className='bookshelf-show__sidelinks'>
             <BookshelfSidebarContainer />
           </aside>
           <main>
             <table className='bookshelf-show__table'>
-              <thead>
+              <thead className='bookshelf-show__table__head' >
                 <tr>
-                  <th>Cover</th>
+                  <th className='bookshelf-show__table__title' >Cover</th>
                   <th>Title</th>
                   <th>Author</th>
                   <th>Avg Rating</th>
-                  <th>Rating</th>
+                  <th className='bookshelf-show__table__rating' >Rating</th>
                 </tr>
               </thead>
               <tbody>
