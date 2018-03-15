@@ -26,7 +26,7 @@ const ReviewItem  = ({userImage, username, updatedAt, body, rating, deleteReview
         <header className='review-item__user'>
           <div className='review-item__user__info'>
             <div className='review-item__user__left'>
-              <Link to={`/user/${user_id}/shelf`}className='review-item__user__name'>{username}</Link>
+              <Link to={`/users/${user_id}/shelf`}className='review-item__user__name'>{username}</Link>
               <p className='review-item__user__rating__label'> Rated it </p>
               <ul className='review-item__user__rating'>
                 { ratingList}

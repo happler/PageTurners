@@ -4,6 +4,7 @@ import BookshelfSidebarContainer from './bookshelf_sidebar_container';
 
 class BookshelfShow extends React.Component{
   componentDidMount(){
+    window.scroll(0, 0);
     if (!this.props.books){
       this.props.fetchResource();
     }

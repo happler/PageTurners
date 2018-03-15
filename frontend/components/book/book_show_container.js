@@ -6,11 +6,13 @@ import { deleteReview } from '../../actions/review_actions';
 import { selectReviews } from '../../reducers/selectors';
 
 const msp = (state, ownProps) =>{
-  const book = state.entities.books[ownProps.match.params.id];
+  const bookTemp = state.entities.books[ownProps.match.params.id];
+  const book = bookTemp.originalTitle ? bookTemp : null;
+  const reviews = selectReviews(state, book).reverse();
   return({
     errors: state.errors.books,
     book,
-    reviews: selectReviews(state, book).reverse(),
+    reviews,
     currentUserId: state.session.currentUser.id,
   });
 };

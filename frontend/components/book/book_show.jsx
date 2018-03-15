@@ -10,6 +10,7 @@ import ReviewsDetails from '../review/review_details';
 class BookShow extends React.Component{
 
   componentDidMount(){
+    window.scroll(0, 0);
     if (!this.props.book || !this.props.book.published){
       this.props.fetchBook(this.props.match.params.id);
     }
