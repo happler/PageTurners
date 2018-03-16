@@ -53,9 +53,9 @@ class User < ApplicationRecord
   end
 
   def set_initial_shelves!
-    self.bookshelves.create(title: "Read")
-    self.bookshelves.create(title: "Reading")
-    self.bookshelves.create(title: "Want to Read")
+    self.bookshelves << Bookshelf.create(title: "Read")
+    self.bookshelves << Bookshelf.create(title: "Reading")
+    self.bookshelves << Bookshelf.create(title: "Want to Read")
   end
 
 end

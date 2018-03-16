@@ -75,7 +75,7 @@ end
 
 books.each do |bk|
   Review.create(
-    user_id: user.id,
+    user_id: demo.id,
     book_id: bk.id,
     rating: rand(1..5),
     body: Faker::TwinPeaks.quote
