@@ -57,3 +57,16 @@
 .review-form__rating:hover{
   cursor: pointer;
 }
+
+.review-form__submit{
+  padding:5px 7px;
+  border: 1px solid #332315;
+  border-radius: 3px;
+  background-color: #f4f1ec;
+  width:100px;
+  text-align: center;
+}
+
+.review-form__submit:hover{
+  opacity: 0.6;
+}

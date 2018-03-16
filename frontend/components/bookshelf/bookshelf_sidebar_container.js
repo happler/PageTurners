@@ -12,10 +12,12 @@ import { selectShelves } from '../../reducers/selectors';
 
 const msp = (state, ownProps) =>{
   const user = state.entities.users[ownProps.match.params.userId];
+  const currentUsersPage = (ownProps.match.params.userId == state.session.currentUser.id)
   const userShelves = selectShelves(state, user);
   return({
     userShelves,
-    errors: state.errors.users
+    errors: state.errors.users,
+    currentUsersPage,
   });
 };
 

@@ -30,7 +30,6 @@ class BookshelfSidebar extends React.Component{
   }
 
   render(){
-
     const shelfLinks = this.props.userShelves.map((shelf, idx) => (
       <div className='bookshelf-sidebar__item' key={idx}>
         <Link className='bookshelf-sidebar__item__link' to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`}>
@@ -57,11 +56,13 @@ class BookshelfSidebar extends React.Component{
         <Link className='bookshelf-sidebar__all-books' to={`/users/${this.props.match.params.userId}/shelf`} >
           All Shelves
         </Link>
+        <div className='bookshelf-sidebar__div'></div>
         {shelfLinks}
-        <form className='bookshelf-sidebar__form' onSubmit={this.handleSubmit}>
+        {this.props.currentUsersPage ? <form className='bookshelf-sidebar__form' onSubmit={this.handleSubmit}>
           <input className='bookshelf-sidebar__form__input' onChange={this.update} value={this.state.title}></input>
           <input className='bookshelf-sidebar__form__submit' type='submit' value='Add Shelf'></input>
-        </form>
+        </form> : null
+        }
       </ul>
     );
   }

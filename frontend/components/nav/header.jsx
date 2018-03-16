@@ -11,13 +11,13 @@ const Header = ({ user, logoutButton, history }) =>{
       <ul className="nav-bar">
         <ul className="left-nav">
           <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
-          <Link to={`/users/${user.id}/shelf`}className="left-nav-shelves">My Books</Link>
+          <Link to={`/users/${user.id}/shelf`} className="left-nav-shelves">My Books</Link>
           <Link to='/books/360' className="left-nav-shelves">Book Demo</Link>
         </ul>
         <ul className="right-nav">
-          <li className="right-nav-user">
+          <Link to={`/users/${user.id}/shelf`} className="right-nav-user">
             {user.username}
-          </li>
+          </Link>
           <li onClick={(e) => logoutButton()} className='right-nav-logout'>
             Log Out
           </li>

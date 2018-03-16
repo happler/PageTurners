@@ -115,7 +115,7 @@ class ReviewDetails extends React.Component{
               <span className='review-details__graph__pct' >{`${oneStarPct.toFixed(2)}% (${oneStar})`}</span>
             </div>
           </div>
-          <p>{`${(fiveStarPct + fourStarPct + threeStarPct).toFixed(2)}% of people liked it`}</p>
+          <p>{`${(fiveStarPct + fourStarPct + threeStarPct).toFixed(0)}% of people liked it`}</p>
 
         </div>
         <span className='review-details__numbers'>{ratings} Ratings</span>

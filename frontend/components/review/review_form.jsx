@@ -139,7 +139,7 @@ class ReviewForm extends React.Component{
           What did you think?
           <textarea  className='review-form__body' onChange={this.update()}value={this.state.body}></textarea>
         </article>
-        <input type="submit" value={this.props.formType}></input>
+        <input className='review-form__submit' type="submit" value={this.props.formType}></input>
       </form>
 
     );
