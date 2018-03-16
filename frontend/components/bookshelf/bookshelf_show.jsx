@@ -24,7 +24,7 @@ class BookshelfShow extends React.Component{
 
   render(){
 
-    const { books, errors,  } = this.props;
+    const { books, errors, shelfTitle } = this.props;
     if (!books){
       return(
       <div className='bookshelf-show-loading-container'>
@@ -42,11 +42,11 @@ class BookshelfShow extends React.Component{
           className='bookshelf-show-error'
           key={ idx }>{error}</li>) }
         <h2 className='bookshelf-show__title'>
-          My Books
+          {`My Books: ${shelfTitle}`}
         </h2>
         <section className='bookshelf-show__body'>
           <aside className='bookshelf-show__sidelinks'>
-            <BookshelfSidebarContainer />
+            <BookshelfSidebarContainer shelfTitle={shelfTitle} />
           </aside>
           <main>
             <table className='bookshelf-show__table'>

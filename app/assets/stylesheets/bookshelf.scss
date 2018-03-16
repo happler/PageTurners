@@ -117,3 +117,24 @@
   opacity: 0.8;
   cursor: pointer;
 }
+
+.bookshelf-sidebar__item__link__current{
+  color: #777777;
+  font-family: 'lato';
+}
+.bookshelf-sidebar__item__link{
+  color: #00635d;
+  font-family: 'lato';
+}
+
+.bookshelf-sidebar__form__submit{
+  background-color: rgb(244,241,234);
+  padding: 3px 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.bookshelf-sidebar__form__submit:hover{
+  background-color: rgb(237,230, 214);
+  cursor:pointer;
+}

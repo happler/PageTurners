@@ -32,9 +32,12 @@ class BookshelfSidebar extends React.Component{
   render(){
     const shelfLinks = this.props.userShelves.map((shelf, idx) => (
       <div className='bookshelf-sidebar__item' key={idx}>
+        {shelf.title === this.props.shelfTitle ? <Link className='bookshelf-sidebar__item__link__current' to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`}>
+          {shelf.title}
+        </Link> :
         <Link className='bookshelf-sidebar__item__link' to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`}>
           {shelf.title}
-        </Link>
+        </Link>}
         {(["Read", "Reading", "Want to Read"].indexOf(shelf.title) === -1 ) ?
           <span className='bookshelf-sidebar__item__delete' onClick={this.destroy(shelf.id)}>(delete)</span> : null
         }

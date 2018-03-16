@@ -26,6 +26,8 @@ const msp = (state, ownProps) =>{
   return({
     errors: state.errors.bookshelves,
     books,
+    shelfTitle:"All Books"
+
   });
 };
 

@@ -10,9 +10,11 @@ const msp = (state, ownProps) =>{
   const shelf = state.entities.bookshelves[ownProps.match.params.shelfId];
   const user = state.entities.users[ownProps.match.params.user_id];
   toFetch = ownProps.match.params.shelfId;
+  const shelfTitle = shelf ? shelf.title : null;
   return({
     errors: state.errors.bookshelves,
     books: selectBooks(state, shelf),
+    shelfTitle,
   });
 };
 

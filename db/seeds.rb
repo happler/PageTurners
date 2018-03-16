@@ -18,6 +18,7 @@ BOOK_IMAGES = %w(
   snow
 ).freeze
 User.destroy_all
+Bookshelf.destroy_all
 demo = User.create(username: "Muad'Dib", password: 'starwars')
 demo.set_initial_shelves!
 5.times do
@@ -82,7 +83,7 @@ books.each do |bk|
   )
 end
 
-Bookshelf.destroy_all
+
 
 15.times do
   Bookshelf.create(title: Faker::Beer.unique.name, owner_id: users.sample.id)

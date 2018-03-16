@@ -18,6 +18,7 @@ const msp = (state, ownProps) =>{
     userShelves,
     errors: state.errors.users,
     currentUsersPage,
+    shelfTitle: ownProps.shelfTitle
   });
 };
 
