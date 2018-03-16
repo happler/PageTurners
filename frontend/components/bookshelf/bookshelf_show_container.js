@@ -3,13 +3,17 @@ import { clearErrors } from '../../actions/global_actions';
 import BookshelfShow from './bookshelf_show';
 import { fetchShelf, deleteShelf } from '../../actions/bookshelf_actions';
 import { selectShelves, selectBooks} from '../../reducers/selectors';
+import { fetchUserShelves } from '../../actions/user_actions';
 
-let toFetch;
+
+let toFetch, userId;
 
 const msp = (state, ownProps) =>{
   const shelf = state.entities.bookshelves[ownProps.match.params.shelfId];
-  const user = state.entities.users[ownProps.match.params.user_id];
+  userId = ownProps.match.params.userId;
+  const user = state.entities.users[userId];
   toFetch = ownProps.match.params.shelfId;
+
   const shelfTitle = shelf ? shelf.title : null;
   return({
     errors: state.errors.bookshelves,
@@ -20,7 +24,7 @@ const msp = (state, ownProps) =>{
 
 const mdp = dispatch =>{
   return({
-    fetchResource: () => dispatch(fetchShelf(toFetch)),
+    fetchResource: () => dispatch(fetchUserShelves(userId)).then(() =>dispatch(fetchShelf(toFetch))),
     clearErrors: () => dispatch(clearErrors()),
   });
 };

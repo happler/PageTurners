@@ -31,9 +31,12 @@ PageTurners is a single page app inspired by Goodreads that utilizes a Ruby on R
   ### Frontend
   +React (v16.2.0) following the redux implementation paradigm
   +Jquery & AJAX for all requests after initial page loader
-  +
 
 
+## Significant Features
+
+###In Place Rating
+One of the pitfalls of online review validity is the bias of love-it or hate-it reviews.  because of the time investment of writing a review users will be motivated to review something only if they feel strongly about it, be that positive or negative. One solution is to make reviewing something easier for users, so that they'll be more likely to review due to the convenience and omnipresence of the feature.
 
 Things you may want to cover:
 
