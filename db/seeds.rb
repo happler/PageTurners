@@ -62,13 +62,13 @@ end
 Bookshelf.destroy_all
 
 15.times do
-  Bookshelf.create(title: Faker::StarTrek.location, owner_id: users.sample.id)
+  Bookshelf.create(title: Faker::Beer.unique.name, owner_id: users.sample.id)
 end
 
 bookshelves = Bookshelf.all
 
-Bookshelvings.destroy_all
+Bookshelving.destroy_all
 
 40.times do
-  Bookshelvings.create(book_id: books.sample.id, bookshelf_id: bookshelves.sample.id)
+  Bookshelving.create(book_id: books.sample.id, bookshelf_id: bookshelves.sample.id)
 end
