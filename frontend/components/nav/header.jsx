@@ -12,7 +12,7 @@ const Header = ({ user, logoutButton, history }) =>{
         <ul className="left-nav">
           <li className="left-nav-home" onClick={(e)=> history.push("/")}>PageTurners</li>
           <Link to={`/users/${user.id}/shelf`} className="left-nav-shelves">My Books</Link>
-          <Link to='/books/360' className="left-nav-shelves">Book Demo</Link>
+          <Link to='/' className="left-nav-shelves">All Books</Link>
         </ul>
         <ul className="right-nav">
           <Link to={`/users/${user.id}/shelf`} className="right-nav-user">
