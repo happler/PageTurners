@@ -18,7 +18,7 @@ const Header = ({ user, logoutButton, history }) =>{
           <Link to={`/users/${user.id}/shelf`} className="right-nav-user">
             {user.username}
           </Link>
-          <li onClick={(e) => logoutButton()} className='right-nav-logout'>
+          <li onClick={(e) => logoutButton().then( ()=> history.push("/") )} className='right-nav-logout'>
             Log Out
           </li>
         </ul>

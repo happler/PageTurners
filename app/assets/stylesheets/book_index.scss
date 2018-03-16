@@ -1,0 +1,26 @@
+.books-index-container{
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  flex-wrap: wrap;
+  padding-top: 65px;
+  align-items: center;
+}
+
+.books-index__cover{
+  width: 75px;
+}
+
+.books-index__item{
+  width: 75px;
+  margin: 15px;
+}
+
+.books-index__item:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.totally-not-just-for-centering{
+  display: flex;
+  justify-content: center;
+}
