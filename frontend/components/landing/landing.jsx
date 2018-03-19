@@ -19,7 +19,6 @@ class Landing extends React.Component{
 }
 
   handleDemo(e){
-    // debugger
     this.props.demoLogin();
   }
 

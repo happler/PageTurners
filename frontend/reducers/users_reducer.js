@@ -19,7 +19,6 @@ const UsersReducer = (state = {}, action) =>{
     case RECEIVE_USER_SHELVES:
       return merge({}, state, action.payload.user);
     case RECEIVE_SHELF:
-    debugger
       shelf = Object.values(action.payload.bookshelves)[0];
       newArr = state[shelf.ownerId].bookshelfIds.slice();
       if (newArr.indexOf(shelf.id) === -1){

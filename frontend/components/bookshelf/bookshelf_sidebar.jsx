@@ -21,7 +21,7 @@ class BookshelfSidebar extends React.Component{
   }
 
   destroy(id){
-    return e => this.props.deleteShelf(id);
+    return e => this.props.deleteShelf(id).then(() => this.props.match.params.userId == id ? this.props.history.push(`/users/${this.props.match.params.userId}/shelf`) : null);
   }
 
   handleSubmit(e){
@@ -38,7 +38,7 @@ class BookshelfSidebar extends React.Component{
         <Link className='bookshelf-sidebar__item__link' to={`/users/${this.props.match.params.userId}/shelf/${shelf.id}`}>
           {shelf.title}
         </Link>}
-        {(["Read", "Reading", "Want to Read"].indexOf(shelf.title) === -1 ) ?
+        {(["Read", "Reading", "Want to Read"].indexOf(shelf.title) === -1 && this.props.currentUsersPage ) ?
           <span className='bookshelf-sidebar__item__delete' onClick={this.destroy(shelf.id)}>(delete)</span> : null
         }
       </div>
