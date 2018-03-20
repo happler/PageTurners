@@ -18,7 +18,7 @@ const mdp = dispatch => {
   return({
     signup: (user) => dispatch(signup(user)),
     login: (user) => dispatch(login(user)),
-    demoLogin: () => dispatch(login({username:"Muad'Dib", password:'starwars'})),
+    demoLogin: () => dispatch(login({username:"Demo User", password:'starwars'})),
     clearErrors: () => dispatch(clearErrors()),
 
   });

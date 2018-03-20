@@ -19,7 +19,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return({
     submitAction: (user) => dispatch(signup(user)),
-    demoLogin: () => dispatch(login({username:"Muad'Dib", password:'starwars'})),
+    demoLogin: () => dispatch(login({username:"Demo User", password:'starwars'})),
     clearErrors: () => dispatch(clearErrors()),
 
   });
