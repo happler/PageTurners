@@ -45,7 +45,7 @@ class BookSynopsisItem extends React.Component{
     } else {
       return(
         <div className='book-synopsis-container'>
-            {splitSyn.map((section, idx) =><div><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
+            {splitSyn.map((section, idx) =><div key={idx} ><p className='book-synopsis__content' >{section}</p><br/></div>)}
         </div>
       );
     }

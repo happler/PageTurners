@@ -19,6 +19,9 @@ class MiniReview extends React.Component{
     this.adjustRating = this.adjustRating.bind(this);
     this.dynamicStars = this.dynamicStars.bind(this);
     this.dynamicStarsReset = this.dynamicStarsReset.bind(this);
+
+  }
+  componentDidMount(){
     this.dynamicStarsReset();
   }
 
