@@ -36,7 +36,10 @@ PageTurners is a single page app inspired by Goodreads that utilizes a Ruby on R
 ## Significant Features
 
 ###In Place Rating
-One of the pitfalls of online review validity is the bias of love-it or hate-it reviews.  because of the time investment of writing a review users will be motivated to review something only if they feel strongly about it, be that positive or negative. One solution is to make reviewing something easier for users, so that they'll be more likely to review due to the convenience and omnipresence of the feature.
+One of the pitfalls of online review validity is the bias of love-it or hate-it reviews.  Because of the time investment of writing a review users will be motivated to review something only if they feel strongly about it, be that positive or negative. One solution is to make reviewing something easier for users, so that they'll be more likely to review due to the convenience and omnipresence of the feature.
+To accomplish this, I took a two-pronged approach to ratings.  First, I created a long-form book review that let users write as much as they like, to be displayed at the bottom of each book's page.  In addition, I also created a short-form that only lets users rate the book on a scale from 1-5.  The long-form is available only on the book's page, but the short-form is available everywhere the book is displayed.
+
+###Review Details Graph
 
 Things you may want to cover:
 
