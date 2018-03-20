@@ -21,7 +21,7 @@ BOOK_IMAGES = %w(
 BOOKS = %i(
   seveneves
   casino
-  dune
+  duner
   wool
   city
   kill
@@ -45,7 +45,7 @@ BOOKS = %i(
 BOOK_NAMES = {
   seveneves: 'Seveneves',
   casino: 'Casino Royale',
-  dune: 'Dune',
+  duner: 'Dune',
   wool: 'Wool Omnibus',
   city: 'The City & the City',
   kill: 'All You Need is Kill',
@@ -70,7 +70,7 @@ BOOK_NAMES = {
 BOOK_AUTHORS = {
   seveneves: 'Neal Stephenson',
   casino: 'Ian Flemming',
-  dune: 'Frank Herbert',
+  duner: 'Frank Herbert',
   wool: 'Hugh Howey',
   city: 'China Miéville',
   kill: 'Hiroshi Sakurazaka',
@@ -102,7 +102,7 @@ Five thousand years later, their progeny—seven distinct races now three billio
 
 A writer of dazzling genius and imaginative vision, Neal Stephenson combines science, philosophy, technology, psychology, and literature in a magnificent work of speculative fiction that offers a portrait of a future that is both extraordinary and eerily recognizable. As he did in Anathem, Cryptonomicon, the Baroque Cycle, and Reamde, Stephenson explores some of our biggest ideas and perplexing challenges in a breathtaking saga that is daring, engrossing, and altogether brilliant. ',
   casino: "Introducing James Bond: charming, sophisticated, handsome, chillingly ruthless and licensed to kill. This, the first of Ian Fleming's tales of secret agent 007, finds Bond on a mission to neutralize a lethal, high-rolling Russian operative called simply \"le Chiffre\" -- by ruining him at the Baccarat table and forcing his Soviet spymasters to \"retire\" him. It seems that lady luck is taken with 007 -- le Chiffre has hit a losing streak. But some people just refuse to play by the rules, and Bond's attraction to a beautiful female agent leads him to disaster and an unexpected savior... ",
-  dune: "Set in the far future amidst a sprawling feudal interstellar empire where planetary dynasties are controlled by noble houses that owe an allegiance to the imperial House Corrino, Dune tells the story of young Paul Atreides (the heir apparent to Duke Leto Atreides and heir of House Atreides) as he and his family accept control of the desert planet Arrakis, the only source of the 'spice' melange, the most important and valuable substance in the cosmos. The story explores the complex, multi-layered interactions of politics, religion, ecology, technology, and human emotion as the forces of the empire confront each other for control of Arrakis.
+  duner: "Set in the far future amidst a sprawling feudal interstellar empire where planetary dynasties are controlled by noble houses that owe an allegiance to the imperial House Corrino, Dune tells the story of young Paul Atreides (the heir apparent to Duke Leto Atreides and heir of House Atreides) as he and his family accept control of the desert planet Arrakis, the only source of the 'spice' melange, the most important and valuable substance in the cosmos. The story explores the complex, multi-layered interactions of politics, religion, ecology, technology, and human emotion as the forces of the empire confront each other for control of Arrakis.
 
 Published in 1965, it won the Hugo Award in 1966 and the inaugural Nebula Award for Best Novel. Dune is frequently cited as the world's best-selling sf novel. ",
   wool: "This Omnibus Edition collects the five Wool books into a single volume. It is for those who arrived late to the party and who wish to save a dollar or two while picking up the same stories in a single package.
