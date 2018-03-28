@@ -42,8 +42,9 @@ class Api::BookshelvesController < ApplicationController
   def unshelve
     @bookshelf = Bookshelf.find(params[:id])
     @book = Book.find(params[:book][:id])
+    was_there = @bookshelf.books.include?(@book)
     @bookshelf.books.delete(@book)
-    if @bookshelf.books.include?(@book)
+    if was_there
       render :shelve
     else
       render json: ['Whoops, something went wrong.'], status: 409

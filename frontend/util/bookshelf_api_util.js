@@ -1,36 +1,31 @@
-export const shelveBook = (shelfId, bookId) =>(
+export const shelveBook = (shelfId, bookId) =>
   $.ajax({
-    url:`/api/bookshelves/${shelfId}/shelve`,
-    method:'POST',
-    data: {book: bookId},
-  })
-);
+    url: `/api/bookshelves/${shelfId}/shelve`,
+    method: "POST",
+    data: { book: { id: bookId } }
+  });
 
-export const unshelveBook = (shelfId, bookId) =>(
+export const unshelveBook = (shelfId, bookId) =>
   $.ajax({
-    url:`/api/bookshelves/${shelfId}/unshelve`,
-    method:'DELETE',
-    data: {book: bookId},
-  })
-);
+    url: `/api/bookshelves/${shelfId}/unshelve`,
+    method: "DELETE",
+    data: { book: { id: bookId } }
+  });
 
-export const fetchShelf = (id) =>(
+export const fetchShelf = id =>
   $.ajax({
-    url:`/api/bookshelves/${id}`
-  })
-);
+    url: `/api/bookshelves/${id}`
+  });
 
-export const postShelf = (bookshelves) =>(
+export const postShelf = bookshelves =>
   $.ajax({
-    url:`/api/bookshelves`,
-    method: 'POST',
-    data: { bookshelves },
-  })
-);
+    url: `/api/bookshelves`,
+    method: "POST",
+    data: { bookshelves }
+  });
 
-export const deleteShelf = (shelfId) =>(
+export const deleteShelf = shelfId =>
   $.ajax({
-    url:`/api/bookshelves/${shelfId}`,
-    method:'DELETE',
-  })
-);
+    url: `/api/bookshelves/${shelfId}`,
+    method: "DELETE"
+  });
