@@ -17,8 +17,8 @@ const BookshelfItem = ({ book, history }) => {
     ? (
         (avgReview * reviewCount + currentUserReview[0].rating) /
         (reviewCount + 1)
-      ).toFixed(3)
-    : avgReview.toFixed(3);
+      ).toFixed(2)
+    : avgReview.toFixed(2);
 
   const toBookPage = () => history.push(`/books/${id}`);
 

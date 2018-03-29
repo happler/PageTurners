@@ -5,7 +5,13 @@ import BookshelfSidebarContainer from "./bookshelf_sidebar_container";
 class BookshelfShow extends React.Component {
   componentDidMount() {
     window.scroll(0, 0);
-    if (!this.props.books) {
+    let allBooksExist = true;
+    if (this.props.books) {
+      this.props.books.forEach(book => {
+        if (!book) allBooksExist = false;
+      });
+    }
+    if (!(this.props.books && allBooksExist)) {
       this.props.fetchResource();
     }
   }

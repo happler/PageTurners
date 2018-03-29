@@ -6,5 +6,6 @@ json.set! book.id do
   json.avgReview book.average_rating
   json.reviewCount book.reviews.length
   json.currentUserReview book.reviews.where(user_id: current_user.id)
+  json.reviewIds []
   # json.dateAdded
 end
