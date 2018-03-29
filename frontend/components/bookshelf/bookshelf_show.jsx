@@ -26,7 +26,15 @@ class BookshelfShow extends React.Component {
 
   render() {
     const { books, errors, shelfTitle } = this.props;
-    if (!books) {
+    // debugger;
+    let allBooksExist = true;
+    if (books) {
+      books.forEach(book => {
+        if (!book) allBooksExist = false;
+      });
+    }
+
+    if (!(books && allBooksExist)) {
       return (
         <div className="bookshelf-show-loading-container">
           <h2 className="bookshelf-show-loading">Loading...</h2>
@@ -38,6 +46,7 @@ class BookshelfShow extends React.Component {
         </div>
       );
     }
+    // debugger;
 
     return (
       <div className="bookshelf-show">
