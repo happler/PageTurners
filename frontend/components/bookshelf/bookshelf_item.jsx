@@ -14,8 +14,19 @@ class BookshelfItem extends React.Component {
   }
 
   updateCurrentUserReview(review) {
+    this.setState(
+      { currentUserReview: [review], newReviewFlag: true },
+      this.updateCallback.bind(this)
+    );
+  }
+  // componentDidUpdate() {
+  //   debugger;
+  //   this.setReviewFlag();
+  //   this.setUpdatedRating();
+  // }
+
+  updateCallback() {
     debugger;
-    this.setState({ currentUserReview: [review], newReviewFlag: true });
     this.setReviewFlag();
     this.setUpdatedRating();
   }
@@ -30,7 +41,7 @@ class BookshelfItem extends React.Component {
 
   setUpdatedRating() {
     let updatedRating;
-
+    debugger;
     if (this.state.newReviewFlag) {
       if (this.state.hadReviewedFlag) {
         updatedRating = (
