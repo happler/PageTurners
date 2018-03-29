@@ -32,7 +32,6 @@ class BookshelfShow extends React.Component {
 
   render() {
     const { books, errors, shelfTitle } = this.props;
-    // debugger;
     let allBooksExist = true;
     if (books) {
       books.forEach(book => {
@@ -52,7 +51,6 @@ class BookshelfShow extends React.Component {
         </div>
       );
     }
-    // debugger;
 
     return (
       <div className="bookshelf-show">
