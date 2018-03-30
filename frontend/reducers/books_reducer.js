@@ -37,8 +37,16 @@ const BooksReducer = (state = {}, action) => {
       return newState;
 
     case UPDATE_AVERAGE_REVIEW:
+      review = Object.values(
+        [action.payload.bookId].currentUserReview
+      ).slice()[0];
+      merge(review, { rating: action.payload.updatedRating });
+
       return merge({}, state, {
-        [action.payload.bookId]: { avgReview: action.payload.avgReview }
+        [action.payload.bookId]: {
+          avgReview: action.payload.avgReview,
+          currentUserReview: review
+        }
       });
     default:
       return state;

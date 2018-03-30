@@ -40,29 +40,31 @@ class BookshelfItem extends React.Component {
   }
 
   setUpdatedRating() {
-    let updatedRating;
+    let updatedAvgRating;
     if (this.state.newReviewFlag) {
       if (this.state.hadReviewedFlag) {
-        updatedRating = (
-          (this.props.book.avgReview * (this.props.book.reviewCount - 1) +
+        updatedAvgRating = (
+          (this.props.book.avgReview * this.props.book.reviewCount -
+            this.props.book.currentUserReview.rating +
             this.state.currentUserReview[0].rating) /
           this.props.book.reviewCount
         ).toFixed(2);
       } else {
-        updatedRating = (
+        updatedAvgRating = (
           (this.props.book.avgReview * this.props.book.reviewCount +
             this.state.currentUserReview[0].rating) /
           (this.props.book.reviewCount + 1)
         ).toFixed(2);
       }
     } else {
-      updatedRating = this.props.book.avgReview.toFixed(2);
+      updatedAvgRating = this.props.book.avgReview.toFixed(2);
     }
     this.props.updateAverageReview({
-      avgRating: updatedRating,
-      bookId: this.props.book.id
+      avgRating: updatedAvgRating,
+      bookId: this.props.book.id,
+      updatedRating: this.state.currentUserReview[0].rating
     });
-    this.setState({ updatedRating });
+    this.setState({ updatedAvgRating });
   }
 
   render() {
