@@ -41,7 +41,6 @@ class BookshelfItem extends React.Component {
 
   setUpdatedRating() {
     let updatedRating;
-    debugger;
     if (this.state.newReviewFlag) {
       if (this.state.hadReviewedFlag) {
         updatedRating = (
@@ -59,6 +58,10 @@ class BookshelfItem extends React.Component {
     } else {
       updatedRating = this.props.book.avgReview.toFixed(2);
     }
+    this.props.updateAverageReview({
+      avgRating: updatedRating,
+      bookId: this.props.book.id
+    });
     this.setState({ updatedRating });
   }
 

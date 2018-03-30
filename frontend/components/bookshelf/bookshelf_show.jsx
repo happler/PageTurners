@@ -31,7 +31,7 @@ class BookshelfShow extends React.Component {
   }
 
   render() {
-    const { books, errors, shelfTitle } = this.props;
+    const { books, errors, shelfTitle, updateAverageReview } = this.props;
     let allBooksExist = true;
     if (books) {
       books.forEach(book => {
@@ -77,7 +77,11 @@ class BookshelfShow extends React.Component {
               </thead>
               <tbody>
                 {books.map((book, idx) => (
-                  <BookshelfItem key={idx} book={book} />
+                  <BookshelfItem
+                    key={idx}
+                    book={book}
+                    updateAverageReview={updateAverageReview}
+                  />
                 ))}
               </tbody>
             </table>

@@ -1,6 +1,10 @@
 import { merge } from "lodash";
 import { RECEIVE_BOOKS } from "../actions/book_actions";
-import { RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_actions";
+import {
+  RECEIVE_REVIEW,
+  REMOVE_REVIEW,
+  UPDATE_AVERAGE_REVIEW
+} from "../actions/review_actions";
 import { RECEIVE_SHELF } from "../actions/bookshelf_actions";
 import { RECEIVE_USER_SHELVES } from "../actions/user_actions";
 
@@ -31,6 +35,11 @@ const BooksReducer = (state = {}, action) => {
       const idx = newState[review.bookId].reviewIds.indexOf(review.id);
       newState[review.bookId].reviewIds.splice(idx, 1);
       return newState;
+
+    case UPDATE_AVERAGE_REVIEW:
+      return merge({}, state, {
+        [action.payload.bookId]: { avgReview: action.payload.avgReview }
+      });
     default:
       return state;
   }
