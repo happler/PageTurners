@@ -20,18 +20,19 @@ class BookShelve extends React.Component {
     const shelveIds = Object.keys(usersShelves);
     const shelfItems = shelveIds.map(shelfId => {
       const bookId = this.props.match.params.id;
+      debugger;
       return (
         <div className="book-shelve__item">
           <p className="book-shelve__item__title">
             {usersShelves[shelfId].title}
           </p>
-          {usersShelves[shelfId].bookIds.includes(bookId) ? (
+          {usersShelves[shelfId].bookIds.includes(Number(bookId)) ? (
             <span onClick={() => unshelveBook(shelfId, bookId)}>
-              Add to Shelf
+              Remove from Shelf
             </span>
           ) : (
             <span onClick={() => shelveBook(shelfId, bookId)}>
-              Remove From Shelf
+              Add to Shelf
             </span>
           )}
         </div>
