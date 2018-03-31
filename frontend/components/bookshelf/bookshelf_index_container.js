@@ -22,7 +22,7 @@ const msp = (state, ownProps) => {
   const booksArr = allShelves
     ? allShelves.map(shelf => selectBooks(state, shelf))
     : null;
-  const books = booksArr ? booksArr.flatten() : null;
+  const books = booksArr ? booksArr.flatten() : null; //make books unique as well, check lodash?
   toFetch = ownProps.match.params.userId;
   return {
     errors: state.errors.bookshelves,

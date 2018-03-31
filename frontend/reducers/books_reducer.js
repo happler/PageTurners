@@ -20,14 +20,16 @@ const BooksReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       review = Object.values(action.payload.reviews)[0];
       newArr = state[review.bookId].reviewIds.slice();
-
+      debugger;
       if (newArr.indexOf(review.id) === -1) {
         newArr.push(review.id);
         return merge({}, state, {
           [review.bookId]: { reviewIds: newArr, currentUserReview: [review] }
         });
       } else {
-        return state;
+        return merge({}, state, {
+          [review.bookId]: { currentUserReview: [review] }
+        });
       }
     case REMOVE_REVIEW:
       const newState = merge({}, state);
@@ -37,15 +39,17 @@ const BooksReducer = (state = {}, action) => {
       return newState;
 
     case UPDATE_AVERAGE_REVIEW:
+      debugger;
       review = Object.values(
-        [action.payload.bookId].currentUserReview
+        state[action.payload.bookId].currentUserReview
       ).slice()[0];
       merge(review, { rating: action.payload.updatedRating });
+      newArr = [review];
 
       return merge({}, state, {
         [action.payload.bookId]: {
-          avgReview: action.payload.avgReview,
-          currentUserReview: review
+          avgReview: action.payload.avgRating,
+          currentUserReview: newArr
         }
       });
     default:

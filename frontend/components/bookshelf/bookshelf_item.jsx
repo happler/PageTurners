@@ -5,12 +5,14 @@ import MiniReviewContainer from "../review/mini_review_container";
 class BookshelfItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentUserReview: props.book.currentUserReview };
+    this.state = {
+      currentUserReview: props.book.currentUserReview
+    };
   }
 
   componentDidMount() {
     this.setReviewFlag();
-    this.setUpdatedRating();
+    // this.setState({ avgRating: this.props.books.avgRating });
   }
 
   updateCurrentUserReview(review) {
@@ -40,12 +42,13 @@ class BookshelfItem extends React.Component {
   }
 
   setUpdatedRating() {
+    debugger;
     let updatedAvgRating;
     if (this.state.newReviewFlag) {
       if (this.state.hadReviewedFlag) {
         updatedAvgRating = (
           (this.props.book.avgReview * this.props.book.reviewCount -
-            this.props.book.currentUserReview.rating +
+            this.props.book.currentUserReview[0].rating +
             this.state.currentUserReview[0].rating) /
           this.props.book.reviewCount
         ).toFixed(2);
@@ -59,12 +62,13 @@ class BookshelfItem extends React.Component {
     } else {
       updatedAvgRating = this.props.book.avgReview.toFixed(2);
     }
+    debugger;
     this.props.updateAverageReview({
       avgRating: updatedAvgRating,
       bookId: this.props.book.id,
       updatedRating: this.state.currentUserReview[0].rating
     });
-    this.setState({ updatedAvgRating });
+    this.setState({ avgRating: updatedAvgRating });
   }
 
   render() {
@@ -87,7 +91,7 @@ class BookshelfItem extends React.Component {
         </td>
         <td className="bookshelf-item__author">{author}</td>
         <td className="bookshelf-item__avgRating">
-          {this.state.updatedRating}
+          {Number(avgReview).toFixed(2)}
         </td>
         <td className="bookshelf-item__mini_review">
           <MiniReviewContainer
