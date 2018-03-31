@@ -1,15 +1,10 @@
 import React from "react";
 import MiniReviewContainer from "../review/mini_review_container";
+import { reviewStats } from "../../util/review_util";
 
 const BookImageItem = ({ coverImage, reviews }) => {
   let reviewCount = 0.0001;
   let total = 0;
-
-  reviews.forEach(review => {
-    reviewCount++;
-    total += review.rating;
-  });
-  const average = total / reviewCount;
 
   return (
     <div className="book-image-container book-show__left">
