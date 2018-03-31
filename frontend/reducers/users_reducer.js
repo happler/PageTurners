@@ -10,7 +10,7 @@ import {
 
 const UsersReducer = (state = {}, action) => {
   Object.freeze(state);
-  let shelf, newArr, newState;
+  let shelf, newArr, newState, idx;
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -34,16 +34,13 @@ const UsersReducer = (state = {}, action) => {
     case REMOVE_SHELF:
       newState = merge({}, state);
       shelf = Object.values(action.payload.bookshelves)[0];
-      const idx = newState[shelf.ownerId].bookshelfIds.indexOf(shelf.id);
+      idx = newState[shelf.ownerId].bookshelfIds.indexOf(shelf.id);
       newState[shelf.ownerId].bookshelfIds.splice(idx, 1);
       return newState;
     case RECEIVE_SHELVING:
-      debugger;
-      newState = merge({}, state);
       newArr =
         state[action.payload.ownerId].bookshelves[action.payload.bookshelfId]
           .bookIds;
-      debugger;
       if (newArr.indexOf(action.payload.bookId) === -1) {
         newArr.push(action.payload.bookId);
         return merge({}, state, {
@@ -54,6 +51,17 @@ const UsersReducer = (state = {}, action) => {
       } else {
         return state;
       }
+    case REMOVE_SHELVING:
+      newArr =
+        state[action.payload.ownerId].bookshelves[action.payload.bookshelfId]
+          .bookIds;
+      idx = newArr.indexOf(action.payload.bookId);
+      newArr.splice(idx, 1);
+      return merge({}, state, {
+        [action.payload.ownerId]: {
+          bookshelves: { [action.payload.bookshelfId]: { bookIds: newArr } }
+        }
+      });
     default:
       return state;
   }
