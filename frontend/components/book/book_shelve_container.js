@@ -3,7 +3,6 @@ import { shelveBook, unshelveBook } from "../../actions/bookshelf_actions";
 import BookShelve from "./book_shelve";
 
 const msp = state => {
-  debugger;
   const usersShelves =
     state.entities.users[state.session.currentUser.id].bookshelves;
   return {

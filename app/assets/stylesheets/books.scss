@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.book-show{
+.book-show {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -18,14 +18,14 @@
   width: 950px;
 }
 
-.book-show-loading-container{
+.book-show-loading-container {
   padding: 65px 20px;
 }
 
 .book-synopsis-container {
   width: 450px;
   border-bottom: 1px solid #ccc;
-  padding-bottom:15px;
+  padding-bottom: 15px;
 }
 
 .book-image__cover-photo {
@@ -33,53 +33,53 @@
   width: 150px;
 }
 
-.book-title__title{
-  font-size:20px;
-  font-family: 'Merriweather', serif;
-  font-weight:bold;
-  line-height: 26px
+.book-title__title {
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  line-height: 26px;
 }
 
-.book-title__rating{
-  padding:5px;
+.book-title__rating {
+  padding: 5px;
 }
 
-.book-show__right{
-  padding-left:10px
+.book-show__right {
+  padding-left: 10px;
 }
 
-.book-show-container{
-  margin:20px 20px 20px 5px
+.book-show-container {
+  margin: 20px 20px 20px 5px;
 }
 
-.book-synopsis__hidden{
+.book-synopsis__hidden {
   display: none;
 }
 
-.book-synopsis__swap-content:hover{
+.book-synopsis__swap-content:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.book-details__swap-content:hover{
+.book-details__swap-content:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.book-synopsis__swap-content{
+.book-synopsis__swap-content {
   color: blue;
   position: relative;
-  top:-20px;
+  top: -20px;
 }
 
-.book-details__hidden{
+.book-details__hidden {
   display: none;
 }
-.book-details__visible{
+.book-details__visible {
   border-bottom: 1px solid #ccc;
 }
 
-.book-details-long__row{
+.book-details-long__row {
   display: flex;
   flex-direction: row;
   width: 500px;
@@ -89,39 +89,95 @@
 .book-details-long__row__header {
   font-weight: 700;
   // line-height: 18px;
-  font-family: 'lato';
-  padding:8px 8px 8px 0;
+  font-family: "lato";
+  padding: 8px 8px 8px 0;
 }
 
-.book-details__row span{
-  font-family: 'lato';
+.book-details__row span {
+  font-family: "lato";
   color: #999;
   font-size: 14px;
 }
 
-.book-details__swap-content{
-  font-family: 'lato';
+.book-details__swap-content {
+  font-family: "lato";
   font-size: 14px;
-  color:rgb(0,99,93);
+  color: rgb(0, 99, 93);
   width: 90px;
 }
 
-.book-synopsis__content{
+.book-synopsis__content {
   white-space: pre-line;
   text-indent: 20px;
 }
 
-.book-show__add__review__link:hover{
+.book-show__add__review__link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.book-show__add__review__link{
-  font-family: 'lato';
+.book-show__add__review__link {
+  font-family: "lato";
   font-size: 14px;
-  color:rgb(0,99,93);
+  color: rgb(0, 99, 93);
   width: 90px;
 }
-.content-page-container{
+.content-page-container {
   background-color: #eae8de;
+}
+
+.book-shelve__closed {
+  display: none;
+}
+
+.book-shelve__open {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: ghostwhite;
+  position: absolute;
+  // top: 5px;
+}
+
+.book-shelve__item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid darkgrey;
+  justify-content: space-between;
+}
+
+.book-shelve__remove,
+.book-shelve__add {
+  font-size: 8px;
+  color: blue;
+  border-left: 1px solid black;
+  padding: 3px;
+}
+
+.book-shelve__add {
+  padding: 9.5px;
+}
+
+.book-shelve__remove:hover,
+.book-shelve__add:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.book-shelve__dropdown__toggle {
+  padding: 2px;
+  // border: 1px solid lightgrey;
+  border-radius: 4px;
+  font-family: "lato" sans-serif;
+  text-align: center;
+  background-color: lightgrey;
+}
+.book-shelve__dropdown__toggle:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+}
+
+.book-shelve__item__title {
+  padding: 2px 3px;
 }
