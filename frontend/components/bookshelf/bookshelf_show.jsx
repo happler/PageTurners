@@ -42,7 +42,7 @@ class BookshelfShow extends React.Component {
     if (!(books && allBooksExist)) {
       return (
         <div className="bookshelf-show-loading-container">
-          <h2 className="bookshelf-show-loading">Loading...</h2>
+          <img className="book-show-loading" src={window.loading} />
           {errors.map((error, idx) => (
             <li className="bookshelf-show-error" key={idx}>
               {error}
