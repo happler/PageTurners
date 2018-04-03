@@ -27,7 +27,7 @@ class Header extends React.Component {
             >
               My Books
             </Link>
-            <Link to="/" className="left-nav-shelves">
+            <Link to="/" className="left-nav-index">
               All Books
             </Link>
           </ul>
