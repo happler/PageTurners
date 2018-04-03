@@ -8,7 +8,7 @@ class BookshelfShow extends React.Component {
     let allBooksExist = true;
     if (this.props.books) {
       this.props.books.forEach(book => {
-        if (!book) allBooksExist = false;
+        if (!book || !book.currentUserReview) allBooksExist = false;
       });
     }
     if (!(this.props.books && allBooksExist)) {
@@ -35,7 +35,7 @@ class BookshelfShow extends React.Component {
     let allBooksExist = true;
     if (books) {
       books.forEach(book => {
-        if (!book) allBooksExist = false;
+        if (!book || !book.currentUserReview) allBooksExist = false;
       });
     }
 

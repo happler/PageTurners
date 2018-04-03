@@ -18,8 +18,7 @@ const msp = (state, ownProps) => {
     review,
     errors: state.errors.reviews,
     bookId,
-    hasReview,
-    updateAverage: ownProps.updateCurrentUserReview
+    hasReview
   };
 };
 

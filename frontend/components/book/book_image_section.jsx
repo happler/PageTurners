@@ -1,5 +1,6 @@
 import React from "react";
 import MiniReviewContainer from "../review/mini_review_container";
+import BookShelveContainer from "./book_shelve_container";
 import { reviewStats } from "../../util/review_util";
 
 const BookImageItem = ({ coverImage, reviews }) => {
