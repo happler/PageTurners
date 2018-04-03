@@ -30,10 +30,15 @@ class MiniReview extends React.Component {
       review.rating = rating;
       this.setState({ review });
       review.book_id = this.props.bookId;
+      // this.props.updateAverage(review); //change when rendering from book show
       if (this.state.hasReview) {
-        this.props.patchReview(review);
+        this.props
+          .patchReview(review)
+          .then(() => this.props.updateAverage(review));
       } else {
-        this.props.postReview(review);
+        this.props
+          .postReview(review)
+          .then(() => this.props.updateAverage(review));
         this.setState({ hasReview: true });
       }
     };

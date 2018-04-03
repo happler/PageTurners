@@ -1,23 +1,25 @@
 class Api::ReviewsController < ApplicationController
   before_action :ensure_logged_in
-  
+
 
   def create
     @review = current_user.reviews.new(review_params)
     if @review.save
+      @book = @review.book
       render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
   end
 
-  def edit
-    @review = current_user.reviews.find(params[:id])
-  end
+  # def edit
+  #   @review = current_user.reviews.find(params[:id])
+  # end
 
   def update
     @review = current_user.reviews.find(params[:id])
     if @review.update(review_params)
+      @book = @review.book
       render :show
     else
       render json: @review.errors.full_messages, status: 422
@@ -28,6 +30,7 @@ class Api::ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     if @review.user_id == current_user.id
+      @book = @review.book
       @review.destroy
       render :show
     else
@@ -38,6 +41,8 @@ class Api::ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     if @review
+      @book = review.book
+
       render :show
     else
       render json: @review.errors.full_messages, status: 404

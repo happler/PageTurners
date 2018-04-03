@@ -26,7 +26,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return {
     fetchResource: () => dispatch(fetchUserShelves(toFetch)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    updateAverageReview: review => dispatch(updateAverageReview(review))
   };
 };
 
