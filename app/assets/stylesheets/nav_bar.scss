@@ -54,7 +54,9 @@
 }
 
 .right-nav-logout:hover,
-.left-nav-shelves:hover {
+.left-nav-shelves:hover,
+.left-nav-index:hover,
+.right-nav-user:hover {
   background-color: #352213;
   color: white;
   cursor: pointer;
