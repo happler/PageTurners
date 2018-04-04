@@ -30,7 +30,6 @@ class MiniReview extends React.Component {
       review.rating = rating;
       this.setState({ review });
       review.book_id = this.props.bookId;
-      // this.props.updateAverage(review); //change when rendering from book show
       if (this.state.hasReview) {
         this.props.patchReview(review);
       } else {
@@ -57,16 +56,7 @@ class MiniReview extends React.Component {
 
   dynamicStarsReset() {
     const star = this.state.review.rating;
-    const ratingKeys = Object.keys(this.state.stars);
-    const newState = Object.assign({}, this.state);
-    ratingKeys.forEach(key => {
-      if (key <= star) {
-        newState.stars[key] = window.yellowStar;
-      } else {
-        newState.stars[key] = window.hollowStar;
-      }
-    });
-    this.setState(newState);
+    this.dynamicStars(star)();
   }
 
   render() {
