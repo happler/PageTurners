@@ -4,7 +4,9 @@ import BookShelve from "./book_shelve";
 
 const msp = (state, ownProps) => {
   const usersShelves =
-    state.entities.users[state.session.currentUser.id].bookshelves;
+    (state.entities.users[state.session.currentUser.id] &&
+      state.entities.users[state.session.currentUser.id].bookshelves) ||
+    {};
   return {
     usersShelves,
     bookId: ownProps.bookId
