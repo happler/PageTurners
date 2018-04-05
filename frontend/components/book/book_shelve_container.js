@@ -2,11 +2,12 @@ import { connect } from "react-redux";
 import { shelveBook, unshelveBook } from "../../actions/bookshelf_actions";
 import BookShelve from "./book_shelve";
 
-const msp = state => {
+const msp = (state, ownProps) => {
   const usersShelves =
     state.entities.users[state.session.currentUser.id].bookshelves;
   return {
-    usersShelves
+    usersShelves,
+    bookId: ownProps.bookId
   };
 };
 

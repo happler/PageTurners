@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import MiniReviewContainer from "../review/mini_review_container";
+import BookShelveContainer from "../book/book_shelve_container";
 
 class BookshelfItem extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class BookshelfItem extends React.Component {
   }
 
   render() {
-    const { book, history } = this.props;
+    const { book, history, onCurrentUserShelf } = this.props;
     const {
       id,
       title,
@@ -39,6 +40,9 @@ class BookshelfItem extends React.Component {
         </td>
         <td className="bookshelf-item__mini_review">
           <MiniReviewContainer reviews={currentUserReview} bookId={id} />
+        </td>
+        <td>
+          <BookShelveContainer passedBookId={id} />
         </td>
       </tr>
     );

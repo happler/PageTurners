@@ -15,11 +15,12 @@ class BookShelve extends React.Component {
     }
   }
   render() {
-    const { usersShelves, shelveBook, unshelveBook } = this.props;
+    const { usersShelves, shelveBook, unshelveBook, passedBookId } = this.props;
+    console.log(usersShelves);
 
     const shelveIds = Object.keys(usersShelves);
     const shelfItems = shelveIds.map(shelfId => {
-      const bookId = this.props.match.params.id;
+      const bookId = passedBookId || this.props.match.params.id;
       return (
         <div key={shelfId} className="book-shelve__item">
           <p className="book-shelve__item__title">

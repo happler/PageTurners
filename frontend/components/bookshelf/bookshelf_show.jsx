@@ -31,7 +31,13 @@ class BookshelfShow extends React.Component {
   }
 
   render() {
-    const { books, errors, shelfTitle, updateAverageReview } = this.props;
+    const {
+      books,
+      errors,
+      shelfTitle,
+      updateAverageReview,
+      currentUserId
+    } = this.props;
     let allBooksExist = true;
     if (books) {
       books.forEach(book => {
@@ -73,6 +79,7 @@ class BookshelfShow extends React.Component {
                   <th>Author</th>
                   <th>Avg Rating</th>
                   <th className="bookshelf-show__table__rating">Rating</th>
+                  <th>Shelve</th>
                 </tr>
               </thead>
               <tbody>
@@ -81,6 +88,9 @@ class BookshelfShow extends React.Component {
                     key={idx}
                     book={book}
                     updateAverageReview={updateAverageReview}
+                    onCurrentUserShelf={
+                      currentUserId === this.props.match.params.userId
+                    }
                   />
                 ))}
               </tbody>

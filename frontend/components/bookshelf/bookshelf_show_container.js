@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
   return {
     errors: state.errors.bookshelves,
     books: selectBooks(state, shelf),
-    shelfTitle
+    shelfTitle,
+    currentUserId: state.session.currentUser.id
   };
 };
 
