@@ -16,7 +16,6 @@ class BookShelve extends React.Component {
   }
   render() {
     const { usersShelves, shelveBook, unshelveBook, passedBookId } = this.props;
-    console.log(usersShelves);
 
     const shelveIds = Object.keys(usersShelves);
     const shelfItems = shelveIds.map(shelfId => {

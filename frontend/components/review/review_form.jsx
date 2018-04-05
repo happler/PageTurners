@@ -22,9 +22,6 @@ class ReviewForm extends React.Component {
     this.dynamicStars = this.dynamicStars.bind(this);
     this.dynamicStarsReset = this.dynamicStarsReset.bind(this);
   }
-  componentDidMount() {
-    this.dynamicStarsReset();
-  }
 
   adjustRating(rating) {
     return e => {
@@ -62,6 +59,7 @@ class ReviewForm extends React.Component {
   }
 
   componentDidMount() {
+    this.dynamicStarsReset();
     window.scroll(0, 0);
     if (!this.props.book || !this.props.book.coverImage) {
       this.props.fetchBook(this.props.match.params.id);
