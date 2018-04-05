@@ -93,18 +93,18 @@
 .book-details-long__row__header {
   font-weight: 700;
   // line-height: 18px;
-  font-family: "lato";
+  font-family: "lato", sans-serif;
   padding: 8px 8px 8px 0;
 }
 
 .book-details__row span {
-  font-family: "lato";
+  font-family: "lato", sans-serif;
   color: #999;
   font-size: 14px;
 }
 
 .book-details__swap-content {
-  font-family: "lato";
+  font-family: "lato", sans-serif;
   font-size: 14px;
   color: rgb(0, 99, 93);
   width: 90px;
@@ -121,7 +121,7 @@
 }
 
 .book-show__add__review__link {
-  font-family: "lato";
+  font-family: "lato", sans-serif;
   font-size: 14px;
   color: rgb(0, 99, 93);
   width: 90px;
@@ -157,10 +157,11 @@
   color: blue;
   border-left: 1px solid black;
   padding: 3px;
+  font-family: "lato", sans-serif;
 }
 
 .book-shelve__add {
-  padding: 9.5px;
+  padding: 10px;
 }
 
 .book-shelve__remove:hover,
@@ -173,7 +174,7 @@
   padding: 2px;
   // border: 1px solid lightgrey;
   border-radius: 0 0 4px 4px;
-  font-family: "lato" sans-serif;
+  font-family: "lato", sans-serif;
   text-align: center;
   background-color: lightgrey;
 }
@@ -184,4 +185,5 @@
 
 .book-shelve__item__title {
   padding: 2px 3px;
+  font-family: "lato", sans-serif;
 }
