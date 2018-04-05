@@ -41,7 +41,7 @@ class Api::ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     if @review
-      @book = review.book
+      @book = @review.book
 
       render :show
     else
