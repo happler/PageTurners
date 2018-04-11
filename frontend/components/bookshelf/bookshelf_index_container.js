@@ -14,9 +14,11 @@ const msp = (state, ownProps) => {
     : null;
   const books = booksArr ? uniq(flatten(booksArr)) : null;
   toFetch = ownProps.match.params.userId;
+  const userName = user && user.username;
   return {
     errors: state.errors.bookshelves,
     books,
+    userName,
     shelfTitle: "All Books",
     currentUserId: state.session.currentUser.id
   };

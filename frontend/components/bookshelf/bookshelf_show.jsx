@@ -36,7 +36,8 @@ class BookshelfShow extends React.Component {
       errors,
       shelfTitle,
       updateAverageReview,
-      currentUserId
+      currentUserId,
+      userName
     } = this.props;
     let allBooksExist = true;
     if (books) {
@@ -65,7 +66,7 @@ class BookshelfShow extends React.Component {
             {error}
           </li>
         ))}
-        <h2 className="bookshelf-show__title">{`My Books: ${shelfTitle}`}</h2>
+        <h2 className="bookshelf-show__title">{`${userName}'s Books: ${shelfTitle}`}</h2>
         <section className="bookshelf-show__body">
           <aside className="bookshelf-show__sidelinks">
             <BookshelfSidebarContainer shelfTitle={shelfTitle} />
