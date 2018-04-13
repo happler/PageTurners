@@ -43,6 +43,12 @@ class Book < ApplicationRecord
     reviews.reduce(:+) / reviews.length.to_f
   end
 
+  def self.all_with_ratings
+    Book.select('books.*, COUNT(rating) AS rating_count, AVG(rating) AS rating_avg')
+      .joins(:reviews)
+      .group('books.id')
+  end
+
   def current_user_shelves(current_user)
     shelf_arr = self.bookshelves.select {|shelf| shelf.owner === current_user}
     shelf_arr.map(&:id)

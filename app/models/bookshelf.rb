@@ -23,4 +23,10 @@ class Bookshelf < ApplicationRecord
   class_name: :User,
   foreign_key: :owner_id
 
+  def all_books_with_ratings
+    self.books.select('books.*, COUNT(rating) AS rating_count, AVG(rating) AS rating_avg')
+      .joins(:reviews)
+      .group('books.id')
+  end
+
 end

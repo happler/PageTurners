@@ -2,7 +2,7 @@ class Api::BookshelvesController < ApplicationController
   before_action :ensure_logged_in
 
   def show
-    @bookshelf = Bookshelf.find_by(id: params[:id])
+    @bookshelf = Bookshelf.find_by(id: params[:id]).all_books_with_ratings
     if @bookshelf
       render :show
     else
