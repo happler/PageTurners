@@ -17,26 +17,28 @@ import Footer from "./nav/footer";
 const Headers = () => (
   <div className="content-page-container">
     <Header />
-    <Switch>
-      <ProtectedRoute
-        path="/users/:userId/shelf/:shelfId"
-        component={BookshelfShowContainer}
-      />
-      <ProtectedRoute
-        path="/users/:userId/shelf"
-        component={BookshelfIndexContainer}
-      />
-      <ProtectedRoute
-        path="/books/:id/addReview/:reviewId"
-        component={EditReviewFormContainer}
-      />
-      <ProtectedRoute
-        path="/books/:id/addReview"
-        component={ReviewFormContainer}
-      />
-      <ProtectedRoute path="/books/:id" component={BookShowContainer} />
-      <ProtectedRoute path="/" component={BooksIndexContainer} />
-    </Switch>
+    <div className="content-page">
+      <Switch>
+        <ProtectedRoute
+          path="/users/:userId/shelf/:shelfId"
+          component={BookshelfShowContainer}
+        />
+        <ProtectedRoute
+          path="/users/:userId/shelf"
+          component={BookshelfIndexContainer}
+        />
+        <ProtectedRoute
+          path="/books/:id/addReview/:reviewId"
+          component={EditReviewFormContainer}
+        />
+        <ProtectedRoute
+          path="/books/:id/addReview"
+          component={ReviewFormContainer}
+        />
+        <ProtectedRoute path="/books/:id" component={BookShowContainer} />
+        <ProtectedRoute path="/" component={BooksIndexContainer} />
+      </Switch>
+    </div>
     <Footer />
   </div>
 );

@@ -5,6 +5,10 @@
   background-color: #eae8de;
 }
 
+.content-page {
+  flex: 1 0 auto;
+}
+
 .nav-bar,
 .personal-links {
   display: flex;
@@ -21,6 +25,10 @@
   border-bottom: 2px solid #dbd9d7;
   position: fixed;
   z-index: 1;
+}
+
+.personal-links {
+  flex-shrink: 0;
 }
 
 .left-nav-home,
