@@ -6,17 +6,17 @@
 }
 
 .personal-links__angel {
-  background-image: image-url("AL_black.png");
+  background-image: image-url("al_black.png");
   background-size: 35%;
   background-position: center;
 }
 .personal-links__linkedin {
-  background-image: image-url("In_black.png");
+  background-image: image-url("in_black.png");
   background-size: 55%;
   background-position: 60% 50%;
 }
 .personal-links__github {
-  background-image: image-url("Git_black.png");
+  background-image: image-url("git_black.png");
   background-size: 55%;
   background-position: center;
 }
@@ -29,15 +29,15 @@
 }
 
 .personal-links__github:hover {
-  background-image: image-url("Git_white.png");
+  background-image: image-url("git_white.png");
   background-color: #352213;
 }
 .personal-links__linkedin:hover {
-  background-image: image-url("In_white.png");
+  background-image: image-url("in_white.png");
   background-color: #352213;
 }
 .personal-links__angel:hover {
-  background-image: image-url("AL_white.png");
+  background-image: image-url("al_white.png");
   background-color: #352213;
 }
 
