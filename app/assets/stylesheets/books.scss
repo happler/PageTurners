@@ -128,7 +128,10 @@
 }
 .content-page-container {
   background-color: #eae8de;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .book-shelve__closed {

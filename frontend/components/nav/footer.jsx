@@ -10,21 +10,23 @@ const Footer = () => {
             Harry Appler
           </a>
         </div>
-        <a
-          className="personal-links__angel"
-          target="_blank"
-          href="https://angel.co/harry-appler"
-        />
-        <a
-          className="personal-links__github"
-          target="_blank"
-          href="https://github.com/happler/"
-        />
-        <a
-          className="personal-links__linkedin"
-          target="_blank"
-          href="https://www.linkedin.com/in/harryappler/"
-        />
+        <div className="personal-links__icons">
+          <a
+            className="personal-links__angel"
+            target="_blank"
+            href="https://angel.co/harry-appler"
+          />
+          <a
+            className="personal-links__github"
+            target="_blank"
+            href="https://github.com/happler/"
+          />
+          <a
+            className="personal-links__linkedin"
+            target="_blank"
+            href="https://www.linkedin.com/in/harryappler/"
+          />
+        </div>
       </div>
     </div>
   );
