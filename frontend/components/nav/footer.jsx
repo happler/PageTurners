@@ -4,11 +4,28 @@ const Footer = () => {
   return (
     <div className="personal-links-container">
       <div className="personal-links">
-        <div>
-          <span className="portfolio-by">By: </span>
-          <a className="portfolio" href="https://www.harryappler.com">
-            Harry Appler
-          </a>
+        <div className="attribution">
+          <p className="inspired-by">
+            Inspired by =>{" "}
+            <a
+              className="personal-links__links"
+              href="https://www.goodreads.com"
+            >
+              {" "}
+              GoodReads
+            </a>{" "}
+          </p>
+
+          <p className="pipes"> || </p>
+          <p className="portfolio-by">
+            Built by =>{" "}
+            <a
+              className="portfolio personal-links__links"
+              href="https://www.harryappler.com"
+            >
+              Harry Appler
+            </a>
+          </p>
         </div>
         <div className="personal-links__icons">
           <a

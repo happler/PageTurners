@@ -5,24 +5,18 @@
   background-color: #eae8de;
 }
 
-.content-page {
-  flex: 1 0 auto;
-}
 .personal-links__angel {
   background-image: image-url("AL_black.png");
-  // padding: 25px;
   background-size: 35%;
   background-position: center;
 }
 .personal-links__linkedin {
   background-image: image-url("In_black.png");
-  // padding: 25px;
   background-size: 55%;
   background-position: 60% 50%;
 }
 .personal-links__github {
   background-image: image-url("Git_black.png");
-  // padding: 25px;
   background-size: 55%;
   background-position: center;
 }
@@ -50,9 +44,38 @@
 .personal-links__icons {
   display: flex;
   flex-direction: row;
-  // width: 250px;
-  // align-items: space-between;
   justify-content: space-between;
+}
+.inspired-by {
+  font-family: "Lato", sans-serif;
+}
+
+.portfolio-by {
+  font-family: "Lato", sans-serif;
+}
+.centered-by {
+  margin-left: 150px;
+  font-family: "Lato", sans-serif;
+}
+.attribution {
+  margin-top: 43px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+}
+.pipes {
+  font-family: "Lato", sans-serif;
+  margin: 0 20px;
+}
+
+.personal-links__links {
+  color: #28615c;
+  font-family: "Lato", sans-serif;
+}
+
+.personal-links__links:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .nav-bar,
