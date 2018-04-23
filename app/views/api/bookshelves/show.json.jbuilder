@@ -1,3 +1,5 @@
+
+debugger
 json.bookshelves do
   json.partial! 'api/bookshelves/bookshelf', bookshelf: @bookshelf
 end
@@ -9,10 +11,9 @@ json.books do
       json.title book.title
       json.author book.author
       json.coverImage asset_path(book.image.url)
-      json.avgReview book.average_rating
-      json.reviewCount book.reviews.length
-      json.currentUserReview book.reviews.where(user_id: current_user.id)
-      # json.dateAdded
+      json.avgReview book.rating_avg
+      json.reviewCount book.rating_count
+      json.currentUserReview book.user_reviews
     end
   end
 end
