@@ -23,11 +23,17 @@ class Bookshelf < ApplicationRecord
   class_name: :User,
   foreign_key: :owner_id
 
+  # def all_books_with_ratings(current_user_id)
+  #   self.books.joins(:reviews)
+  #     .select('books.*, COUNT(ag_reviews.rating) AS rating_count, AVG(ag_reviews.rating) AS rating_avg')
+  #     .joins('JOIN reviews as ag_reviews on books.id = ag_reviews.book_id')
+  #     .group('books.id')
+  # end
+
   def all_books_with_ratings(current_user_id)
-    self.books.includes(:reviews).where(reviews: {user_id: current_user_id})
-      .select('books.*, COUNT(ag_reviews.rating) AS rating_count, AVG(ag_reviews.rating) AS rating_avg')
-      .joins('JOIN reviews as ag_reviews on books.id = ag_reviews.book_id')
-      .group('books.id','reviews.id')
+    books_with_ratings = self.books.joins(:reviews).select('AVG(reviews.rating) as avg_rating').group('books.id')
+    current_user_reviews = Review.where('reviews.user_id = ?', current_user_id).where('reviews.book_id IN (?)', self.books.pluck(:id))
+    debugger
   end
 
   # def all_books_with_ratings(current_user_id)
