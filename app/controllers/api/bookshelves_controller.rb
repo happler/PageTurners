@@ -2,8 +2,9 @@ class Api::BookshelvesController < ApplicationController
   before_action :ensure_logged_in
 
   def show
-    @bookshelf = Bookshelf.find_by(id: params[:id]).all_books_with_ratings(current_user.id)
+    @bookshelf = Bookshelf.find_by(id: params[:id])
     if @bookshelf
+      @books_with_ratings = @bookshelf.all_books_with_ratings(current_user.id)
       render :show
     else
       render json: ["Sorry, we couldn't find your bookshelf"], status: 404

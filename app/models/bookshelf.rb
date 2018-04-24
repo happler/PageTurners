@@ -31,9 +31,9 @@ class Bookshelf < ApplicationRecord
   # end
 
   def all_books_with_ratings(current_user_id)
-    books_with_ratings = self.books.joins(:reviews).select('AVG(reviews.rating) as avg_rating').group('books.id')
-    current_user_reviews = Review.where('reviews.user_id = ?', current_user_id).where('reviews.book_id IN (?)', self.books.pluck(:id))
-    debugger
+    books_with_ratings = self.books.joins(:reviews).select('books.*, COUNT(reviews.rating) AS rating_count, AVG(reviews.rating) as avg_rating').group('books.id')
+    current_user_reviews = Review.select('reviews.*').where('reviews.user_id = ?', current_user_id).where('reviews.book_id IN (?)', self.books.pluck(:id))
+    [books_with_ratings, current_user_reviews.group_by {|review| review.book_id} ]
   end
 
   # def all_books_with_ratings(current_user_id)
