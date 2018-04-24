@@ -1,7 +1,7 @@
 
 
 json.bookshelves do
-  json.partial! 'api/bookshelves/bookshelf', bookshelf: @bookshelf
+  json.partial! 'api/bookshelves/bookshelf', bookshelf: @bookshelf, books: @books_with_ratings[0].map(&:id)
 end
 
 json.books do

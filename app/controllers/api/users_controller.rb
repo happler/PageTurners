@@ -24,10 +24,14 @@ class Api::UsersController < ApplicationController
   end
 
   def shelves
-    @user = User.find_by(id:params[:id])
+    user_id = params[:id]
+    @user = User.find_by(id:user_id)
     if @user
       @bookshelves = @user.bookshelves
-      @books = @bookshelves.map(&:books).flatten
+      bookshelves_content = @bookshelves.map { |shelf| [shelf.id, shelf.all_books_with_ratings(user_id)] }
+      @bookshelves_hash = bookshelves_content.group_by { |shelf| shelf[0] }
+      @bookshelves_hash.each { |k, v| @bookshelves_hash[k] = v[0].map(&:id) }
+      @books = bookshelves_content.map { |shelf| shelf[1][0] }.flatten
       render :shelves
     else
       render json: ["Sorry, we can't find that user"], status: 404
