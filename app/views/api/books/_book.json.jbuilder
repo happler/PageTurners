@@ -4,5 +4,4 @@ json.set! book.id do
   json.originalTitle book.original_title
   json.reviewIds book.reviews.pluck(:id)
   json.currentUserReview book.reviews.where(user_id: current_user.id)
-  # json.currentUserShelves book.current_user_shelves(current_user)
 end

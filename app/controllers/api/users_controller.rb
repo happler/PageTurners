@@ -30,8 +30,10 @@ class Api::UsersController < ApplicationController
       @bookshelves = @user.bookshelves
       bookshelves_content = @bookshelves.map { |shelf| [shelf.id, shelf.all_books_with_ratings(user_id)] }
       @bookshelves_hash = bookshelves_content.group_by { |shelf| shelf[0] }
-      @bookshelves_hash.each { |k, v| @bookshelves_hash[k] = v[0].map(&:id) }
+      @bookshelves_hash.each { |k, v| @bookshelves_hash[k] = v[0][1][0].ids } ##this works
       @books = bookshelves_content.map { |shelf| shelf[1][0] }.flatten
+      reviews_arr = bookshelves_content.map {|shelf| shelf[1][1] }.flatten
+      @reviews = reviews_arr.reduce { |acc, hash| acc.merge(hash) }
       render :shelves
     else
       render json: ["Sorry, we can't find that user"], status: 404

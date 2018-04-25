@@ -13,7 +13,7 @@ json.books do
       json.coverImage asset_path(book.image.url)
       json.avgReview book.avg_rating
       json.reviewCount book.rating_count
-      json.currentUserReview @books_with_ratings[1][book.id][0]
+      json.currentUserReview [@books_with_ratings[1][book.id][0]] || []
     end
   end
 end

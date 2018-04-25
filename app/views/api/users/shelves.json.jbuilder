@@ -6,7 +6,7 @@ end
 
 json.books do
   @books.each do |book|
-    json.partial! 'api/books/book_shelved.json.jbuilder', book: book
+    json.partial! 'api/books/book_shelved.json.jbuilder', book: book, review: @reviews[book.id] ? [@reviews[book.id][0]] : []
   end
 end
 
