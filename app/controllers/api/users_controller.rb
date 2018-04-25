@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
 
   def shelves
     user_id = params[:id]
-    @user = User.find_by(id:user_id)
+    @user = User.includes(bookshelves: {books: :reviews}).find_by(id:user_id)
     if @user
       @bookshelves = @user.bookshelves
       bookshelves_content = @bookshelves.map { |shelf| [shelf.id, shelf.all_books_with_ratings(user_id)] }
