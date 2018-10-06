@@ -11,6 +11,7 @@ import ReviewFormContainer from "./review/review_form_container";
 import EditReviewFormContainer from "./review/edit_review_form_container";
 import BookshelfShowContainer from "./bookshelf/bookshelf_show_container";
 import BookshelfIndexContainer from "./bookshelf/bookshelf_index_container";
+import BookFeedIndex from "./book/book_feed_index";
 import Header from "./nav/header";
 import Footer from "./nav/footer";
 
@@ -37,7 +38,7 @@ const Headers = () => (
             component={ReviewFormContainer}
           />
           <ProtectedRoute path="/books/:id" component={BookShowContainer} />
-          <ProtectedRoute path="/" component={BooksIndexContainer} />
+          <ProtectedRoute path="/" component={BookFeedIndex} />
         </Switch>
       </div>
     </div>

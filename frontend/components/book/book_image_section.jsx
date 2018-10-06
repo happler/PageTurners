@@ -4,8 +4,6 @@ import BookShelveContainer from "./book_shelve_container";
 import { reviewStats } from "../../util/review_util";
 
 const BookImageItem = ({ coverImage, reviews }) => {
-  let reviewCount = 0.0001;
-  let total = 0;
 
   return (
     <div className="book-image-container book-show__left">
@@ -21,5 +19,4 @@ const BookImageItem = ({ coverImage, reviews }) => {
     </div>
   );
 };
-// change for git to see
 export default BookImageItem;
