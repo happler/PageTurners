@@ -23,14 +23,12 @@ class BookFeedIndex extends React.Component{
 
   render() {
     if (this.props.books.length === 0) {
-      debugger
       return (
         <div className="books-index-loading-container">
           <img className="book-show-loading" src={window.loading} />
         </div>
       );
     }
-    debugger
     return (
       <div>
       {this.props.books.map(book =>(
