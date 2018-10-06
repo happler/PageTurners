@@ -4,15 +4,23 @@ import { withRouter } from "react-router-dom";
 class BookShelve extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dropdown: "book-shelve__closed" };
+    this.state = { dropdown: "book-shelve__closed", stillHovered: false };
   }
 
   toggleDropdown(e) {
-    if (this.state.dropdown === "book-shelve__open") {
-      this.setState({ dropdown: "book-shelve__closed" });
-    } else {
+    if (this.state.dropdown === "book-shelve__closed" && this.state.stillHovered) {
       this.setState({ dropdown: "book-shelve__open" });
     }
+  }
+
+  timeoutDropdown(e){
+    this.setState({stillHovered: true});
+    setTimeout(this.toggleDropdown.bind(this), 1000);
+
+  }
+
+  hoverReset(){
+    this.setState({stillHovered: false, dropdown: "book-shelve__closed"});
   }
   render() {
     const { usersShelves, shelveBook, unshelveBook, passedBookId } = this.props;
@@ -44,7 +52,11 @@ class BookShelve extends React.Component {
       );
     });
     return (
-      <section className="book-shelve-container">
+      <section
+        className="book-shelve-container"
+        onMouseEnter={this.timeoutDropdown.bind(this)}
+        onMouseLeave={this.hoverReset.bind(this)}
+        >
         <div
           className="book-shelve__dropdown__toggle"
           onClick={this.toggleDropdown.bind(this)}
