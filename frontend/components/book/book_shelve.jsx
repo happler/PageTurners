@@ -15,7 +15,7 @@ class BookShelve extends React.Component {
 
   timeoutDropdown(e){
     this.setState({stillHovered: true});
-    setTimeout(this.toggleDropdown.bind(this), 1000);
+    setTimeout(this.toggleDropdown.bind(this), 500);
 
   }
 
