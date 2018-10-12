@@ -108,11 +108,11 @@ class ReviewDetails extends React.Component{
               <div className='review-details__graph__bars__one' style={oneStyle}></div>
             </div>
             <div className='review-details__graph__pcts'>
-              <span className='review-details__graph__pct' >{`${fiveStarPct.toFixed(2)}% (${fiveStar})`}</span>
-              <span className='review-details__graph__pct' >{`${fourStarPct.toFixed(2)}% (${fourStar})`}</span>
-              <span className='review-details__graph__pct' >{`${threeStarPct.toFixed(2)}% (${threeStar})`}</span>
-              <span className='review-details__graph__pct' >{`${twoStarPct.toFixed(2)}% (${twoStar})`}</span>
-              <span className='review-details__graph__pct' >{`${oneStarPct.toFixed(2)}% (${oneStar})`}</span>
+              <span className='review-details__graph__pct' >{`${ fiveStarPct ? fiveStarPct.toFixed(1) : 0}% (${fiveStar})`}</span>
+              <span className='review-details__graph__pct' >{`${ fourStarPct ? fourStarPct.toFixed(1) : 0}% (${fourStar})`}</span>
+              <span className='review-details__graph__pct' >{`${ threeStarPct ? threeStarPct.toFixed(1) : 0}% (${threeStar})`}</span>
+              <span className='review-details__graph__pct' >{`${ twoStarPct ? twoStarPct.toFixed(1) : 0}% (${twoStar})`}</span>
+              <span className='review-details__graph__pct' >{`${ oneStarPct ? oneStarPct.toFixed(1) : 0}% (${oneStar})`}</span>
             </div>
           </div>
           <p>{`${(fiveStarPct + fourStarPct + threeStarPct).toFixed(0)}% of people liked it`}</p>
