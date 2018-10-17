@@ -3,7 +3,7 @@ import MiniReviewContainer from "../review/mini_review_container";
 import BookShelveContainer from "./book_shelve_container";
 import { reviewStats } from "../../util/review_util";
 
-const BookImageItem = ({ coverImage, reviews }) => {
+const BookImageItem = ({ coverImage, reviews, passedBookId }) => {
 
   return (
     <div className="book-image-container book-show__left">
@@ -11,7 +11,7 @@ const BookImageItem = ({ coverImage, reviews }) => {
         <img src={coverImage} />
       </div>
       <div className="book-image__read-status">
-        <BookShelveContainer />
+        <BookShelveContainer passedBookId={passedBookId} />
       </div>
       <div className="book-image__rating">
         <MiniReviewContainer reviews={reviews} />

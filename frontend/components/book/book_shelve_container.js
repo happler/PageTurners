@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
     {};
   return {
     usersShelves,
-    bookId: ownProps.bookId
+    passedBookId: ownProps.passedBookId
   };
 };
 

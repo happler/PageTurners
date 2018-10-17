@@ -14,7 +14,7 @@ class BookFeedIndex extends React.Component{
   }
   componentDidMount() {
     window.scroll(0, 0);
-    this.props.fetchBooks();
+    this.props.fetchBooks().then(() => this.setState({isLoading:false}));
   }
 
   componentWillUnmount() {
@@ -22,7 +22,8 @@ class BookFeedIndex extends React.Component{
   }
 
   render() {
-    if (this.props.books.length === 0) {
+    debugger
+    if (this.state.isLoading) {
       return (
         <div className="books-index-loading-container">
           <img className="book-show-loading" src={window.loading} />

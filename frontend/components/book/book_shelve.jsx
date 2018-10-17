@@ -38,14 +38,14 @@ class BookShelve extends React.Component {
               onClick={() => unshelveBook(shelfId, bookId)}
               className="book-shelve__remove"
             >
-              (Remove)
+              Remove
             </p>
           ) : (
             <p
               onClick={() => shelveBook(shelfId, bookId)}
               className="book-shelve__add"
             >
-              (Add)
+              Add
             </p>
           )}
         </div>

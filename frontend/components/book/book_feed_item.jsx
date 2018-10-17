@@ -17,6 +17,7 @@ const BookFeedItem = ({book, reviews, history}) => {
     <BookImageItem
       coverImage={coverImage}
       reviews={reviews}
+      passedBookId={id}
       onClick={() => history.push(`/books/${id}`)}
       />
     <div className="book-show__right">
