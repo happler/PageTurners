@@ -22,7 +22,6 @@ class BookFeedIndex extends React.Component{
   }
 
   render() {
-    debugger
     if (this.state.isLoading) {
       return (
         <div className="books-index-loading-container">
@@ -31,7 +30,7 @@ class BookFeedIndex extends React.Component{
       );
     }
     return (
-      <div>
+      <div className="book-feed-container">
       {this.props.books.map(book =>(
         <BookFeedItem key={book.id} book={book} />
       ))}

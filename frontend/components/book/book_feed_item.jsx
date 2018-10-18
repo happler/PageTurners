@@ -13,20 +13,23 @@ const BookFeedItem = ({book, reviews, history}) => {
 
   const {title, author, coverImage, synopsis, id} = book;
   return(
-    <div className="book-show-container">
+    <div className="book-show-container book-feed-item">
     <BookImageItem
       coverImage={coverImage}
       reviews={reviews}
       passedBookId={id}
-      onClick={() => history.push(`/books/${id}`)}
+      feed={'feed'}
+      callback={() => history.push(`/books/${id}`)}
       />
     <div className="book-show__right">
       <BookTitleItem
         title={title}
         author={author}
         reviews={reviews}
+        feed={'feed'}
+        callback={() => history.push(`/books/${id}`)}
       />
-      <BookSynopsisItem synopsis={synopsis} />
+    <BookSynopsisItem synopsis={synopsis} feed={'feed'} />
     </div>
     </div>
   );

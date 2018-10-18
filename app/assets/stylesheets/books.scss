@@ -191,3 +191,13 @@
   padding: 2px 3px;
   font-family: "lato", sans-serif;
 }
+.book-feed-item{
+  background-color: ghostwhite;
+  width: 650px;
+}
+.book-feed-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+}

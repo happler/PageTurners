@@ -21,9 +21,9 @@ class BookSynopsisItem extends React.Component{
     const splitSyn = synopsis.split("\n");
     let truncSyn;
     if(synopsis.length > 450){
-      truncSyn = synopsis.slice(0, 375) + " " ;
-      if (truncSyn.slice(-3).includes('\\')){
-        truncSyn = truncSyn.slice(0, -3);
+      truncSyn = synopsis.slice(0, 375) + "..." ;
+      if (truncSyn.slice(-5).includes('\\')){
+        truncSyn = truncSyn.slice(0, -5) + "...";
       }
       truncSyn = truncSyn.split("\n");
       return(
@@ -32,13 +32,13 @@ class BookSynopsisItem extends React.Component{
              {truncSyn.map((section, idx) => <div key={idx}><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
             <span
               onClick={this.swapContent()}
-              className='book-synopsis__swap-content'>(more)</span>
+              className='book-synopsis__swap-content'>(More...)</span>
           </div>
           <div className={longSynopsis}>
               {splitSyn.map((section, idx) => <div key={idx}><p className='book-synopsis__content' key={idx}>{section}</p><br/></div>)}
              <span
                onClick={this.swapContent()}
-               className='book-synopsis__swap-content'>(less)</span>
+               className='book-synopsis__swap-content'>(...Less)</span>
           </div>
         </div>
       );

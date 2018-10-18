@@ -2,11 +2,11 @@ import React from 'react';
 import ReviewDetails from '../review/review_details';
 
 
-const BookTitleItem = ({ title, author, reviews}) =>{
+const BookTitleItem = ({ title, author, reviews, callback}) =>{
   return(
     <div className='book-title-container'>
       <div className='book-title__title'>
-        <span >{title}</span>
+        <span onClick={callback} >{title}</span>
       </div>
       <div className='book-title__author'>
         <span> by {author}</span>
