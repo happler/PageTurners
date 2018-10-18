@@ -195,10 +195,14 @@
 .book-feed-item{
   background-color: ghostwhite;
   width: 650px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
 }
 .book-feed-container{
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 2px;
 }
