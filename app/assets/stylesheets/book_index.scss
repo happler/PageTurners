@@ -24,3 +24,8 @@
   display: flex;
   justify-content: center;
 }
+.feed:hover{
+  cursor: pointer;
+  opacity: 0.8;
+  text-decoration: underline;
+}
